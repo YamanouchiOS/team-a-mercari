@@ -54,5 +54,6 @@ group :test do
 end
 
 gem 'pry-rails'
+gem 'pry-byebug'
 gem 'erb2haml'
 gem 'haml-rails'
