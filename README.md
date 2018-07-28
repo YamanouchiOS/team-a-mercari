@@ -86,9 +86,46 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false|
+|category-1_id|references|null: false, foreign_key: true|
+|category-2_id|references|null: false, foreign_key: true|
+|category-3_id|references|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :category-1
+- belongs_to :category-2
+- belongs_to :category-3
+- has_one :product
+
+##category-1テーブル
+|Column|Type|Options|
+|------|----|-------|
+|category-1_name|string|null: false, unique: true|
+
+### Association
+- has_many :categories
+- has_many :category-2
+
+##category-2テーブル
+|Column|Type|Options|
+|------|----|-------|
+|category-2_name|string|null: false, unique: true|
+|category-1_id|references|null: false, foreign_key: true|
+
+### Association
+- has_many :categories
+- belongs_to :category-1
+- has_many :category-3
+
+
+##category-3テーブル
+|Column|Type|Options|
+|------|----|-------|
+|category-3_name|string|null: false, unique: true|
+|category-2_id|references|null: false, foreign_key: true|
+
+### Association
+- has_many :cateogries
+- belongs_to :category-2
 
 
 ## conditionsテーブル
