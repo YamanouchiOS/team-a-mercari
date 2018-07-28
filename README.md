@@ -20,9 +20,9 @@
 ### Association
 - belongs_to :user, counter_cache: :products_count
 - belongs_to :category
-- belongs_to :conditon
-- belongs_to :delivery cost
-- belongs_tp :prefecture
+- belongs_to :condition
+- belongs_to :delivery_cost
+- belongs_to :prefecture
 - belongs_to :delivery_date
 - belongs_to :status
 - has_many :comments
@@ -35,7 +35,7 @@
 |------|----|-------|
 |nickname|string|null: false, add_index: true|
 |email|string|unique: true, null: false|
-|password|string|unique: true, null: false|#パスワード要る？
+|password|string|unique: true, null: false|
 |products_count|string|default: 0|
 
 
@@ -66,8 +66,10 @@
 |------|----|-------|
 |postal_code|integer|null: false, add_index: true|
 |prefecture_id|references|null: false, foreign_key: true|
-|city|string|null: false|#市区町村のテーブル作るの面倒そう#○○市××町まで描いてもらうイメージ
-|street_number|string|null: false|#１−１−１を描いてもらうイメージ
+|city|string|null: false|
+<!-- #○○市××町まで描いてもらうイメージ -->
+|street_number|string|null: false|
+<!-- #１−１−１を描いてもらうイメージ -->
 |building_number|string|null: false|
 |tel|integer|unique: true, null: false|
 |user_id|references|unique: true, null: false, foreign_key: true|
@@ -89,7 +91,7 @@
 - belongs_to :category-3
 - has_one :product
 
-##category-1テーブル
+##category-1sテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category-1_name|string|null: false, unique: true|
@@ -98,7 +100,7 @@
 - has_many :categories
 - has_many :category-2
 
-##category-2テーブル
+##category-2sテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category-2_name|string|null: false, unique: true|
@@ -110,7 +112,7 @@
 - has_many :category-3
 
 
-##category-3テーブル
+##category-3sテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category-3_name|string|null: false, unique: true|
@@ -128,6 +130,7 @@
 |condition|string|unique: true, null: false|
 
 ### Association
+- has_many :products
 
 
 ## prefecturesテーブル
@@ -137,6 +140,7 @@
 |name|string|null: false, unique: true|
 
 ### Association
+- has_many :products
 
 
 ## delivery_costsテーブル
@@ -146,25 +150,25 @@
 |delivery_cost|integer|unique: true, null: false|
 
 ### Association
+- has_many :products
 
-
-## delivery_dateテーブル
+## delivery_datesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |delivery_date|datetime|unique: true, null: false|
 
 ### Association
+- has_many :products
 
-
-## product_statusテーブル
+## product_statusesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |status|string|unique: true, null: false|
 
 ### Association
-
+- has_many :products
 
 ## product_imagesテーブル
 
