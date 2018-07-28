@@ -72,9 +72,10 @@
 |tel|integer|unique: true, null: false|
 |user_id|references|unique: true, null: false, foreign_key: true|
 
+```
 ○○市××町までユーザーに入力してもらう→Cityカラムに格納
 １−１−１までユーザーに入力してもらう→street_numberに格納
-
+```
 
 ### Association
 - belongs_to :user
