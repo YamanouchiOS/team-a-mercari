@@ -49,6 +49,7 @@
 ### Association
 - has_one :user_details
 - has_one :self_introduction
+- has_one :address
 
 
 ## user_detailsテーブル
@@ -66,18 +67,20 @@
 ### Association
 - belongs_to :user
 
-## addressテーブル
+## addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|postal_code|string|null: false, add_index: true|
-|prefecture_id|string|unique: true, null: false|
-|city|string|unique: true, null: false|
-|house_number|string|unique: true, null: false|
-|building_number|string|unique: true, null: false|
-|tel|string|unique: true, null: false|
-|user_id|string|unique: true, null: false|
+|postal_code|integer|null: false, add_index: true|
+|prefecture_id|references|null: false, foreign_key: true|
+|city|string|null: false|#市区町村のテーブル作るの面倒そう#○○市××町まで描いてもらうイメージ
+|street_number|string|null: false|#１−１−１を描いてもらうイメージ
+|building_number|string|null: false|
+|tel|integer|unique: true, null: false|
+|user_id|references|unique: true, null: false, foreign_key: true|
 
+### Association
+- belongs_to :user
 
 ## categoriesテーブル
 
