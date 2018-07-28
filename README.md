@@ -181,11 +181,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|images|string|null: false|
-|status|string|null: false|
-|product_id|string|null: false|
+|text|text|null: false|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :product
 
 
 ## likesテーブル
