@@ -21,6 +21,7 @@
 |prefecture_id|string|
 |derivery_date_id|string|
 |status_id|string|
+|likes_count|string|
 
 
 ### Association
