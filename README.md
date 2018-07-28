@@ -1,26 +1,18 @@
 # README
-## prefecturesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-
-### Association
-
 
 ## productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|index要る？
-|detail|text|null: false|#null: false要る？(入力必須？)
+|name|string|null: false, add_index: true|
+|detail|text|null: false|
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |condition_id|references|null: false, foreign_key: true|
 |delivery_cost_id|references|null: false, foreign_key: true|
 |prefecture_id|references|null: false, foreign_key: true|
-|derivery_date_id|references|null: false, foreign_key: true|
+|delivery_date_id|references|null: false, foreign_key: true|
 |status_id|references|null: false, foreign_key: true|
 |likes_count|integer|default: 0|
 
@@ -134,6 +126,15 @@
 |Column|Type|Options|
 |------|----|-------|
 |condition|string|unique: true, null: false|
+
+### Association
+
+
+## prefecturesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
 
 ### Association
 
