@@ -23,11 +23,6 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 ### Association
 - belongs_to :user, counter_cache: :products_count
 - belongs_to :category
-- belongs_to :condition
-- belongs_to :delivery_cost
-- belongs_to :prefecture
-- belongs_to :delivery_date
-- belongs_to :status
 - has_many :comments
 - has_many :likes, dependent: :destroy
 - has_many :product_images
