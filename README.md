@@ -42,11 +42,12 @@
 |------|----|-------|
 |nickname|string|null: false, add_index: true|
 |email|string|unique: true, null: false|
-|password|string|unique: true, null: false|
+|password|string|unique: true, null: false|#パスワード要る？
 |products_count|string|default: 0|
 
 
 ### Association
+- has_one :user_details
 - has_one :self_introduction
 
 
