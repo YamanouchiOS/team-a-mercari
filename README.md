@@ -67,12 +67,14 @@
 |postal_code|integer|null: false, add_index: true|
 |prefecture_id|references|null: false, foreign_key: true|
 |city|string|null: false|
-<!-- #○○市××町まで描いてもらうイメージ -->
 |street_number|string|null: false|
-<!-- #１−１−１を描いてもらうイメージ -->
 |building_number|string|null: false|
 |tel|integer|unique: true, null: false|
 |user_id|references|unique: true, null: false, foreign_key: true|
+
+○○市××町までユーザーに入力してもらう→Cityカラムに格納
+１−１−１までユーザーに入力してもらう→street_numberに格納
+
 
 ### Association
 - belongs_to :user
@@ -92,6 +94,7 @@
 - has_one :product
 
 ##category-1sテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |category-1_name|string|null: false, unique: true|
@@ -101,6 +104,7 @@
 - has_many :category-2
 
 ##category-2sテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |category-2_name|string|null: false, unique: true|
@@ -113,6 +117,7 @@
 
 
 ##category-3sテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |category-3_name|string|null: false, unique: true|
