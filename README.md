@@ -9,13 +9,16 @@
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
-|condition_id|references|null: false, foreign_key: true|
-|delivery_cost_id|references|null: false, foreign_key: true|
-|prefecture_id|references|null: false, foreign_key: true|
-|delivery_date_id|references|null: false, foreign_key: true|
-|status_id|references|null: false, foreign_key: true|
+|condition|references|null: false, foreign_key: true|
+|delivery_cost|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
+|delivery_date|references|null: false, foreign_key: true|
+|status|references|null: false, foreign_key: true|
 |likes_count|integer|default: 0|
 
+```
+condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択肢を持っておく
+```
 
 ### Association
 - belongs_to :user, counter_cache: :products_count
@@ -127,54 +130,6 @@
 ### Association
 - has_many :cateogries
 - belongs_to :category-2
-
-
-## conditionsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|unique: true, null: false|
-
-### Association
-- has_many :products
-
-
-## prefecturesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-
-### Association
-- has_many :products
-
-
-## delivery_costsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|delivery_cost|integer|unique: true, null: false|
-
-### Association
-- has_many :products
-
-## delivery_datesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|delivery_date|datetime|unique: true, null: false|
-
-### Association
-- has_many :products
-
-## product_statusesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|status|string|unique: true, null: false|
-
-### Association
-- has_many :products
 
 ## product_imagesテーブル
 
