@@ -8,16 +8,16 @@
 |detail|text|null: false|
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
-|condition|references|null: false, foreign_key: true|
-|delivery_cost|references|null: false, foreign_key: true|
-|prefecture|references|null: false, foreign_key: true|
-|delivery_date|references|null: false, foreign_key: true|
-|status|references|null: false, foreign_key: true|
+|product_category_id|references|null: false, foreign_key: true|
+|condition|integer|null: false|
+|delivery_cost|integer|null: false|
+|prefecture|integer|null: false|
+|delivery_date|integer|null: false|
+|status|integer|null: false|
 |likes_count|integer|default: 0|
 
 ```
-condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択肢を持っておく
+condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択肢を保持
 ```
 
 ### Association
@@ -35,96 +35,77 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |email|string|unique: true, null: false|
 |password|string|unique: true, null: false|
 |products_count|string|default: 0|
-
-
-### Association
-- has_one :user_details
-- has_one :self_introduction
-- has_one :address
-
-
-## user_detailsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_kana|string|null: false|
-|first_kana|string|null: false|
-|gender|integer|null: false|
-|user_id|references|unique: true, null: false, foreign_key: true|
-
-
-### Association
-- belongs_to :user
-
-## addressesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|postal_code|integer|null: false, add_index: true|
-|prefecture_id|references|null: false, foreign_key: true|
-|city|string|null: false|
-|street_number|string|null: false|
-|building_number|string|null: false|
-|tel|integer|unique: true, null: false|
-|user_id|references|unique: true, null: false, foreign_key: true|
+|family_name|string||
+|first_name|string||
+|family_kana|string||
+|first_kana|string||
+|gender|integer||
+|postal_code|integer||
+|prefecture|integer||
+|city|string||
+|street_number|string||
+|building_number|string||
+|tel|integer|unique: true|
+|introduction|text||
 
 ```
+prefectureはenum型で選択肢を保持
 ○○市××町までユーザーに入力してもらう→Cityカラムに格納
 １−１−１までユーザーに入力してもらう→street_numberに格納
 ```
 
-### Association
-- belongs_to :user
+###Association
+- has_many :products
+- has_many :likes
 
-## categoriesテーブル
+
+## product_categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|category-1_id|references|null: false, foreign_key: true|
-|category-2_id|references|null: false, foreign_key: true|
-|category-3_id|references|null: false, foreign_key: true|
+|large_class_id|references|null: false, foreign_key: true|
+|middle_class_id|references|null: false, foreign_key: true|
+|small_class_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :category-1
-- belongs_to :category-2
-- belongs_to :category-3
+- belongs_to :large_class
+- belongs_to :middle_class
+- belongs_to :small_class
 - has_one :product
 
-## category-1sテーブル
+## large_classesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|category-1_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :categories
-- has_many :category-2
+- has_many :middle_classes
 
-## category-2sテーブル
+## middle_classesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|category-2_name|string|null: false, unique: true|
-|category-1_id|references|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
+|large_class_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :categories
-- belongs_to :category-1
-- has_many :category-3
+- belongs_to :large_class
+- has_many :small_classes
 
 
-## category-3sテーブル
+## small_classesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|category-3_name|string|null: false, unique: true|
-|category-2_id|references|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
+|middle_classes_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :cateogries
-- belongs_to :category-2
+- belongs_to :middle_classes
 
 ## product_imagesテーブル
 
@@ -158,13 +139,4 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 
 ### Association
 - belongs_to :product, counter_cache: :likes_couns
-- belongs_to :user
-
-## self_introductionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text||
-|user_id|references|null: false, foreign_key: true|
-
-### Association
 - belongs_to :user
