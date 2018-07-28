@@ -55,16 +55,16 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false, add_index: true|
-|first_name|string|unique: true, null: false|
-|family_kana|string|unique: true, null: false|
-|first_kana|string|unique: true, null: false|
-|gender|string|unique: true, null: false|
-|user_id|string|unique: true, null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_kana|string|null: false|
+|first_kana|string|null: false|
+|gender|integer|null: false|
+|user_id|references|unique: true, null: false, foreign_key: true|
 
 
 ### Association
-
+- belongs_to :user
 
 ## addressテーブル
 
