@@ -93,7 +93,7 @@
 - belongs_to :category-3
 - has_one :product
 
-##category-1sテーブル
+## category-1sテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -103,7 +103,7 @@
 - has_many :categories
 - has_many :category-2
 
-##category-2sテーブル
+## category-2sテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -116,7 +116,7 @@
 - has_many :category-3
 
 
-##category-3sテーブル
+## category-3sテーブル
 
 |Column|Type|Options|
 |------|----|-------|
