@@ -40,13 +40,24 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |family_kana|string||
 |first_kana|string||
 |gender|integer||
-|postal_code|integer||
-|prefecture|integer||
-|city|string||
-|street_number|string||
-|building_number|string||
-|tel|integer|unique: true|
 |introduction|text||
+
+###Association
+- has_many :products
+- has_many :likes
+- has_one :address
+
+## addressesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false, add_index: true|
+|prefecture|integer|null: false|
+|city|string|null: false|
+|street_number|string|null: false|
+|building_number|string|null: false|
+|tel|integer|unique: true, null: false|
+|user_id|references|unique: true, null: false, foreign_key: true|
 
 ```
 prefectureはenum型で選択肢を保持
@@ -55,9 +66,7 @@ prefectureはenum型で選択肢を保持
 ```
 
 ###Association
-- has_many :products
-- has_many :likes
-
+- belongs_to :user
 
 ## product_categoriesテーブル
 
