@@ -232,6 +232,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
+
   pry-rails
   rails (~> 4.2.8)
   rails-controller-testing
