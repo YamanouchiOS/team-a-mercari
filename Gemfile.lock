@@ -157,7 +157,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
-  rails (= 4.2.8)
+  rails (~> 4.2.8)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
