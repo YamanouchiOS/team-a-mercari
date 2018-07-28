@@ -138,5 +138,5 @@ prefectureはenum型で選択肢を保持
 |product_id|string|null: false|
 
 ### Association
-- belongs_to :product, counter_cache: :likes_couns
+- belongs_to :product, counter_cache: :likes_counts
 - belongs_to :user
