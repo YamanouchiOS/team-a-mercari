@@ -1,31 +1,40 @@
 # README
-## 都道府県情報テーブル
+## prefecturesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-||references|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
 
 ### Association
 
 
-## productテーブル
+## productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|references|null: false, foreign_key: true|
-|detail|references|null: false, foreign_key: true|
-|price|text|
-|category_id|string|
-|condition_id|string|
-|derivery_cost_id|string|
-|prefecture_id|string|
-|derivery_date_id|string|
-|status_id|string|
-|likes_count|string|
+|name|string|null: false|index要る？
+|detail|text|null: false|#null: false要る？(入力必須？)
+|price|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|condition_id|references|null: false, foreign_key: true|
+|delivery_cost_id|references|null: false, foreign_key: true|
+|prefecture_id|references|null: false, foreign_key: true|
+|derivery_date_id|references|null: false, foreign_key: true|
+|status_id|references|null: false, foreign_key: true|
+|likes_count|integer|default: 0|
 
 
 ### Association
-
+- belongs_to :user, counter_cache: :products_count
+- belongs_to :category
+- belongs_to :conditon
+- belongs_to :delivery cost
+- belongs_tp :prefecture
+- belongs_to :delivery_date
+- belongs_to :status
+- has_many :comments
+- has_many :likes, dependent: :destroy
 
 ## usersテーブル
 
@@ -34,9 +43,11 @@
 |nickname|string|null: false, add_index: true|
 |email|string|unique: true, null: false|
 |password|string|unique: true, null: false|
+|products_count|string|default: 0|
 
 
 ### Association
+- has_one :self_introduction
 
 
 ## user_detailsテーブル
@@ -142,4 +153,14 @@
 |product_id|string|null: false|
 
 ### Association
+- belongs_to :product, counter_cache: :likes_couns
+- belongs_to :user
 
+## self_introductionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text||
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
