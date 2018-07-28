@@ -132,25 +132,25 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|condition|string|null: false|
+|condition|string|unique: true, null: false|
 
 ### Association
 
 
-## derivery_costsテーブル
+## delivery_costsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|derivery_cost|string|null: false|
+|delivery_cost|integer|unique: true, null: false|
 
 ### Association
 
 
-## derivery_dateテーブル
+## delivery_dateテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|derivery_cost|string|null: false|
+|delivery_date|datetime|unique: true, null: false|
 
 ### Association
 
@@ -159,7 +159,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|status|string|null: false|
+|status|string|unique: true, null: false|
 
 ### Association
 
