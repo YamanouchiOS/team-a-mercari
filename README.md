@@ -31,7 +31,7 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false, add_index: true|
+|nickname|string|null: false, unique: true, add_index: true|
 |email|string|unique: true, null: false|
 |password|string|null: false|
 |products_count|string|default: 0|
@@ -56,7 +56,7 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |city|string|null: false|
 |street_number|string|null: false|
 |building_number|string|null: false|
-|tel|integer|unique: true, null: false|
+|phone_number|string|unique: true, null: false|
 |user_id|references|unique: true, null: false, foreign_key: true|
 
 ```
