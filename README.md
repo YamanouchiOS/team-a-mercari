@@ -121,7 +121,7 @@ prefectureはenum型で選択肢を保持
 
 |Column|Type|Options|
 |------|----|-------|
-|images|string|null: false|
+|image|string|null: false|
 |status|integer|null: false|
 |product_id|references|null: false, foreign_key: true|
 
@@ -134,7 +134,7 @@ prefectureはenum型で選択肢を保持
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|user_id|string|null: false|
+|user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -145,9 +145,9 @@ prefectureはenum型で選択肢を保持
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, add_index: true|
-|product_id|string|null: false, add_index: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :product, counter_cache: :likes_counts
+- belongs_to :product, counter_cache: :likes_count
 - belongs_to :user
