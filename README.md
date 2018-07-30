@@ -145,8 +145,8 @@ prefectureはenum型で選択肢を保持
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false|
-|product_id|string|null: false|
+|user_id|string|null: false, add_index: true|
+|product_id|string|null: false, add_index: true|
 
 ### Association
 - belongs_to :product, counter_cache: :likes_counts
