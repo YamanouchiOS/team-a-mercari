@@ -8,7 +8,6 @@
 |detail|text|null: false|
 |price|unsigned_integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|product_category_id|references|null: false, foreign_key: true|
 |condition|integer|null: false|
 |delivery_cost|integer|null: false|
 |prefecture|integer|null: false|
@@ -22,7 +21,7 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 
 ### Association
 - belongs_to :user, counter_cache: :products_count
-- belongs_to :category
+- has_one :product_category, dependent: :destroy
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :product_images, dependent: :destroy
@@ -46,6 +45,11 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 - has_many :products, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_one :address
+- accepts_nested_attributes_for :address
+
+```
+ユーザーを保存するときに、関連するaddressテーブルの情報も一緒に登録する
+```
 
 ## addressesテーブル
 
@@ -67,21 +71,18 @@ prefectureはenum型で選択肢を保持
 
 ###Association
 - belongs_to :user
-- accepts_nested_attributes_for :user
 
 ## product_categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|product_id|references|null: false, foreign_key: true|
 |large_class_id|references|null: false, foreign_key: true|
 |middle_class_id|references|null: false, foreign_key: true|
 |small_class_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :large_class
-- belongs_to :middle_class
-- belongs_to :small_class
-- has_one :product
+- belongs_to :product, :large_class, :middle_class, small_class
 
 ## large_classesテーブル
 
@@ -90,7 +91,7 @@ prefectureはenum型で選択肢を保持
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :categories, dependent: :destroy
+- has_many :product_categories, dependent: :destroy
 - has_many :middle_classes, dependent: :destroy
 
 ## middle_classesテーブル
@@ -101,7 +102,7 @@ prefectureはenum型で選択肢を保持
 |large_class_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :categories, dependent: :destroy
+- has_many :product_categories, dependent: :destroy
 - belongs_to :large_class
 - has_many :small_classes, dependent: :destroy
 
@@ -114,7 +115,7 @@ prefectureはenum型で選択肢を保持
 |middle_classes_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :cateogries, dependent: :destroy
+- has_many :product_cateogries, dependent: :destroy
 - belongs_to :middle_classes
 
 ## product_imagesテーブル
@@ -127,7 +128,6 @@ prefectureはenum型で選択肢を保持
 
 ### Association
 - belongs_to :product
-
 
 ## commentsテーブル
 
