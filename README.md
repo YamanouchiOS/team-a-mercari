@@ -6,7 +6,7 @@
 |------|----|-------|
 |name|string|null: false, add_index: true|
 |detail|text|null: false|
-|price|integer|null: false|
+|price|unsigned_integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |product_category_id|references|null: false, foreign_key: true|
 |condition|integer|null: false|
