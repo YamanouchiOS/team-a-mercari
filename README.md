@@ -134,6 +134,7 @@ prefectureはenum型で選択肢を保持
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|user_id|string|null: false|
 |product_id|references|null: false, foreign_key: true|
 
 ### Association
