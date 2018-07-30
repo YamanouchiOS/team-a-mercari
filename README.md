@@ -23,9 +23,9 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 ### Association
 - belongs_to :user, counter_cache: :products_count
 - belongs_to :category
-- has_many :comments
+- has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
-- has_many :product_images
+- has_many :product_images, dependent: :destroy
 
 ## usersテーブル
 
@@ -43,8 +43,8 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |introduction|text||
 
 ###Association
-- has_many :products
-- has_many :likes
+- has_many :products, dependent: :destroy
+- has_many :likes, dependent: :destroy
 - has_one :address
 
 ## addressesテーブル
@@ -67,6 +67,7 @@ prefectureはenum型で選択肢を保持
 
 ###Association
 - belongs_to :user
+- accepts_nested_attributes_for :user
 
 ## product_categoriesテーブル
 
@@ -89,8 +90,8 @@ prefectureはenum型で選択肢を保持
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :categories
-- has_many :middle_classes
+- has_many :categories, dependent: :destroy
+- has_many :middle_classes, dependent: :destroy
 
 ## middle_classesテーブル
 
@@ -100,9 +101,9 @@ prefectureはenum型で選択肢を保持
 |large_class_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :categories
+- has_many :categories, dependent: :destroy
 - belongs_to :large_class
-- has_many :small_classes
+- has_many :small_classes, dependent: :destroy
 
 
 ## small_classesテーブル
@@ -113,7 +114,7 @@ prefectureはenum型で選択肢を保持
 |middle_classes_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :cateogries
+- has_many :cateogries, dependent: :destroy
 - belongs_to :middle_classes
 
 ## product_imagesテーブル
