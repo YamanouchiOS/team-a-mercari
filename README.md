@@ -12,7 +12,7 @@
 |condition|integer|null: false|
 |delivery_cost|integer|null: false|
 |prefecture|integer|null: false|
-|delivery_date|integer|null: false|
+|delivery_date|date|null: false|
 |status|integer|null: false|
 |likes_count|integer|default: 0|
 
