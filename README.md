@@ -12,7 +12,7 @@
 |condition|integer|null: false|
 |delivery_cost|integer|null: false|
 |prefecture|integer|null: false|
-|delivery_date|date|null: false|
+|delivery_date|integer|null: false|
 |status|integer|null: false|
 |likes_count|integer|default: 0|
 
@@ -33,7 +33,7 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |------|----|-------|
 |nickname|string|null: false, add_index: true|
 |email|string|unique: true, null: false|
-|password|string|unique: true, null: false|
+|password|string|null: false|
 |products_count|string|default: 0|
 |family_name|string||
 |first_name|string||
