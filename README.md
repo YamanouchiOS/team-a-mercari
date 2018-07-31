@@ -41,7 +41,7 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |gender|integer||
 |introduction|text||
 
-###Association
+### Association
 - has_many :products, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_one :address
@@ -69,7 +69,7 @@ prefectureはenum型で選択肢を保持
 １−１−１までユーザーに入力してもらう→street_numberに格納
 ```
 
-###Association
+### Association
 - belongs_to :user
 
 ## product_categoriesテーブル
