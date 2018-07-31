@@ -2,15 +2,15 @@ class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
       t.string :name, null: false, add_index: true
-      t.detail :text, null: false
-      t.price :unsigned_integer, null: false
-      t.user_id :references, null: false, foreign_key: true
-      t.condition :integer, null: false
-      t.delivery_cost :integer, null: false
-      t.prefecture :integer, null: false
-      t.delivery_date :integer, null: false
-      t.status :integer, null: false
-      t.likes_count :integer, default: 0
+      t.text :detail, null: false
+      t.unsigned_integer :price, null: false
+      t.references :user_id, null: false, foreign_key: true
+      t.integer :condition, null: false
+      t.integer :delivery_cost, null: false
+      t.integer :prefecture, null: false
+      t.integer :delivery_date, null: false
+      t.integer :status, null: false
+      t.integer :likes_count, default: 0
       t.timestamps null: false
     end
   end
