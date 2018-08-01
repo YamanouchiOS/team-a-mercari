@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name, null: false, add_index: true
       t.text :detail, null: false
       t.unsigned_integer :price, null: false
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.integer :condition, null: false
       t.integer :delivery_cost, null: false
       t.integer :prefecture, null: false
