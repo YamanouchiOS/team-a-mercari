@@ -5,9 +5,9 @@ class CreateAddresses < ActiveRecord::Migration
       t.integer :postal_code, null: false, add_index: true
       t.integer :prefecture,null: false
       t.string :city, null: false
-      t.string, :street_number, null: false
-      t.string, :building_number, null: false
-      t.string, :phone_number, unique: true, null: false
+      t.string :street_number, null: false
+      t.string :building_number, null: false
+      t.string :phone_number, unique: true, null: false
       t.timestamps null: false
     end
   end
