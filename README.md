@@ -112,11 +112,11 @@ prefectureはenum型で選択肢を保持
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|middle_classes_id|references|null: false, foreign_key: true|
+|middle_class_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :product_cateogries, dependent: :destroy
-- belongs_to :middle_classes
+- belongs_to :middle_class
 
 ## product_imagesテーブル
 
