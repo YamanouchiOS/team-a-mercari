@@ -5,7 +5,7 @@ class CreateProductCategories < ActiveRecord::Migration
       t.references :large_class, null: false, foreign_key: true
       t.references :middle_class, null: false, foreign_key: true
       t.references :small_class, null: false, foreign_key: true
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

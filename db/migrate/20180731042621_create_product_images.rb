@@ -4,7 +4,7 @@ class CreateProductImages < ActiveRecord::Migration
       t.string :image, null: false
       t.integer :status, null: false
       t.references :product, null: false, foreign_key: true
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

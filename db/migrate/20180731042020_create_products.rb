@@ -11,7 +11,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :delivery_date, null: false
       t.integer :status, null: false
       t.integer :likes_count, default: 0
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
