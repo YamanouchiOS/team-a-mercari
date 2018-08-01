@@ -3,7 +3,7 @@ class CreateSmallClasses < ActiveRecord::Migration
     create_table :small_classes do |t|
       t.string :name, null: false, unique: true
       t.references :middle_class, null: false, foreign_key: true
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

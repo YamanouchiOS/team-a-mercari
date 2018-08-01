@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :first_kana
       t.integer :gender
       t.text :introduction
-      t.timestamps null: false
+      t.timestamps
     end
 
     add_index :users, :email,                unique: true
