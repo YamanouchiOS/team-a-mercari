@@ -52,3 +52,4 @@ production:
   database: team-a-mercari_production
   username: team-a-mercari
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
