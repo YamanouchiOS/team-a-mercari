@@ -51,4 +51,4 @@ production:
   <<: *default
   database: team-a-mercari_production
   username: team-a-mercari
-  password: <%= ENV['TEAM-A-MERCARI_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

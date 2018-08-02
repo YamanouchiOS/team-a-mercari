@@ -58,4 +58,8 @@ gem 'pry-byebug'
 gem 'erb2haml'
 gem 'haml-rails'
 gem 'devise'
+
+group :production do
+  gem 'unicorn'
+end
 gem 'mechanize'

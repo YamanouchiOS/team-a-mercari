@@ -1,13 +1,7 @@
-require "csv"
-
-CSV.foreach('db/csv/large_class.csv') do |row|
-  Large_class.create(name: row[0], created_at: Time.zone.now, updated_at: Time.zone.now)
-end
-
-CSV.foreach('db/csv/middle_class.csv') do |row|
-  Middle_class.create(name: row[0], large_class_id: row[1], created_at: Time.zone.now, updated_at: Time.zone.now)
-end
-
-CSV.foreach('db/csv/small_class.csv') do |row|
-  Small_class.create(name: row[0], middle_class_id: row[1],created_at: Time.zone.now, updated_at: Time.zone.now)
-end
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
