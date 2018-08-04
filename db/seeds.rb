@@ -9,5 +9,5 @@ CSV.foreach('db/csv/middle_class.csv') do |row|
 end
 
 CSV.foreach('db/csv/small_class.csv') do |row|
-  SmallClass.create(name: row[0], middle_class_id: row[1],created_at: Time.zone.now, updated_at: Time.zone.now)
+  SmallClass.create(name: row[0], middle_class_id: row[1], created_at: Time.zone.now, updated_at: Time.zone.now)
 end
