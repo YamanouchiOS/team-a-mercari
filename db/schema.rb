@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180804100549) do
+ActiveRecord::Schema.define(version: 20180804101600) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "user_id",                       null: false
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20180804100549) do
     t.string   "first_name"
     t.string   "family_kana"
     t.string   "first_kana"
-    t.integer  "gender"
     t.text     "introduction",    limit: 65535
     t.index ["user_id"], name: "fk_rails_48c9e0c5a2", using: :btree
   end

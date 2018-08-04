@@ -59,12 +59,11 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |first_name|string||
 |family_kana|string||
 |first_kana|string||
-|gender|integer||
 |introduction|text||
 |user_id|references|unique: true, null: false, foreign_key: true|
 
 ```
-prefecture, genderはenum型で選択肢を保持
+prefectureはenum型で選択肢を保持
 ○○市××町までユーザーに入力してもらう→Cityカラムに格納
 １−１−１までユーザーに入力してもらう→street_numberに格納
 ```
