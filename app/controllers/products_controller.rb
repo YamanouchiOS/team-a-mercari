@@ -4,6 +4,6 @@ class ProductsController < ApplicationController
   end
 
   def new
-
+    @large_classes = LargeClass.all
   end
 end
