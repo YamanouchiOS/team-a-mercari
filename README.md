@@ -34,12 +34,6 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |email|string|unique: true, null: false|
 |password|string|null: false|
 |products_count|string|default: 0|
-|family_name|string||
-|first_name|string||
-|family_kana|string||
-|first_kana|string||
-|gender|integer||
-|introduction|text||
 
 ### Association
 - has_many :products, dependent: :destroy
@@ -61,10 +55,16 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |street_number|string|null: false|
 |building_number|string|null: false|
 |phone_number|string|unique: true, null: false|
+|family_name|string||
+|first_name|string||
+|family_kana|string||
+|first_kana|string||
+|gender|integer||
+|introduction|text||
 |user_id|references|unique: true, null: false, foreign_key: true|
 
 ```
-prefectureはenum型で選択肢を保持
+prefecture, genderはenum型で選択肢を保持
 ○○市××町までユーザーに入力してもらう→Cityカラムに格納
 １−１−１までユーザーに入力してもらう→street_numberに格納
 ```
