@@ -47,9 +47,7 @@
 
             <div class="form-group">
               <%= f.label "パスワード" %>
-              <% if @minimum_password_length %>
               <span class="form-require">必須</span>
-              <% end %><br />
               <%= f.password_field :password, autocomplete: "off", placeholder: "６文字以上", class: "input-default" %>
             </div>
 
