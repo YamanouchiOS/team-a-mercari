@@ -67,4 +67,4 @@ gem 'devise'
 group :production do
   gem 'unicorn'
 end
-gem 'mechanize'
+gem 'font-awesome-rails'
