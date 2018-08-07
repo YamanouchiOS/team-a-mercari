@@ -63,6 +63,9 @@ gem 'pry-byebug'
 gem 'erb2haml'
 gem 'haml-rails'
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'
