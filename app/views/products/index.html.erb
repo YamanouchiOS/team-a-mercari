@@ -99,7 +99,11 @@
   </div>
 
   <%= render partial: "category" %>
-  <%= render partial: "notification" %>
+  <% if user_signed_in? %>
+    <%= render partial: "notification" %>
+  <% else %>
+    <%= render partial: "user_signed_out" %>
+  <% end %>
 </header>
 
 
