@@ -1,9 +1,30 @@
 class ProductsController < ApplicationController
-  def index
 
+  protect_from_forgery :except => [:create]
+
+  def index
   end
 
   def new
+    @product = Product.new
     @large_classes = LargeClass.all
+  end
+
+  def create
+    @product = Product.create(product_params)
+    if @product.save
+    redirect_to :root, notice: 'New prototype was successfully created'
+    else
+      redirect_to action: :new, alert: 'New product was unsuccessfully created'
+    end
+  end
+
+
+  private
+
+  def product_params
+    params.require(:product).permit(
+      product_images_attributes: [:image, :status]
+      )
   end
 end
