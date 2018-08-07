@@ -148,10 +148,7 @@
                           / /react-text
                           %span.form-require 必須
                         .select-wrap
-                          %select.select-default
-                            %option{:value => ""} ---
-                            %option{:value => "1"} 送料込み(出品者負担)
-                            %option{:value => "2"} 着払い(購入者負担)
+                          = f.select :delivery_cost, {"---" => ""}.merge(Product.delivery_costs).keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default"
                           %i.icon-arrow-bottom
                         / react-empty: 70
                       .form-group
@@ -161,10 +158,7 @@
                           / /react-text
                           %span.form-require 必須
                         .select-wrap
-                          %select.select-default
-                            %option{:value => ""} ---
-                            - (1..47).each do |prefecture|
-                              %option{:value => "#{prefecture}"} #{prefecture}
+                          = f.select :prefecture, {"---" => ""}.merge(Product.prefectures).keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default"
                           %i.icon-arrow-bottom
                         / react-empty: 79
                       .form-group
@@ -174,11 +168,7 @@
                           / /react-text
                           %span.form-require 必須
                         .select-wrap
-                          %select.select-default
-                            %option{:value => ""} ---
-                            %option{:value => "1"} 1~2日で発送
-                            %option{:value => "1"} 2~3日で発送
-                            %option{:value => "1"} 4~7日で発送
+                          = f.select :delivery_date, {"---" => ""}.merge(Product.delivery_dates).keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default"
                           %i.icon-arrow-bottom
                         / react-empty: 88
                   .sell-content.clearfix
@@ -198,6 +188,7 @@
                               ¥
                               / /react-text
                               %div
+                                = f.
                                 %input.input-default{:placeholder => "例）300", :value => ""}/
                           / react-empty: 103
                         %li.clearfix
