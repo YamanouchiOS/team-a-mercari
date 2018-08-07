@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180804101600) do
+ActiveRecord::Schema.define(version: 20180806021655) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "user_id",                       null: false
@@ -121,7 +121,6 @@ ActiveRecord::Schema.define(version: 20180804101600) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "nickname",                             null: false
-    t.string   "password",                             null: false
     t.string   "products_count",         default: "0"
     t.datetime "created_at"
     t.datetime "updated_at"
