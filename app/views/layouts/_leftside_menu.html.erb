@@ -3,10 +3,10 @@
 
     <ul class="mypage-nav-list">
       <li>
-        <a href="/jp/mypage/" class="mypage-nav-list-item active">
+        <%= link_to address_path(current_user.id), class: "mypage-nav-list-item active" do %>
           マイページ
           <i class="icon-arrow-right"></i>
-        </a>
+        <% end %>
       </li>
 
       <li>
@@ -128,22 +128,15 @@
     <h3 class="mypage-nav-head">設定</h3>
     <ul class="mypage-nav-list">
       <li>
-        <a href="/jp/mypage/profile/" class="mypage-nav-list-item ">
+        <%= link_to edit_address_path(current_user.id), class: "mypage-nav-list-item" do %>
           プロフィール
           <i class="icon-arrow-right"></i>
-        </a>
+        <% end %>
       </li>
 
       <li>
         <a href="/jp/mypage/deliver_address/" class="mypage-nav-list-item ">
           住所変更
-          <i class="icon-arrow-right"></i>
-        </a>
-      </li>
-
-      <li>
-        <a href="/jp/mypage/card/" class="mypage-nav-list-item ">
-          支払い方法
           <i class="icon-arrow-right"></i>
         </a>
       </li>
