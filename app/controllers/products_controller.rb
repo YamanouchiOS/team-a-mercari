@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   protect_from_forgery :except => [:create]
 
   def index
+      @products =Product.find(1)
   end
 
   def new
@@ -15,6 +16,9 @@ class ProductsController < ApplicationController
     @middle_classes = MiddleClass.all
     @small_classes = SmallClass.all
   end
+
+  def show
+    @product = Product.find_by(1)
 
   def create
     @product = Product.new(product_params)
