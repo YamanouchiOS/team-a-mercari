@@ -1,8 +1,5 @@
 class AddressesController < ApplicationController
 
-  def index
-  end
-
   def new
     @address = Address.new
   end
@@ -20,6 +17,9 @@ class AddressesController < ApplicationController
   end
 
   def update
+  end
+
+  def show
   end
 
 private
