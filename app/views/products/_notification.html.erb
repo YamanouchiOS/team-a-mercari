@@ -1,21 +1,21 @@
 <div class="l-right">
   <ul class="pc-header-user-nav">
     <li>
-       <a href="https://www.mercari.com/jp/mypage/" class="sp-header-user-icon pc-header-nav-root">
+       <%= link_to address_path(current_user.id), class: "sp-header-user-icon pc-header-nav-root" do %>
         <figure>
           <div>
             <img src="//static-mercari-jp-imgtr2.akamaized.net/thumb/members/557352198.jpg?1532452662" alt="" width="32">
           </div>
         </figure>
         <div>マイページ</div>
-      </a>
+      <% end %>
       <div class="pc-header-user-box pc-header-mypage-box">
           <div class="pc-header-mypage-state text-center">
             <figure>
               <div>
                 <img src="//static-mercari-jp-imgtr2.akamaized.net/thumb/members/557352198.jpg?1532452662" alt="" width="60">
               </div>
-              <figcaption>haya4</figcaption>
+              <figcaption><%= current_user.nickname %></figcaption>
             </figure>
             <ul class="pc-header-mypage-review-listing">
               <li><a href="https://www.mercari.com/jp/mypage/review/history/">評価: 3</a></li>
