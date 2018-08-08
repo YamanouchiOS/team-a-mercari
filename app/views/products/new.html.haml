@@ -44,7 +44,6 @@
               .sell-container-inner
                 %h2.l-single-head 商品の情報を入力
                 = form_for @product do |f|
-                  = f.hidden_field :user_id, value: "1"
                   .sell-upload-box
                     %h3.sell-upload-head
                       / react-text: 7
@@ -54,7 +53,7 @@
                     %p 最大4枚までアップロードできます
                     .sell-dropbox-container.clearfix
                       .sell-upload-items
-                        = f.fields_for :product_images_attributes do |image|
+                        = f.fields_for :product_images do |image|
                           %label.label-upload-drop-box{for: "upload-image"}
                             .sell-upload-drop-box.have-item-3.one
                               = image.file_field :image, style: "display:none", id: "upload-image"
@@ -63,28 +62,28 @@
                                 :preserve
                                   ドラッグアンドドロップ
                                   またはクリックしてファイルをアップロード
-                        = f.fields_for :product_images_attributes do |image|
-                          %label.label-upload-drop-box{for: "upload-image"}
+                        = f.fields_for :product_images do |image|
+                          %label.label-upload-drop-box{for: "upload-image2"}
                             .sell-upload-drop-box.have-item-3
-                              = image.file_field :image, style: "display:none", id: "upload-image"
+                              = image.file_field :image, style: "display:none", id: "upload-image2"
                               = image.hidden_field :status, value:"1"
                               %pre.visible-pc
                                 :preserve
                                   ドラッグアンドドロップ
                                   またはクリックしてファイルをアップロード
-                        = f.fields_for :product_images_attributes do |image|
-                          %label.label-upload-drop-box{for: "upload-image"}
+                        = f.fields_for :product_images do |image|
+                          %label.label-upload-drop-box{for: "upload-image3"}
                             .sell-upload-drop-box.have-item-3
-                              = image.file_field :image, style: "display:none", id: "upload-image"
+                              = image.file_field :image, style: "display:none", id: "upload-image3"
                               = image.hidden_field :status, value:"1"
                               %pre.visible-pc
                                 :preserve
                                   ドラッグアンドドロップ
                                   またはクリックしてファイルをアップロード
-                        = f.fields_for :product_images_attributes do |image|
-                          %label.label-upload-drop-box{for: "upload-image"}
+                        = f.fields_for :product_images do |image|
+                          %label.label-upload-drop-box{for: "upload-image4"}
                             .sell-upload-drop-box.have-item-3
-                              = image.file_field :image, style: "display:none", id: "upload-image"
+                              = image.file_field :image, style: "display:none", id: "upload-image4"
                               = image.hidden_field :status, value:"1"
                               %pre.visible-pc
                                 :preserve
@@ -125,8 +124,10 @@
                           %span.form-require 必須
                         %div
                           .select-wrap
-                            = f.fields_for :product_categories do |category|
+                            = f.fields_for :product_category do |category|
                               = category.select :large_class_id, {"---" => ""}.merge(@large_classes.map{|t| [t.name, t.id]}.to_h), {}, {class: "select-default"}
+                              = category.select :middle_class_id, {"---" => ""}.merge(@middle_classes.map{|t| [t.name, t.id]}.to_h), {}, {class: "select-default"}
+                              = category.select :small_class_id, {"---" => ""}.merge(@small_classes.map{|t| [t.name, t.id]}.to_h), {}, {class: "select-default"}
                         / react-empty: 48
                       .form-group
                         %label
