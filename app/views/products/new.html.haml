@@ -44,6 +44,7 @@
               .sell-container-inner
                 %h2.l-single-head 商品の情報を入力
                 = form_for @product do |f|
+                  = f.hidden_field :user_id, value: "1"
                   .sell-upload-box
                     %h3.sell-upload-head
                       / react-text: 7
@@ -57,7 +58,7 @@
                         %label.label-upload-drop-box{for: "upload-image"}
                           .sell-upload-drop-box.have-item-3.one
                             = image.file_field :image, style: "display:none", id: "upload-image"
-                            = image.hidden_field :status, value:"1"
+                            = image.hidden_field :status, value: "1"
                             %pre.visible-pc
                               :preserve
                                 ドラッグアンドドロップ
