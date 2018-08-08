@@ -7,7 +7,13 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    product_category = ProductCategory.new
+    @product.product_images.build
+    @product.product_category = product_category
+
     @large_classes = LargeClass.all
+    @middle_classes = MiddleClass.all
+    @small_classes = SmallClass.all
   end
 
   def create
@@ -33,7 +39,8 @@ class ProductsController < ApplicationController
       :prefecture,
       :delivery_date,
       product_images_attributes: [:image, :status],
-      # product_categories_attributes: [:large_class_id, :middle_class_id, :small_class_id]
-      )
+      product_category_attributes: [:large_class_id, :middle_class_id, :small_class_id]
+      ).merge(user_id: "")
+    #current_user_idに変更。ダメだったらメンタに相談
   end
 end
