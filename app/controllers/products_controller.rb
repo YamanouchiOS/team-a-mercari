@@ -32,7 +32,8 @@ class ProductsController < ApplicationController
       :delivery_cost,
       :prefecture,
       :delivery_date,
-      product_images_attributes: [:image, :status]
+      product_images_attributes: [:image, :status],
+      # product_categories_attributes: [:large_class_id, :middle_class_id, :small_class_id]
       )
   end
 end
