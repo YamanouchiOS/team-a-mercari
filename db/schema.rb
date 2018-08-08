@@ -12,32 +12,25 @@
 
 ActiveRecord::Schema.define(version: 20180807124817) do
 
-  create_table "addresses", force: :cascade do |t|
-    t.integer  "user_id",         limit: 4,     null: false
-    t.integer  "postal_code",     limit: 4,     null: false
-    t.integer  "prefecture",      limit: 4,     null: false
-    t.string   "city",            limit: 255,   null: false
-    t.string   "street_number",   limit: 255,   null: false
-    t.string   "building_number", limit: 255,   null: false
-    t.string   "phone_number",    limit: 255,   null: false
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.integer  "user_id",                       null: false
+    t.integer  "postal_code",                   null: false
+    t.integer  "prefecture",                    null: false
+    t.string   "city",                          null: false
+    t.string   "street_number",                 null: false
+    t.string   "building_number",               null: false
+    t.string   "phone_number",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "family_name",     limit: 255
-    t.string   "first_name",      limit: 255
-    t.string   "family_kana",     limit: 255
-    t.string   "first_kana",      limit: 255
+    t.string   "family_name"
+    t.string   "first_name"
+    t.string   "family_kana"
+    t.string   "first_kana"
     t.text     "introduction",    limit: 65535
+    t.index ["user_id"], name: "fk_rails_48c9e0c5a2", using: :btree
   end
 
-  add_index "addresses", ["user_id"], name: "fk_rails_48c9e0c5a2", using: :btree
-
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.text     "text",       limit: 65535, null: false
     t.integer  "user_id",                  null: false
     t.integer  "product_id",               null: false
@@ -95,14 +88,14 @@ ActiveRecord::Schema.define(version: 20180807124817) do
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name",                                    null: false
     t.text     "detail",        limit: 65535,             null: false
-    t.integer  "price",         limit: 4,                 null: false
-    t.integer  "user_id",       limit: 4,                 null: false
-    t.integer  "condition",     limit: 4,                 null: false
-    t.integer  "delivery_cost", limit: 4,                 null: false
-    t.integer  "prefecture",    limit: 4,                 null: false
-    t.integer  "delivery_date", limit: 4,                 null: false
-    t.integer  "status",        limit: 4,     default: 0, null: false
-    t.integer  "likes_count",   limit: 4,     default: 0
+    t.integer  "price",                                   null: false
+    t.integer  "user_id",                                 null: false
+    t.integer  "condition",                               null: false
+    t.integer  "delivery_cost",                           null: false
+    t.integer  "prefecture",                              null: false
+    t.integer  "delivery_date",                           null: false
+    t.integer  "status",                      default: 0, null: false
+    t.integer  "likes_count",                 default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["user_id"], name: "fk_rails_dee2631783", using: :btree
@@ -116,21 +109,19 @@ ActiveRecord::Schema.define(version: 20180807124817) do
     t.index ["middle_class_id"], name: "fk_rails_f25fd54ff7", using: :btree
   end
 
-  add_index "small_classes", ["middle_class_id"], name: "fk_rails_f25fd54ff7", using: :btree
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",  null: false
-    t.string   "encrypted_password",     limit: 255, default: "",  null: false
-    t.string   "reset_password_token",   limit: 255
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "email",                  default: "",  null: false
+    t.string   "encrypted_password",     default: "",  null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,   null: false
+    t.integer  "sign_in_count",          default: 0,   null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.string   "nickname",               limit: 255,               null: false
-    t.string   "products_count",         limit: 255, default: "0"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "nickname",                             null: false
+    t.string   "products_count",         default: "0"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

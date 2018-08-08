@@ -2800,7 +2800,8 @@
               .item-photo
                 .owl-carousel
                   .owl-item-inner{"data-thumbnail-class-name" => ""}
-                    %img.owl-lazy{:alt => "【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)", "data-src" => "http://simemarugozen.cocolog-nifty.com/photos/uncategorized/2012/08/03/img_0715.jpg"}/
+                    %img.owl-lazy
+                      = image_tag (@product.product_images.image)
                   .owl-item-inner{"data-thumbnail-class-name" => ""}
                     %img.owl-lazy{:alt => "【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)", "data-src" => "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0408/users/7/1/4/3/tada4_nono-img900x1200-1533561114uaoxpr16551.jpg"}/
                   .owl-item-inner{"data-thumbnail-class-name" => ""}
