@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.8'
+gem 'rails', '~> 5.0.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
@@ -35,6 +35,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -58,8 +63,11 @@ gem 'pry-byebug'
 gem 'erb2haml'
 gem 'haml-rails'
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'
 end
-gem 'mechanize'
+gem 'font-awesome-rails'
