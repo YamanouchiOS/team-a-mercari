@@ -73,11 +73,47 @@
   <link rel="apple-touch-icon" sizes="180x180" href="//www-mercari-jp.akamaized.net/apple-touch-icon-180x180.png?304547132">
 
 </head>
-<body>
+<body class="">
 <% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 <% end %>
-<%= yield %>
+<!-- #ハヤシ追記 -->
+<!-- <link rel="stylesheet" type="text/css" href="app.jp.css"> -->
+
+<div class="default-container">
+  <header class="sp-header visible-sp">
+    <div class="sp-header-inner clearfix">
+      <h1>
+        <a href="/">
+          <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?304547132" alt="mercari"  width="148" height="40">
+        </a>
+      </h1>
+
+      <div class="sp-header-user-nav clearfix">
+        <a href="https://www.mercari.com/jp/mypage/" class="sp-header-user-icon">
+          <figure>
+            <div>
+              <img src="//static-mercari-jp-imgtr2.akamaized.net/thumb/members/557352198.jpg?1532452662" alt="" width="32">
+            </div>
+            <figcaption>2</figcaption>
+          </figure>
+        </a>
+        <form action="https://www.mercari.com/jp/search/" class="sp-header-form">
+          <input type="search" name="keyword" value="" placeholder="キーワードから探す" class="sp-header-search input-default">
+          <i class="icon-search"></i>
+        </form>
+      </div>
+    </div>
+
+    <%= render partial: "products/category" %>
+    <% if user_signed_in? %>
+      <%= render partial: "products/notification" %>
+    <% else %>
+      <%= render partial: "products/user_signed_out" %>
+    <% end %>
+  </header>
+
+    <%= yield %>
 
   <aside class="app-banner">
 
