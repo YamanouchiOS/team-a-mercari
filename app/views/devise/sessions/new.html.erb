@@ -1,26 +1,87 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="single-container">
+  <header class="single-header">
+    <h1>
+      <a href="/">
+        <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1845134038" alt="mercari">
+      </a>
+    </h1>
+  </header>
+  <main class="single-main">
+    <div class="login-panel">
+    <div class="login-no-account">
+      <p>アカウントをお持ちでない方はこちら</p>
+      <%= link_to "新規会員登録", '/users/sign_up' %>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <div class="login-form-inner">
+      <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook">
+        <i class="icon-facebook"></i>
+        Facebookでログイン
+      </button>
+      <button id="google-login" class="btn-default btn-sns btn-sns-google">
+        <i class="icon-google-plus"></i>
+        Googleでログイン
+      </button>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="login-form-inner">
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "login-input-text input-default" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "login-input-text input-default" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "ログイン", class: "login-submit btn-default btn-red" %>
+        </div>
+      </div>
+    <% end %>
+    <form id="login_form_facebook" action="/jp/login/" method="POST" novalidate="novalidate">
+    <input type="hidden" name="__csrf_value" value="e8a44ab743b7916b5d604801101e8ed5d10878a2d7cb60fc25c82394c4edba987e99a0057e1a899004e91836e18931694298a86e98f827a2ecf5467a55497907b">
+    <input type="hidden" name="nickname" value="">
+    <input type="hidden" name="email" value="">
+    <input type="hidden" name="facebook_user_id" value="">
+    <input type="hidden" name="facebook_access_token" value="">
+    <input type="hidden" name="login_type" value="facebook">
+    <input type="hidden" name="login_callback" value="https://www.mercari.com/jp/" >
+    </form>
+
+    <form id="login_form_google" action="/jp/login/" method="POST" novalidate="novalidate">
+    <input type="hidden" name="__csrf_value" value="e8a44ab743b7916b5d604801101e8ed5d10878a2d7cb60fc25c82394c4edba987e99a0057e1a899004e91836e18931694298a86e98f827a2ecf5467a55497907b">
+    <input type="hidden" name="nickname" value="">
+    <input type="hidden" name="email" value="">
+    <input type="hidden" name="google_user_id" value="">
+    <input type="hidden" name="google_access_token" value="">
+    <input type="hidden" name="login_type" value="google">
+    <input type="hidden" name="login_callback" value="https://www.mercari.com/jp/" >
+    </form>
+    <input type="hidden" id="google_client_id" value="238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com">
+    <input type="hidden" id="facebook_app_id" value="466308336793848">
+
+  </main>
+
+  <footer class="single-footer">
+    <nav>
+      <ul class="clearfix">
+        <li>
+          <a href="https://www.mercari.com/jp/privacy/">プライバシーポリシー</a>
+        </li>
+        <li>
+          <a href="https://www.mercari.com/jp/tos/">メルカリ利用規約</a>
+        </li>
+        <li>
+          <a href="https://www.mercari.com/jp/tokutei/">特定商取引に関する表記</a>
+        </li>
+      </ul>
+    </nav>
+    <a href="https://www.mercari.com/jp/" class="single-footer-logo">
+      <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1845134038" alt="mercari" width="80" height="65">
+    </a>
+    <p>
+      <small>&copy; 2018 Mercari</small>
+    </p>
+  </footer>
+</div>
