@@ -1,0 +1,16 @@
+<section class="items-box">
+  <a href="">
+    <figure class="items-box-photo">
+      <% product.product_images.each do |image| %>
+        <img data-src="<%= image.image %>" class="lazyload" alt="<%= product.name %>">
+      <% end %>
+    </figure>
+    <div class="items-box-body">
+      <h3 class="items-box-name font-2"><%= product.name %></h3>
+      <div class="items-box-num clearfix">
+        <div class="items-box-price font-5">¥ <%= product.price %></div>
+        <p class="item-box-tax">(税込)</p>
+        </div>
+    </div>
+  </a>
+</section>

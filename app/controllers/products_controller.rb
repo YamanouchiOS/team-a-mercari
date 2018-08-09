@@ -3,6 +3,12 @@ class ProductsController < ApplicationController
   protect_from_forgery :except => [:create]
 
   def index
+    pickup_id_1 = "1"
+    pickup_id_2 = ""
+    pickup_id_3 = ""
+
+    @products = Product.includes(:product_category).includes(:product_images)
+    @pickup1 = @products.where("product_categories.large_class_id" => "#{pickup_id_1}")
   end
 
   def new
