@@ -1,3 +1,13 @@
+<% if user_signed_in? %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% end %>
+<!-- #ハヤシ追記 -->
+<!-- <link rel="stylesheet" type="text/css" href="app.jp.css"> -->
+
+<div class="default-container">
+
+  <%= render partial: "layouts/header" %>
+
 <main class="white" role="main">
 
   <section class="top-main-visual">
@@ -543,3 +553,5 @@
     </section>
   </section>
 </main>
+
+<%= render partial: "layouts/footer" %>
