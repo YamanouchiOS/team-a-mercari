@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(1)
   end
+
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -43,7 +44,6 @@ class ProductsController < ApplicationController
       :delivery_date,
       product_images_attributes: [:image, :status],
       product_category_attributes: [:large_class_id, :middle_class_id, :small_class_id]
-      ).merge(user_id: "")
-    #current_user_idに変更。ダメだったらメンタに相談
+      ).merge(user_id: current_user.id)
   end
 end
