@@ -1,9 +1,7 @@
 <section class="items-box">
   <a href="">
     <figure class="items-box-photo">
-      <% product.product_images.each do |image| %>
-        <img data-src="<%= image.image %>" class="lazyload" alt="<%= product.name %>">
-      <% end %>
+      <img data-src="<%= product.product_images[0].image %>" class="lazyload" alt="<%= product.name %>">
     </figure>
     <div class="items-box-body">
       <h3 class="items-box-name font-2"><%= product.name %></h3>
