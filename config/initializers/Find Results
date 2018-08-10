@@ -1,0 +1,13 @@
+Searching 293 files for "us-east-1"
+
+/Users/shibataishin/projects/team-a-mercari/config/initializers/carrierwave.rb:
+   10      aws_access_key_id: Rails.application.secrets.aws_access_key_id,
+   11      aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
+   12:     region: 'ap-northeast-1'
+   13    }
+   14
+
+/Users/shibataishin/projects/team-a-mercari/log/development.log:
+    <binary>
+
+5 matches across 2 files
