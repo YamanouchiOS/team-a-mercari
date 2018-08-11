@@ -8,7 +8,7 @@ class UserController < ApplicationController
   def update
     @user = User.find(current_user.id)
     @user.update(introduction_params)
-    redirect_to root_path
+    redirect_to user_path(current_user.id)
   end
 
   def show
