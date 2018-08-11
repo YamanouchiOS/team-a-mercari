@@ -285,7 +285,7 @@
     <div class="items-box-content clearfix">
       <!-- # -->
       <!-- #商品の部分テンプレート -->
-      <% @pickup1.limit(4).each do |product| %>
+      <% @pickup1.each do |product| %>
         <%= render partial: 'product', locals: {product: product} %>
       <% end %>
       <!-- # -->

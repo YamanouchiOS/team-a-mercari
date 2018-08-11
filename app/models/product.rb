@@ -10,4 +10,10 @@ class Product < ActiveRecord::Base
     enum delivery_date:{"1~2日で発送":0, "2~3日で発送":1, "4~7日で発送":2}
     accepts_nested_attributes_for :product_images
     accepts_nested_attributes_for :product_category
+
+    def self.fetch_pickup_categories(cat1)
+
+      pickup1 = self.order('products.created_at DESC').includes(:product_category, :product_images).where("product_categories.large_class_id" => "#{cat1}").limit(4)
+      return pickup1
+    end
 end
