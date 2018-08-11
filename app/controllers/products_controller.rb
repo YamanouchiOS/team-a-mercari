@@ -7,8 +7,10 @@ class ProductsController < ApplicationController
     pickup_id_2 = ""
     pickup_id_3 = ""
 
-    @products = Product.includes(:product_category).includes(:product_images)
-    @pickup1 = @products.where("product_categories.large_class_id" => "#{pickup_id_1}")
+    @large_classes = LargeClass.pluck(:id, :name)
+    @middle_classes = MiddleClass.pluck(:id, :name, :large_class_id)
+    @small_classes = SmallClass.pluck(:id, :name, :middle_class_id)
+
   end
 
   def new
