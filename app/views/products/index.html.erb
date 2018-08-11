@@ -172,55 +172,15 @@
           レディース
         </a>
       </h3>
-
-      <div class="items-box-content clearfix">
-        <section class="items-box">
-          <a href="https://item.mercari.com/jp/m40548171061/">
-              <figure class="items-box-photo">
-                <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m40548171061_1.jpg?1531713459" class="lazyload" alt="新品　キラキラ　イラスト　半袖Ｔシャツ">
-              </figure>
-            <div class="items-box-body">
-              <h3 class="items-box-name font-2">新品　キラキラ　イラスト　半袖Ｔシャツ</h3>
-              <div class="items-box-num clearfix">
-                <div class="items-box-price font-5">¥ 600</div>
-                <p class="item-box-tax">(税込)</p>
-              </div>
-            </div>
-          </a>
-        </section>
-        <section class="items-box">
-          <a href="https://item.mercari.com/jp/m28824546027/">
-            <figure class="items-box-photo">
-              <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m28824546027_1.jpg?1532342243" class="lazyload" alt="【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)">
-            </figure>
-            <div class="items-box-body">
-              <h3 class="items-box-name font-2">【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)</h3>
-              <div class="items-box-num clearfix">
-                <div class="items-box-price font-5">¥ 15,800</div>
-                <div class="items-box-likes font-2">
-                  <i class="icon-like-border"></i>
-                  <span>9</span>
-                </div>
-                <p class="item-box-tax">(税込)</p>
-              </div>
-            </div>
-          </a>
-        </section>
-        <section class="items-box">
-          <a href="https://item.mercari.com/jp/m23072163277/">
-            <figure class="items-box-photo">
-              <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m23072163277_1.jpg?1533092129" class="lazyload" alt="アームカバー">
-            </figure>
-            <div class="items-box-body">
-              <h3 class="items-box-name font-2">アームカバー</h3>
-              <div class="items-box-num clearfix">
-                <div class="items-box-price font-5">¥ 500</div>
-                <p class="item-box-tax">(税込)</p>
-              </div>
-            </div>
-          </a>
-        </section>
-        <section class="items-box">
+    <div class="items-box-content clearfix">
+      <!-- # -->
+      <!-- #商品の部分テンプレート -->
+      <% @pickup1.limit(4).each do |product| %>
+        <%= render partial: 'product', locals: {product: product} %>
+      <% end %>
+      <!-- # -->
+      <!-- ここから本サイトからそのまま取ってきたHTML -->
+      <section class="items-box">
           <a href="https://item.mercari.com/jp/m30751588849/">
           <figure class="items-box-photo">
             <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m30751588849_1.jpg?1531281819" class="lazyload" alt="ジャーナルスタンダード ガウチョパンツ">
