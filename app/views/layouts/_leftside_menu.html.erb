@@ -3,7 +3,7 @@
 
     <ul class="mypage-nav-list">
       <li>
-        <%= link_to address_path(current_user.id), class: "mypage-nav-list-item active" do %>
+        <%= link_to user_path(current_user.id), class: "mypage-nav-list-item active" do %>
           マイページ
           <i class="icon-arrow-right"></i>
         <% end %>
@@ -128,24 +128,24 @@
     <h3 class="mypage-nav-head">設定</h3>
     <ul class="mypage-nav-list">
       <li>
-        <%= link_to edit_address_path(current_user.id), class: "mypage-nav-list-item" do %>
+        <%= link_to edit_user_path(current_user.id), class: "mypage-nav-list-item" do %>
           プロフィール
           <i class="icon-arrow-right"></i>
         <% end %>
       </li>
 
       <li>
-        <a href="/jp/mypage/deliver_address/" class="mypage-nav-list-item ">
+        <%= link_to edit_address_path(current_user.address.id), class: "mypage-nav-list-item" do %>
           住所変更
           <i class="icon-arrow-right"></i>
-        </a>
+        <% end %>
       </li>
 
       <li>
-        <a href="/jp/mypage/email_password/" class="mypage-nav-list-item ">
+        <%= link_to edit_user_registration_path, class: "mypage-nav-list-item" do %>
           メール/パスワード
           <i class="icon-arrow-right"></i>
-        </a>
+        <% end %>
       </li>
 
       <li>
