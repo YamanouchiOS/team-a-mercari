@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180806021655) do
+ActiveRecord::Schema.define(version: 20180809080523) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "user_id",                       null: false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20180806021655) do
   end
 
   create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
-    t.string   "image",      null: false
+    t.string   "image"
     t.integer  "status",     null: false
     t.integer  "product_id", null: false
     t.datetime "created_at"
@@ -89,16 +89,16 @@ ActiveRecord::Schema.define(version: 20180806021655) do
     t.string   "name",                                    null: false
     t.text     "detail",        limit: 65535,             null: false
     t.integer  "price",                                   null: false
-    t.integer  "user_id",                                 null: false
     t.integer  "condition",                               null: false
     t.integer  "delivery_cost",                           null: false
     t.integer  "prefecture",                              null: false
     t.integer  "delivery_date",                           null: false
-    t.integer  "status",                                  null: false
+    t.integer  "status",                      default: 0, null: false
     t.integer  "likes_count",                 default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["user_id"], name: "fk_rails_dee2631783", using: :btree
+    t.integer  "user_id",                                 null: false
+    t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
   create_table "small_classes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
@@ -110,18 +110,18 @@ ActiveRecord::Schema.define(version: 20180806021655) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
-    t.string   "email",                  default: "",  null: false
-    t.string   "encrypted_password",     default: "",  null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,   null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "nickname",                             null: false
-    t.string   "products_count",         default: "0"
+    t.string   "nickname",                            null: false
+    t.integer  "products_count",         default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

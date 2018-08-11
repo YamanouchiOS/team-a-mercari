@@ -33,7 +33,7 @@ condition, delivery_cost, prefecture, delivery_date, statusは enum型で選択�
 |nickname|string|null: false, unique: true, add_index: true|
 |email|string|unique: true, null: false|
 |password|string|null: false|
-|products_count|string|default: 0|
+|products_count|integer|default: 0|
 
 ### Association
 - has_many :products, dependent: :destroy

@@ -12700,7 +12700,7 @@ body.modal-open {
 @media screen and (min-width: 768px) {
   .sell-upload-drop-box.have-item-3 {
     width: 140px;
-    margin: 0 0 0 20px
+    margin: 0 0 0 16px;
   }
 }
 
@@ -12739,6 +12739,10 @@ body.modal-open {
     word-wrap: break-word
   }
 }
+
+.sell-upload-drop-box.have-item-3.one {
+        margin: 0;
+      }
 
 .sell-upload-items {
   display: -webkit-box;
