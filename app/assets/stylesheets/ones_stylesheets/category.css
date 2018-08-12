@@ -952,7 +952,7 @@ h3{
 .form-group .checkbox-default,.form-group .radio-default,.form-group .textarea-default{
     margin:16px 0 0
 }
-.form-group .icon-arrow-bottom{
+.form-group .fa-angle-down{
     position:absolute
 }
 .form-require{
@@ -1078,7 +1078,7 @@ h3{
     position:relative;
     background:#fff
 }
-.select-wrap .icon-arrow-bottom{
+.select-wrap .fa-angle-down{
     position:absolute;
     right:16px;
     top:50%;
@@ -1651,7 +1651,7 @@ h3{
     opacity:1;
     text-decoration:none
 }
-.pc-header-nav .icon-arrow-bottom{
+.pc-header-nav .fa-angle-down{
     margin:0 0 0 8px;
     font-size:7px
 }
@@ -2198,7 +2198,7 @@ i[class^='icon-'],i[class*='icon-']{
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale
 }
-.icon-arrow-bottom:before{
+.fa-angle-down:before{
     content:'\e001'
 }
 .icon-arrow-double-left:before{
@@ -4286,7 +4286,7 @@ body.modal-open{
 .list-row .fa-angle-right{
     font-size:14px
 }
-.list-row .icon-arrow-up,.list-row .icon-arrow-bottom{
+.list-row .icon-arrow-up,.list-row .fa-angle-down{
     font-size:8px
 }
 .list-right-icon{
@@ -6450,7 +6450,7 @@ body.modal-open{
     background:#fafafa;
     text-align:left
 }
-.buy-accordion .icon-arrow-bottom{
+.buy-accordion .fa-angle-down{
     font-size:8px
 }
 .buy-balance-info{

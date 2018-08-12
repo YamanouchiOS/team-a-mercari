@@ -1154,7 +1154,7 @@ h3 {
   margin: 16px 0 0
 }
 
-.form-group .icon-arrow-bottom {
+.form-group .fa-angle-down {
   position: absolute
 }
 
@@ -1304,7 +1304,7 @@ h3 {
   background: #fff
 }
 
-.select-wrap .icon-arrow-bottom {
+.select-wrap .fa-angle-down {
   position: absolute;
   right: 16px;
   top: 50%;
@@ -1779,7 +1779,7 @@ h3 {
   z-index: 2
 }
 
-.sp-header-form .icon-search {
+.sp-header-form .fa-search {
   position: absolute;
   top: 0;
   right: 0;
@@ -1815,7 +1815,7 @@ h3 {
   border: 1px solid #0099e8
 }
 
-.sp-header-search:focus+.icon-search {
+.sp-header-search:focus+.fa-search {
   z-index: 3;
   color: #333
 }
@@ -1906,7 +1906,7 @@ h3 {
   border: 1px solid #0099e8
 }
 
-.pc-header-form .icon-search {
+.pc-header-form .fa-search {
   position: absolute;
   top: 0;
   right: 0;
@@ -1977,7 +1977,7 @@ h3 {
   text-decoration: none
 }
 
-.pc-header-nav .icon-arrow-bottom {
+.pc-header-nav .fa-angle-down {
   margin: 0 0 0 8px;
   font-size: 7px
 }
@@ -2625,7 +2625,7 @@ i[class^='icon-'], i[class*='icon-'] {
   -moz-osx-font-smoothing: grayscale
 }
 
-.icon-arrow-bottom:before {
+.fa-angle-down:before {
   content: '\e001'
 }
 
@@ -2766,11 +2766,11 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e023'
 }
 
-.icon-search-detail:before {
+.fa-search-detail:before {
   content: '\e024'
 }
 
-.icon-search:before {
+.fa-search:before {
   content: '\e025'
 }
 
@@ -5081,7 +5081,7 @@ body.modal-open {
   font-size: 14px
 }
 
-.list-row .icon-arrow-up, .list-row .icon-arrow-bottom {
+.list-row .icon-arrow-up, .list-row .fa-angle-down {
   font-size: 8px
 }
 
@@ -7665,7 +7665,7 @@ body.modal-open {
   text-align: left
 }
 
-.buy-accordion .icon-arrow-bottom {
+.buy-accordion .fa-angle-down {
   font-size: 8px
 }
 
@@ -7863,7 +7863,7 @@ body.modal-open {
   font-size: 14px
 }
 
-.search-nav .icon-search-detail {
+.search-nav .fa-search-detail {
   font-size: 15px
 }
 
@@ -18779,7 +18779,7 @@ body.modal-open {
   width: 44px
 }
 
-.help-center-search-form .icon-search {
+.help-center-search-form .fa-search {
   font-size: 18px;
   color: #888
 }
