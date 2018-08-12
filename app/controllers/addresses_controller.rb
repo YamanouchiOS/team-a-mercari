@@ -16,6 +16,7 @@ class AddressesController < ApplicationController
   end
 
   def edit
+    each_cat = [@large_classes = LargeClass.pluck(:id, :name), @middle_classes = MiddleClass.pluck(:id, :name, :large_class_id), @small_classes = SmallClass.pluck(:id, :name, :middle_class_id)]
   end
 
   def update
