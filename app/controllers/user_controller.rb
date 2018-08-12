@@ -1,5 +1,8 @@
 class UserController < ApplicationController
 
+  def signout
+  end
+
   def edit
     @address = Address.find_by(user_id: current_user.id)
     @user = User.find(current_user.id)
