@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :show]
   resources :addresses, except: [:index, :destroy, :show]
   resources :user, only: [:edit, :update, :show]
+  resources :categories, only: [:index, :show]
 end
