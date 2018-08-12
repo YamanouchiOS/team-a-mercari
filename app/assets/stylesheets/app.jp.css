@@ -317,7 +317,7 @@ button:disabled {
   }
 }
 
-.nav-item-link-prev-next .icon-arrow-right, .nav-user-link-prev-next .icon-arrow-right, .nav-item-link-prev-next .icon-arrow-left, .nav-user-link-prev-next .icon-arrow-left {
+.nav-item-link-prev-next .fa-angle-right, .nav-user-link-prev-next .fa-angle-right, .nav-item-link-prev-next .icon-arrow-left, .nav-user-link-prev-next .icon-arrow-left {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -339,7 +339,7 @@ button:disabled {
   text-align: right
 }
 
-.nav-item-link-next .icon-arrow-right, .nav-user-link-next .icon-arrow-right {
+.nav-item-link-next .fa-angle-right, .nav-user-link-next .fa-angle-right {
   right: 0
 }
 
@@ -2281,7 +2281,7 @@ h3 {
   line-height: 40px
 }
 
-.pc-header-mypage-sales-point .icon-arrow-right {
+.pc-header-mypage-sales-point .fa-angle-right {
   position: relative;
   top: -2px;
   font-size: 12px;
@@ -2641,7 +2641,7 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e004'
 }
 
-.icon-arrow-right:before {
+.fa-angle-right:before {
   content: '\e005'
 }
 
@@ -3021,7 +3021,7 @@ i[class^='icon-'], i[class*='icon-'] {
   color: #333
 }
 
-.bread-crumbs .icon-arrow-right {
+.bread-crumbs .fa-angle-right {
   margin: 0 8px;
   font-size: 9px;
   color: #888
@@ -3295,7 +3295,7 @@ i[class^='icon-'], i[class*='icon-'] {
   color: #333
 }
 
-.accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .icon-arrow-right {
+.accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 20px;
@@ -3306,7 +3306,7 @@ i[class^='icon-'], i[class*='icon-'] {
 }
 
 @media screen and (min-width: 768px) {
-  .accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .icon-arrow-right {
+  .accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .fa-angle-right {
     display: none
   }
 }
@@ -3485,7 +3485,7 @@ i[class^='icon-'], i[class*='icon-'] {
   color: #ea352d
 }
 
-.search-category h2+a .icon-arrow-right {
+.search-category h2+a .fa-angle-right {
   font-size: 10px
 }
 
@@ -5077,7 +5077,7 @@ body.modal-open {
   background: #fafafa
 }
 
-.list-row .icon-arrow-right {
+.list-row .fa-angle-right {
   font-size: 14px
 }
 
@@ -6221,7 +6221,7 @@ body.modal-open {
   margin: 0
 }
 
-.item-detail-table .icon-arrow-right:before {
+.item-detail-table .fa-angle-right:before {
   font-size: .9em
 }
 
@@ -6934,7 +6934,7 @@ body.modal-open {
   margin: 0 8px 0 0
 }
 
-.mypage-item-link .icon-arrow-right {
+.mypage-item-link .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -7050,11 +7050,11 @@ body.modal-open {
   text-align: center
 }
 
-.mypage-go-list span, .mypage-go-list .icon-arrow-right {
+.mypage-go-list span, .mypage-go-list .fa-angle-right {
   vertical-align: middle
 }
 
-.mypage-go-list .icon-arrow-right {
+.mypage-go-list .fa-angle-right {
   margin: 0 0 0 8px
 }
 
@@ -7087,7 +7087,7 @@ body.modal-open {
   opacity: 1
 }
 
-.mypage-nav-list a:hover .icon-arrow-right {
+.mypage-nav-list a:hover .fa-angle-right {
   -webkit-transform: translate(4px, -50%);
   transform: translate(4px, -50%);
   color: #333
@@ -7107,7 +7107,7 @@ body.modal-open {
   font-weight: 600
 }
 
-.mypage-nav-list-item.active .icon-arrow-right {
+.mypage-nav-list-item.active .fa-angle-right {
   color: #333
 }
 
@@ -7115,7 +7115,7 @@ body.modal-open {
   background: #eee
 }
 
-.mypage-nav-list-item .icon-arrow-right {
+.mypage-nav-list-item .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -7712,12 +7712,12 @@ body.modal-open {
   text-align: right
 }
 
-.buy-user-info-fix .icon-arrow-right {
+.buy-user-info-fix .fa-angle-right {
   margin: 0 0 0 8px;
   font-size: 10px
 }
 
-.buy-user-info-fix .icon-arrow-right, .buy-user-info-fix span {
+.buy-user-info-fix .fa-angle-right, .buy-user-info-fix span {
   vertical-align: middle
 }
 
@@ -8022,7 +8022,7 @@ body.modal-open {
   color: #333
 }
 
-.search-save-nav .icon-arrow-right {
+.search-save-nav .fa-angle-right {
   position: absolute;
   top: 50%;
   right: -28px;
@@ -8630,7 +8630,7 @@ body.modal-open {
   }
 }
 
-.transaction-user-icon .icon-arrow-right {
+.transaction-user-icon .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -8915,7 +8915,7 @@ body.modal-open {
   text-align: justify
 }
 
-.news-list .icon-arrow-right {
+.news-list .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -13124,7 +13124,7 @@ body.modal-open {
   text-overflow: ellipsis
 }
 
-.sell-draft-list .icon-arrow-right {
+.sell-draft-list .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 8px;
@@ -14729,7 +14729,7 @@ body.modal-open {
   text-decoration: none
 }
 
-.guide-car-main a:hover .icon-arrow-right {
+.guide-car-main a:hover .fa-angle-right {
   -webkit-transform: translate(8px, 0);
   transform: translate(8px, 0)
 }
@@ -14753,11 +14753,11 @@ body.modal-open {
   }
 }
 
-.guide-car-main a .icon-arrow-right, .guide-car-main a span {
+.guide-car-main a .fa-angle-right, .guide-car-main a span {
   vertical-align: middle
 }
 
-.guide-car-main .icon-arrow-right {
+.guide-car-main .fa-angle-right {
   margin: 0 0 0 8px;
   font-size: 12px;
   -webkit-transition: all ease-out .15s;
@@ -14765,7 +14765,7 @@ body.modal-open {
 }
 
 @media screen and (min-width: 768px) {
-  .guide-car-main .icon-arrow-right {
+  .guide-car-main .fa-angle-right {
     margin: 0 0 0 24px;
     font-size: 20px
   }
@@ -15022,13 +15022,13 @@ body.modal-open {
   }
 }
 
-.guide-car-detail-head .icon-arrow-right {
+.guide-car-detail-head .fa-angle-right {
   font-size: 12px;
   vertical-align: middle
 }
 
 @media screen and (min-width: 768px) {
-  .guide-car-detail-head .icon-arrow-right {
+  .guide-car-detail-head .fa-angle-right {
     font-size: 16px
   }
 }
@@ -18030,7 +18030,7 @@ body.modal-open {
   line-height: 1.2
 }
 
-.help-center-top-content-list .icon-arrow-right {
+.help-center-top-content-list .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 0;
