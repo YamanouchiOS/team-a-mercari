@@ -2183,8 +2183,8 @@ h3 {
   vertical-align: middle
 }
 
-.pc-header-user-nav .icon-bell {
-  font-size: 17px
+.pc-header-user-nav .fa-bell {
+  font-size: 17px;
 }
 
 .pc-header-user-nav .icon-check {
@@ -2657,8 +2657,9 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e008'
 }
 
-.icon-bell:before {
+.fa-bell:before {
   content: '\e009'
+  color: white;
 }
 
 .fa-camera:before {
