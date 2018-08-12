@@ -3,6 +3,13 @@ class ProductsController < ApplicationController
   protect_from_forgery :except => [:create]
 
   def index
+
+    @large_classes = LargeClass.pluck(:id, :name)
+    @middle_classes = MiddleClass.pluck(:id, :name, :large_class_id)
+    @small_classes = SmallClass.pluck(:id, :name, :middle_class_id)
+
+    @pickup1 = Product.fetch_pickup_categories(1)
+
   end
 
   def new
@@ -23,6 +30,7 @@ class ProductsController < ApplicationController
     @comments = @product.comments
     @comment = Comment.new
   end
+
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -47,7 +55,6 @@ class ProductsController < ApplicationController
       :delivery_date,
       product_images_attributes: [:image, :status],
       product_category_attributes: [:large_class_id, :middle_class_id, :small_class_id]
-      ).merge(user_id: "")
-    #current_user_idに変更。ダメだったらメンタに相談
+      ).merge(user_id: current_user.id)
   end
 end
