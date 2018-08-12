@@ -16,4 +16,18 @@ class Product < ActiveRecord::Base
       pickup1 = self.order('products.created_at DESC').includes(:product_category, :product_images).where("product_categories.large_class_id" => "#{cat1}").limit(4)
       return pickup1
     end
+
+    def self.fetch_products_of_category(cat_cl, cat_id)
+      if cat_cl == 1
+        category_class = "large"
+      elsif cat_cl == 2
+        category_class = "middle"
+      elsif cat_cl == 3
+        category_class = "small"
+      end
+
+      products = self.order('products.created_at DESC').includes(:product_category, :product_images).where("product_categories.#{category_class}_class_id" => "#{cat_id}")
+      return products
+    end
+
 end
