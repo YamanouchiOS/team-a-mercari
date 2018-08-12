@@ -2121,12 +2121,12 @@ h3{
     opacity:1;
     text-decoration:none
 }
-.footer-sell-btn .icon-camera{
+.footer-sell-btn .fa-camera{
     margin:4px 0 0;
     font-size:24px
 }
 @media screen and (min-width: 768px){
-    .footer-sell-btn .icon-camera{
+    .footer-sell-btn .fa-camera{
         margin:8px 0 0;
         font-size:54px
     }
@@ -2225,7 +2225,7 @@ i[class^='icon-'],i[class*='icon-']{
 .icon-bell:before{
     content:'\e009'
 }
-.icon-camera:before{
+.fa-camera:before{
     content:'\e00a'
 }
 .icon-car:before{
@@ -10685,7 +10685,7 @@ body.modal-open{
 .sell-upload-drop-box.have-item-4{
     display:none
 }
-.sell-upload-drop-box .icon-camera{
+.sell-upload-drop-box .fa-camera{
     position:absolute;
     top:50%;
     left:50%;
@@ -10694,7 +10694,7 @@ body.modal-open{
     font-size:14px
 }
 @media screen and (min-width: 768px){
-    .sell-upload-drop-box .icon-camera{
+    .sell-upload-drop-box .fa-camera{
         display:none
     }
 }
@@ -10884,10 +10884,10 @@ body.modal-open{
         padding:12px 16px
     }
 }
-.sell-crop-header a .icon-camera{
+.sell-crop-header a .fa-camera{
     margin:0 8px 0 0
 }
-.sell-crop-header a .icon-camera,.sell-crop-header a span{
+.sell-crop-header a .fa-camera,.sell-crop-header a span{
     vertical-align:middle
 }
 .sell-crop-editor{
@@ -10924,17 +10924,17 @@ body.modal-open{
     width:100%;
     padding:0 36px 0 22px
 }
-.sell-crop-range .icon-camera{
+.sell-crop-range .fa-camera{
     position:absolute;
     top:50%;
     -webkit-transform:translate(0, -50%);
     transform:translate(0, -50%)
 }
-.sell-crop-range .icon-camera:first-child{
+.sell-crop-range .fa-camera:first-child{
     left:0;
     font-size:12px
 }
-.sell-crop-range .icon-camera:last-child{
+.sell-crop-range .fa-camera:last-child{
     right:0;
     font-size:20px
 }
@@ -10989,10 +10989,10 @@ body.modal-open{
 .sell-draft .btn-red{
     margin:40px auto 0
 }
-.sell-draft .btn-red span,.sell-draft .btn-red .icon-camera{
+.sell-draft .btn-red span,.sell-draft .btn-red .fa-camera{
     vertical-align:middle
 }
-.sell-draft .icon-camera{
+.sell-draft .fa-camera{
     margin:0 8px 0 0
 }
 .sell-draft-list{
@@ -14954,7 +14954,7 @@ body.modal-open{
 .help-center-photo-file.is-disabled{
     opacity:.64
 }
-.help-center-photo-file .icon-camera{
+.help-center-photo-file .fa-camera{
     margin:0 8px 0 0;
     color:#ea352d
 }
