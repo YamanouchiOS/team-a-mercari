@@ -79,7 +79,7 @@
                   %img{:alt => "", :src => "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/983966298.jpg?1496547172", :width => "32"}/
             %form.sp-header-form{:action => "https://www.mercari.com/jp/search/"}
               %input.sp-header-search.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
-              %i.icon-search
+              %i.fas fa-search
         %nav.sp-header-nav
           %ul
             %li
@@ -106,7 +106,7 @@
                 %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1845134038", :width => "134"}/
             %form.pc-header-form.l-right{:action => "https://www.mercari.com/jp/search/"}
               %input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
-              %i.icon-search
+              %i.fas fa-search
           .pc-header-nav-box.clearfix
             %nav.l-left
               %ul.pc-header-nav
@@ -2741,38 +2741,38 @@
                             .l-left 売上金
                             .l-right
                               ¥ 0
-                              %i.icon-arrow-right
+                              %i.fas fa-angle-right
                         %li
                           %a.clearfix{:href => "https://www.mercari.com/jp/mypage/point/"}
                             .l-left ポイント
                             .l-right
                               P 0
-                              %i.icon-arrow-right
+                              %i.fas fa-angle-right
                     %ul.mypage-nav-list
                       %li
                         %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/like/history/"}
                           いいね！一覧
-                          %i.icon-arrow-right
+                          %i.fas fa-angle-right
                       %li
                         %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/listings/listing/"}
                           出品した商品 - 出品中
-                          %i.icon-arrow-right
+                          %i.fas fa-angle-right
                       %li
                         %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/listings/in_progress/"}
                           出品した商品 - 取引中
-                          %i.icon-arrow-right
+                          %i.fas fa-angle-right
                       %li
                         %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/listings/completed/"}
                           出品した商品 - 売却済み
-                          %i.icon-arrow-right
+                          %i.fas fa-angle-right
                       %li
                         %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/purchase/"}
                           購入した商品 - 取引中
-                          %i.icon-arrow-right
+                          %i.fas fa-angle-right
                       %li
                         %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/purchased/"}
                           購入した商品 - 過去の取引
-                          %i.icon-arrow-right
+                          %i.fas fa-angle-right
                 %li{"data-id" => "pc-header-user-nav", "data-key" => "notification_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
                   %a.pc-header-nav-root{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/notification/"}
                     %i.icon-bell
@@ -2788,7 +2788,7 @@
           %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
             %a{:href => "https://www.mercari.com/jp/", :itemprop => "url"}
               %span{:itemprop => "title"} メルカリ
-            %i.icon-arrow-right
+            %i.fas fa-angle-right
           %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
             %span{:itemprop => "title"} 【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)
       %main.l-container.clearfix
@@ -2799,17 +2799,12 @@
             .item-main-content.clearfix
               .item-photo
                 .owl-carousel
-                  .owl-item-inner{"data-thumbnail-class-name" => ""}
-                    %img.owl-lazy
-                      = image_tag (@product.product_images.image)
-                  .owl-item-inner{"data-thumbnail-class-name" => ""}
-                    %img.owl-lazy{:alt => "【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)", "data-src" => "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0408/users/7/1/4/3/tada4_nono-img900x1200-1533561114uaoxpr16551.jpg"}/
-                  .owl-item-inner{"data-thumbnail-class-name" => ""}
-                    %img.owl-lazy{:alt => "【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)", "data-src" => "https://www.1999.co.jp/blog/img/20140303_dekigayosugiru_gyrocanopy23.jpg"}/
-                  .owl-item-inner{"data-thumbnail-class-name" => ""}
-                    %img.owl-lazy{:alt => "【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)", "data-src" => "http://d2dcan0armyq93.cloudfront.net/photo/odai/400/c434999c8fea1a0f06840590da888f2a_400.jpg"}/
+                  - @product.product_images.each do |product|
+                    .owl-item-inner{"data-thumbnail-class-name" => ""}
+                      %img.owl-lazy{"data-src" => "#{product.image}"}/
               .item-price-box.text-center.visible-sp
-                %span.item-price.bold ¥ 15,200
+                %span.item-price.bold
+                  = @product.price
                 %span.item-tax (税込)
                 %span.item-shipping-fee 送料込み
               %section.visible-sp
@@ -2823,54 +2818,63 @@
                 %tr
                   %th 出品者
                   %td
-                    %a{:href => "https://www.mercari.com/jp/u/789824183/"} Toshi@無言購入・お値引交渉大歓迎
+                    = link_to @user.nickname, "user_path"
                     %div
                       .item-user-ratings
                         %i.icon-good
-                        %span 569
+                        %span 0
                       .item-user-ratings
                         %i.icon-normal
-                        %span 14
+                        %span 0
                       .item-user-ratings
                         %i.icon-bad
                         %span 0
                 %tr
                   %th カテゴリー
                   %td
-                    %a{:href => "https://www.mercari.com/jp/category/1/"}
-                      %div レディース
-                    %a{:href => "https://www.mercari.com/jp/category/20/"}
+                    %a{:href => ""}
                       .item-detail-table-sub-category
-                        %i.icon-arrow-right
-                        バッグ
-                    %a{:href => "https://www.mercari.com/jp/category/214/"}
+                        %i.fas fa-angle-right
+                        = @productcategory.large_class.name
+                    %a{:href => ""}
+                      .item-detail-table-sub-category
+                        %i.fas fa-angle-right
+                        = @productcategory.middle_class.name
+                    %a{:href => ""}
                       .item-detail-table-sub-sub-category
-                        %i.icon-arrow-right
-                        ショルダーバッグ
+                        %i.fas fa-angle-right
+                        = @productcategory.small_class.name
+                  / カテゴリーの詳細画面がないので、リンク先はノータッチ
                 %tr
                   %th ブランド
+                  / ブランドテーブルがないので保留
                   %td
-                    %a{:href => "https://www.mercari.com/jp/brand/495/"}
+                    %a{:href => ""}
                       %div
-                        クリスチャン ディオール
                 %tr
                   %th 商品の状態
-                  %td 目立った傷や汚れなし
+                  %td
+                    = @product.condition
                 %tr
                   %th 配送料の負担
-                  %td 送料込み(出品者負担)
+                  %td
+                    = @product.delivery_cost
                 %tr
                   %th 配送の方法
-                  %td らくらくメルカリ便
+                  %td
+                  / テーブルがないので保留
                 %tr
                   %th 配送元地域
                   %td
-                    %a{:href => "https://www.mercari.com/jp/area/8/"} 茨城県
+                    = link_to @product.prefecture, ""
                 %tr
                   %th 発送日の目安
-                  %td 1~2日で発送
+                  %td
+                    = @product.delivery_date
             .item-price-box.text-center
-              %span.item-price.bold ¥ 15,200
+              %span.item-price.bold
+                ¥
+                = @product.price
               %span.item-tax (税込)
               %span.item-shipping-fee 送料込み
             %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"} 購入画面に進む
@@ -2880,162 +2884,13 @@
             %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
               アプリで購入
             .item-description.f14
-              ご覧いただきまして
-              %br/
-              ありがとうございます(*^∇^*)
-              %br/
-              %br/
-              ※：20,800円からお値引きいたしました！
-              %br/
-              %br/
-              「いいね」をしていただきますと
-              %br/
-              お得なお知らせが届きます。
-              %br/
-              %br/
-              「雑談・ご質問・お値引交渉など
-              %br/
-              24時間どのような些細なことでも
-              %br/
-              お気軽にコメントをお寄せください」
-              %br/
-              %br/
-              ■■■
-              %br/
-              %br/
-              管理番号：B045
-              %br/
-              %br/
-              ブランド：Christian Dior
-              %br/
-              (クリスチャン・ディオール)
-              %br/
-              %br/
-              種類：ショルダーバッグ(鞄・バック)
-              %br/
-              %br/
-              対象性別：レディース
-              %br/
-              %br/
-              素材：レザー
-              %br/
-              %br/
-              ランク・外側：8 (極美品)
-              %br/
-              %br/
-              ランク・内側：7.5 (全体的には綺麗)
-              %br/
-              %br/
-              斜め掛け：可能
-              %br/
-              %br/
-              一般的な長財布の収納：可能
-              %br/
-              %br/
-              A4ノートの収納：不可能
-              %br/
-              %br/
-              カラー：ビスケット(ベージュ系)
-              %br/
-              %br/
-              重さ：550g
-              %br/
-              %br/
-              サイズ：横28.1cm × 縦18.2cm ×
-              %br/
-              幅1.5cm × ショルダー103.6cm
-              %br/
-              %br/
-              ポケット・外側：なし
-              %br/
-              %br/
-              ポケット・内側：オープンポケット × 3
-              %br/
-              %br/
-              付属品：保存袋、タグ
-              %br/
-              %br/
-              ■■■
-              %br/
-              %br/
-              [商品のランク・早見表]
-              %br/
-              %br/
-              10：新品
-              %br/
-              9：新品同様品
-              %br/
-              8〜8.5：極美品
-              %br/
-              7〜7.5：全体的には綺麗
-              %br/
-              6〜6.5：一般的な中古品
-              %br/
-              4～5：ダメージが多い中古品
-              %br/
-              1～3：訳あり品
-              %br/
-              %br/
-              ■■■
-              %br/
-              %br/
-              2005年ごろ、ディオール(池袋西武店)で
-              %br/
-              購入いたしました、斜め掛けできる
-              %br/
-              ショルダーバッグでございます。
-              %br/
-              %br/
-              バッグの外側は、留め具がパチンと閉まらず
-              %br/
-              スカスカになっておりますが
-              %br/
-              外観は使用感などが少なくて
-              %br/
-              極美品でございます。
-              %br/
-              %br/
-              バッグの内側は、汚れや使用感などが
-              %br/
-              若干ございますが、美品で気持ちよく
-              %br/
-              お使いいただけます。
-              %br/
-              %br/
-              こちらのバッグは、全面に丈夫で高級な
-              %br/
-              牛革をあしらい、収納スペースも多く
-              %br/
-              分けられておりますので
-              %br/
-              どのような場面でも末永く活躍いたします。
-              %br/
-              %br/
-              ディオールの中でもワンランク上の
-              %br/
-              高級ラインですので、必ず周囲から
-              %br/
-              注目されて、お出かけがもっと
-              %br/
-              楽しくなります！
-              %br/
-              %br/
-              「雑談・ご質問・お値引交渉など
-              %br/
-              24時間どのような些細なことでも
-              %br/
-              お気軽にコメントをお寄せください」
-              %br/
-              %br/
-              ご検討のほど、なにとぞよろしくお願い
-              %br/
-              いたします(*^∇^*)
+              = @product.detail
             .item-button-container.clearfix
               .item-button-left
                 %button.item-button.item-button-like{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "like!", "data-id" => "m28824546027", "data-toggle" => "like", :name => "like!", :type => "button"}
                   %i.icon-like-border
                   %span いいね!
-                  %span.fade-in-down{"data-num" => "like"} 11
+                  %span.fade-in-down{"data-num" => "like"}
                 %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
                   %i.icon-flag
                   %span 不適切な商品の報告
@@ -3046,133 +2901,55 @@
                 %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
                   %i.icon-lock
                   %span あんしん・あんぜんへの取り組み
+                  / ここは本家のリンクでいいですかね？？
           .item-detail-message
             .message-container
               .message-content
                 %ul.message-items
-                  %li.clearfix
-                    .message-user
-                      %figure
-                        .message-user-unknown
-                          %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1845134038"}/
-                        %figcaption.bold
-                    .message-body
-                      .message-body-text 出品者がコメントを削除しました
-                      .message-icons.clearfix
-                        %time.message-icon-left
-                          %i.icon-time
-                          %span 16 日前
-                        .message-icon-right
-                      %i.icon-balloon
-                  %li.clearfix
-                    .message-user
-                      %figure
-                        .message-user-unknown
-                          %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1845134038"}/
-                        %figcaption.bold
-                    .message-body
-                      .message-body-text 出品者がコメントを削除しました
-                      .message-icons.clearfix
-                        %time.message-icon-left
-                          %i.icon-time
-                          %span 11 日前
-                        .message-icon-right
-                      %i.icon-balloon
-                  %li.clearfix
-                    .message-user
-                      %figure
-                        .message-user-unknown
-                          %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1845134038"}/
-                        %figcaption.bold
-                    .message-body
-                      .message-body-text 出品者がコメントを削除しました
-                      .message-icons.clearfix
-                        %time.message-icon-left
-                          %i.icon-time
-                          %span 7 日前
-                        .message-icon-right
-                      %i.icon-balloon
-                  %li.clearfix
-                    %a.message-user{:href => "https://www.mercari.com/jp/u/789824183/"}
-                      %figure
-                        %div
-                          %img{:alt => "", :src => "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/789824183.jpg?1531405765"}/
-                        %figcaption.bold
-                          Toshi@無言購入・お値引交渉大歓迎
-                      .message-is-seller 出品者
-                    .message-body
-                      .message-body-text
-                        お客様、ご覧いただきまして
-                        %br/
-                        ありがとうございます(*^∇^*)
-                        %br/
-                        %br/
-                        先日の20,800円からの大幅なお値引から
-                        %br/
-                        さらに、2,000円お値引きいたしました！
-                        %br/
-                        %br/
-                        また、こちらの商品は
-                        %br/
-                        プロフィールに記載しております
-                        %br/
-                        「全額返金保証サービス」
-                        %br/
-                        「クリーニングサービス」
-                        %br/
-                        「アフターサービス」が付いております。
-                        %br/
-                        %br/
-                        さらに、複数ご購入していただきますと
-                        %br/
-                        2個のご購入で5%、3個のご購入で7%
-                        %br/
-                        4個以上のご購入で10%
-                        %br/
-                        合計金額からお値引きいたします。
-                        %br/
-                        %br/
-                        「雑談・ご質問・お値引交渉など
-                        %br/
-                        24時間どのような些細なことでも
-                        %br/
-                        お気軽にコメントをお寄せください」
-                        %br/
-                        %br/
-                        ごゆっくりご覧くださいませ。
-                        %br/
-                        ご検討のほど、なにとぞよろしくお願い
-                        %br/
-                        いたします(*^∇^*)
-                        %br/
-                        %br/
-                        ※：大変恐縮ではございますが
-                        %br/
-                        後日、こちらの商品を元値に戻して
-                        %br/
-                        削除・再出品いたします。
-                        %br/
-                        %br/
-                        なにとぞご了承くださいませ。
-                      .message-icons.clearfix
-                        %time.message-icon-left
-                          %i.icon-time
-                          %span 1 日前
-                        .message-icon-right
-                          %form{:action => "https://www.mercari.com/jp/comment/report/m28824546027/1693597243/", :method => "POST"}
-                            %button{:type => "submit"}
-                              %i.icon-flag
-                            %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
-                      %i.icon-balloon
+                  = render partial: 'comment', locals: {comment: @comments}
+                  / %li.clearfix
+                  /   .message-user
+                  /     =link_to @user.nickname, "user_path"
+                  /     %figure
+                  /       .message-user-unknown
+                  /         %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1845134038"}/
+                  /   %figcaption.bold
+                  /     = comment.user
+                  /   .message-body
+                  /     .message-body-text
+                  /       = comment.text
+                  /     .message-icons.clearfix
+                  /       %time.message-icon-left
+                  /         %i.icon-time
+                  /         %span 16 日前
+                  /       .message-icon-right
+                  /     %i.icon-balloon
+                  / %li.clearfix
+                  /   %a.message-user{:href => "https://www.mercari.com/jp/u/789824183/"}
+                  /     %figure
+                  /       %div
+                  /         %img{:alt => "", :src => "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/789824183.jpg?1531405765"}/
+                  /       %figcaption.bold
+                  /         Toshi@無言購入・お値引交渉大歓迎
+                  /     .message-is-seller 出品者
+                  /   .message-body
+                  /     .message-body-text
+                  /       なにとぞご了承くださいませ。
+                  /     .message-icons.clearfix
+                  /       %time.message-icon-left
+                  /         %i.icon-time
+                  /         %span 1 日前
+                  /       .message-icon-right
+                  /         %form{:action => "https://www.mercari.com/jp/comment/report/m28824546027/1693597243/", :method => "POST"}
+                  /           %button{:type => "submit"}
+                  /             %i.icon-flag
+                  /           %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+                  /     %i.icon-balloon
               .message-content
-                %form.message-form{:action => "https://www.mercari.com/jp/comment/add/", :method => "POST"}
-                  %input{:name => "__csrf_value", :type => "hidden", :value => "389f6d304ef0d1e57ce30a2b501480ffa86f5a09dab73c637b6b2391bff118f8ce166567391fa0e419057723dd967af8e2a7b4baeeb38344593f4072d7bc0d5c1"}/
-                  %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-                  %input{:name => "item_id", :type => "hidden", :value => "m28824546027"}/
-                  %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
-                  %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
-                  %button.message-submit.btn-default.btn-gray{:type => "submit"}
-                    %span コメントする
+                = form_for [@product,@comment],class: "message-form" do |f|
+                  = f.text_field :text, class: 'textarea-default', placeholder: "type a message"
+                  = f.hidden_field :product_id
+                  = f.submit 'コメントする', class: 'message-submit btn-default btn-gray'
               %aside.modal{"data-close" => "modal", "data-modal" => "delete-comment"}
                 .modal-inner.modal-banner
                   .modal-body
@@ -3197,7 +2974,7 @@
             %li.nav-item-link-next
               %a{:href => "https://item.mercari.com/jp/m37307566134/"}
                 Hey!Say!2010TENJUMP Hey!Say! JUMP
-                %i.icon-arrow-right
+                %i.fas fa-angle-right
           .item-social-media-box
             .text-center
               .fb-save{"data-uri" => "product://113299479059860/m28824546027"}

@@ -3,6 +3,13 @@ class ProductsController < ApplicationController
   protect_from_forgery :except => [:create]
 
   def index
+
+    @large_classes = LargeClass.pluck(:id, :name)
+    @middle_classes = MiddleClass.pluck(:id, :name, :large_class_id)
+    @small_classes = SmallClass.pluck(:id, :name, :middle_class_id)
+
+    @pickup1 = Product.fetch_pickup_categories(1)
+
   end
 
   def new
@@ -17,7 +24,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(1)
+    @user = User.find(params[:id])
+    @product = Product.find(params[:id])
+    @productcategory = ProductCategory.find(params[:id])
+    @comments = @product.comments
+    @comment = Comment.new
   end
 
   def create

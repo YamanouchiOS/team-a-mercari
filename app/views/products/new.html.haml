@@ -137,7 +137,7 @@
                           %span.form-require 必須
                         .select-wrap
                           = f.select :condition, {"---" => ""}.merge(Product.conditions).keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default"
-                          %i.icon-arrow-bottom
+                          %i.fas.fa-angle-down
                         / react-empty: 57
                   .sell-content.clearfix
                     %h3.sell-sub-head 配送について
@@ -151,7 +151,7 @@
                           %span.form-require 必須
                         .select-wrap
                           = f.select :delivery_cost, {"---" => ""}.merge(Product.delivery_costs).keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default"
-                          %i.icon-arrow-bottom
+                          %i.fas.fa-angle-down
                         / react-empty: 70
                       .form-group
                         %label
@@ -161,7 +161,7 @@
                           %span.form-require 必須
                         .select-wrap
                           = f.select :prefecture, {"---" => ""}.merge(Product.prefectures).keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default"
-                          %i.icon-arrow-bottom
+                          %i.fas.fa-angle-down
                         / react-empty: 79
                       .form-group
                         %label
@@ -171,7 +171,7 @@
                           %span.form-require 必須
                         .select-wrap
                           = f.select :delivery_date, {"---" => ""}.merge(Product.delivery_dates).keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default"
-                          %i.icon-arrow-bottom
+                          %i.fas.fa-angle-down
                         / react-empty: 88
                   .sell-content.clearfix
                     %h3.sell-sub-head 販売価格(300〜9,999,999)

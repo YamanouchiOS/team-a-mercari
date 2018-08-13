@@ -25,6 +25,7 @@
 
   <div class="l-single-container">
     <h2 class="l-single-head">住所入力</h2>
+
     <div class="l-single-inner">
       <div class="l-single-content">
         <%= form_for @address do |f| %>
@@ -53,7 +54,7 @@
           <span class="form-require">必須</span>
           <div class="select-wrap">
             <%= f.select :prefecture, Address.prefectures.keys.to_a, {}, autofocus: true, autocomplete: "off", class: "select-default" %>
-            <i class="fas fa-angle-down icon-arrow-bottom"></i>
+            <i class="fas fa-angle-down fas fa-angle-down"></i>
           </div>
         </div>
 
