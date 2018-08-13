@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180809080523) do
+ActiveRecord::Schema.define(version: 20180812004843) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "user_id",                       null: false
-    t.integer  "postal_code",                   null: false
+    t.string   "postal_code",                   null: false
     t.integer  "prefecture",                    null: false
     t.string   "city",                          null: false
     t.string   "street_number",                 null: false
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20180809080523) do
     t.string   "phone_number",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "family_name"
-    t.string   "first_name"
-    t.string   "family_kana"
-    t.string   "first_kana"
+    t.string   "family_name",                   null: false
+    t.string   "first_name",                    null: false
+    t.string   "family_kana",                   null: false
+    t.string   "first_kana",                    null: false
     t.text     "introduction",    limit: 65535
     t.index ["user_id"], name: "fk_rails_48c9e0c5a2", using: :btree
   end
