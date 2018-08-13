@@ -249,7 +249,7 @@ button:disabled{
         width:45%
     }
 }
-.nav-item-link-prev-next .icon-arrow-right,.nav-user-link-prev-next .icon-arrow-right,.nav-item-link-prev-next .icon-arrow-left,.nav-user-link-prev-next .icon-arrow-left{
+.nav-item-link-prev-next .fa-angle-right,.nav-user-link-prev-next .fa-angle-right,.nav-item-link-prev-next .icon-arrow-left,.nav-user-link-prev-next .icon-arrow-left{
     position:absolute;
     top:50%;
     -webkit-transform:translate(0, -50%);
@@ -267,7 +267,7 @@ button:disabled{
     padding:0 14px 0 0;
     text-align:right
 }
-.nav-item-link-next .icon-arrow-right,.nav-user-link-next .icon-arrow-right{
+.nav-item-link-next .fa-angle-right,.nav-user-link-next .fa-angle-right{
     right:0
 }
 .form-require,.form-arbitrary,.message-is-seller,.news-private{
@@ -952,7 +952,7 @@ h3{
 .form-group .checkbox-default,.form-group .radio-default,.form-group .textarea-default{
     margin:16px 0 0
 }
-.form-group .icon-arrow-bottom{
+.form-group .fa-angle-down{
     position:absolute
 }
 .form-require{
@@ -1078,7 +1078,7 @@ h3{
     position:relative;
     background:#fff
 }
-.select-wrap .icon-arrow-bottom{
+.select-wrap .fa-angle-down{
     position:absolute;
     right:16px;
     top:50%;
@@ -1651,7 +1651,7 @@ h3{
     opacity:1;
     text-decoration:none
 }
-.pc-header-nav .icon-arrow-bottom{
+.pc-header-nav .fa-angle-down{
     margin:0 0 0 8px;
     font-size:7px
 }
@@ -1899,7 +1899,7 @@ h3{
     padding:0 8px;
     line-height:40px
 }
-.pc-header-mypage-sales-point .icon-arrow-right{
+.pc-header-mypage-sales-point .fa-angle-right{
     position:relative;
     top:-2px;
     font-size:12px;
@@ -2121,12 +2121,12 @@ h3{
     opacity:1;
     text-decoration:none
 }
-.footer-sell-btn .icon-camera{
+.footer-sell-btn .fa-camera{
     margin:4px 0 0;
     font-size:24px
 }
 @media screen and (min-width: 768px){
-    .footer-sell-btn .icon-camera{
+    .footer-sell-btn .fa-camera{
         margin:8px 0 0;
         font-size:54px
     }
@@ -2198,7 +2198,7 @@ i[class^='icon-'],i[class*='icon-']{
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale
 }
-.icon-arrow-bottom:before{
+.fa-angle-down:before{
     content:'\e001'
 }
 .icon-arrow-double-left:before{
@@ -2210,7 +2210,7 @@ i[class^='icon-'],i[class*='icon-']{
 .icon-arrow-left:before{
     content:'\e004'
 }
-.icon-arrow-right:before{
+.fa-angle-right:before{
     content:'\e005'
 }
 .icon-arrow-up:before{
@@ -2225,7 +2225,7 @@ i[class^='icon-'],i[class*='icon-']{
 .icon-bell:before{
     content:'\e009'
 }
-.icon-camera:before{
+.fa-camera:before{
     content:'\e00a'
 }
 .icon-car:before{
@@ -2510,7 +2510,7 @@ i[class^='icon-'],i[class*='icon-']{
 .bread-crumbs a{
     color:#333
 }
-.bread-crumbs .icon-arrow-right{
+.bread-crumbs .fa-angle-right{
     margin:0 8px;
     font-size:9px;
     color:#888
@@ -2736,7 +2736,7 @@ i[class^='icon-'],i[class*='icon-']{
     border:1px solid #ccc;
     color:#333
 }
-.accordion-parent .icon-minus,.accordion-parent .icon-plus,.accordion-parent .icon-arrow-right{
+.accordion-parent .icon-minus,.accordion-parent .icon-plus,.accordion-parent .fa-angle-right{
     position:absolute;
     top:50%;
     right:20px;
@@ -2746,7 +2746,7 @@ i[class^='icon-'],i[class*='icon-']{
     font-size:14px
 }
 @media screen and (min-width: 768px){
-    .accordion-parent .icon-minus,.accordion-parent .icon-plus,.accordion-parent .icon-arrow-right{
+    .accordion-parent .icon-minus,.accordion-parent .icon-plus,.accordion-parent .fa-angle-right{
         display:none
     }
 }
@@ -2892,7 +2892,7 @@ i[class^='icon-'],i[class*='icon-']{
     border:0;
     color:#ea352d
 }
-.search-category h2+a .icon-arrow-right{
+.search-category h2+a .fa-angle-right{
     font-size:10px
 }
 .search-category nav{
@@ -4283,10 +4283,10 @@ body.modal-open{
 .list-row a:hover{
     background:#fafafa
 }
-.list-row .icon-arrow-right{
+.list-row .fa-angle-right{
     font-size:14px
 }
-.list-row .icon-arrow-up,.list-row .icon-arrow-bottom{
+.list-row .icon-arrow-up,.list-row .fa-angle-down{
     font-size:8px
 }
 .list-right-icon{
@@ -5263,7 +5263,7 @@ body.modal-open{
 .item-detail-table a:first-child{
     margin:0
 }
-.item-detail-table .icon-arrow-right:before{
+.item-detail-table .fa-angle-right:before{
     font-size:.9em
 }
 .item-user-ratings{
@@ -5851,7 +5851,7 @@ body.modal-open{
 .mypage-item-link .icon-time{
     margin:0 8px 0 0
 }
-.mypage-item-link .icon-arrow-right{
+.mypage-item-link .fa-angle-right{
     position:absolute;
     top:50%;
     right:16px;
@@ -5948,10 +5948,10 @@ body.modal-open{
     line-height:56px;
     text-align:center
 }
-.mypage-go-list span,.mypage-go-list .icon-arrow-right{
+.mypage-go-list span,.mypage-go-list .fa-angle-right{
     vertical-align:middle
 }
-.mypage-go-list .icon-arrow-right{
+.mypage-go-list .fa-angle-right{
     margin:0 0 0 8px
 }
 .mypage-nav-head{
@@ -5977,7 +5977,7 @@ body.modal-open{
     text-decoration:none;
     opacity:1
 }
-.mypage-nav-list a:hover .icon-arrow-right{
+.mypage-nav-list a:hover .fa-angle-right{
     -webkit-transform:translate(4px, -50%);
     transform:translate(4px, -50%);
     color:#333
@@ -5994,13 +5994,13 @@ body.modal-open{
     background:#eee;
     font-weight:600
 }
-.mypage-nav-list-item.active .icon-arrow-right{
+.mypage-nav-list-item.active .fa-angle-right{
     color:#333
 }
 .mypage-nav-list-item.active:hover{
     background:#eee
 }
-.mypage-nav-list-item .icon-arrow-right{
+.mypage-nav-list-item .fa-angle-right{
     position:absolute;
     top:50%;
     right:16px;
@@ -6450,7 +6450,7 @@ body.modal-open{
     background:#fafafa;
     text-align:left
 }
-.buy-accordion .icon-arrow-bottom{
+.buy-accordion .fa-angle-down{
     font-size:8px
 }
 .buy-balance-info{
@@ -6487,11 +6487,11 @@ body.modal-open{
     display:block;
     text-align:right
 }
-.buy-user-info-fix .icon-arrow-right{
+.buy-user-info-fix .fa-angle-right{
     margin:0 0 0 8px;
     font-size:10px
 }
-.buy-user-info-fix .icon-arrow-right,.buy-user-info-fix span{
+.buy-user-info-fix .fa-angle-right,.buy-user-info-fix span{
     vertical-align:middle
 }
 .buy-error p{
@@ -6744,7 +6744,7 @@ body.modal-open{
     display:block;
     color:#333
 }
-.search-save-nav .icon-arrow-right{
+.search-save-nav .fa-angle-right{
     position:absolute;
     top:50%;
     right:-28px;
@@ -7245,7 +7245,7 @@ body.modal-open{
         max-width:160px
     }
 }
-.transaction-user-icon .icon-arrow-right{
+.transaction-user-icon .fa-angle-right{
     position:absolute;
     top:50%;
     right:16px;
@@ -7474,7 +7474,7 @@ body.modal-open{
     font-weight:400;
     text-align:justify
 }
-.news-list .icon-arrow-right{
+.news-list .fa-angle-right{
     position:absolute;
     top:50%;
     right:16px;
@@ -10685,7 +10685,7 @@ body.modal-open{
 .sell-upload-drop-box.have-item-4{
     display:none
 }
-.sell-upload-drop-box .icon-camera{
+.sell-upload-drop-box .fa-camera{
     position:absolute;
     top:50%;
     left:50%;
@@ -10694,7 +10694,7 @@ body.modal-open{
     font-size:14px
 }
 @media screen and (min-width: 768px){
-    .sell-upload-drop-box .icon-camera{
+    .sell-upload-drop-box .fa-camera{
         display:none
     }
 }
@@ -10884,10 +10884,10 @@ body.modal-open{
         padding:12px 16px
     }
 }
-.sell-crop-header a .icon-camera{
+.sell-crop-header a .fa-camera{
     margin:0 8px 0 0
 }
-.sell-crop-header a .icon-camera,.sell-crop-header a span{
+.sell-crop-header a .fa-camera,.sell-crop-header a span{
     vertical-align:middle
 }
 .sell-crop-editor{
@@ -10924,17 +10924,17 @@ body.modal-open{
     width:100%;
     padding:0 36px 0 22px
 }
-.sell-crop-range .icon-camera{
+.sell-crop-range .fa-camera{
     position:absolute;
     top:50%;
     -webkit-transform:translate(0, -50%);
     transform:translate(0, -50%)
 }
-.sell-crop-range .icon-camera:first-child{
+.sell-crop-range .fa-camera:first-child{
     left:0;
     font-size:12px
 }
-.sell-crop-range .icon-camera:last-child{
+.sell-crop-range .fa-camera:last-child{
     right:0;
     font-size:20px
 }
@@ -10989,10 +10989,10 @@ body.modal-open{
 .sell-draft .btn-red{
     margin:40px auto 0
 }
-.sell-draft .btn-red span,.sell-draft .btn-red .icon-camera{
+.sell-draft .btn-red span,.sell-draft .btn-red .fa-camera{
     vertical-align:middle
 }
-.sell-draft .icon-camera{
+.sell-draft .fa-camera{
     margin:0 8px 0 0
 }
 .sell-draft-list{
@@ -11027,7 +11027,7 @@ body.modal-open{
     white-space:nowrap;
     text-overflow:ellipsis
 }
-.sell-draft-list .icon-arrow-right{
+.sell-draft-list .fa-angle-right{
     position:absolute;
     top:50%;
     right:8px;
@@ -12381,7 +12381,7 @@ body.modal-open{
     opacity:1;
     text-decoration:none
 }
-.guide-car-main a:hover .icon-arrow-right{
+.guide-car-main a:hover .fa-angle-right{
     -webkit-transform:translate(8px, 0);
     transform:translate(8px, 0)
 }
@@ -12401,17 +12401,17 @@ body.modal-open{
         margin:40px 0 0 40px
     }
 }
-.guide-car-main a .icon-arrow-right,.guide-car-main a span{
+.guide-car-main a .fa-angle-right,.guide-car-main a span{
     vertical-align:middle
 }
-.guide-car-main .icon-arrow-right{
+.guide-car-main .fa-angle-right{
     margin:0 0 0 8px;
     font-size:12px;
     -webkit-transition:all ease-out .15s;
     transition:all ease-out .15s
 }
 @media screen and (min-width: 768px){
-    .guide-car-main .icon-arrow-right{
+    .guide-car-main .fa-angle-right{
         margin:0 0 0 24px;
         font-size:20px
     }
@@ -12630,12 +12630,12 @@ body.modal-open{
         margin:0 24px 0 0
     }
 }
-.guide-car-detail-head .icon-arrow-right{
+.guide-car-detail-head .fa-angle-right{
     font-size:12px;
     vertical-align:middle
 }
 @media screen and (min-width: 768px){
-    .guide-car-detail-head .icon-arrow-right{
+    .guide-car-detail-head .fa-angle-right{
         font-size:16px
     }
 }
@@ -14954,7 +14954,7 @@ body.modal-open{
 .help-center-photo-file.is-disabled{
     opacity:.64
 }
-.help-center-photo-file .icon-camera{
+.help-center-photo-file .fa-camera{
     margin:0 8px 0 0;
     color:#ea352d
 }
@@ -15170,7 +15170,7 @@ body.modal-open{
     color:#333;
     line-height:1.2
 }
-.help-center-top-content-list .icon-arrow-right{
+.help-center-top-content-list .fa-angle-right{
     position:absolute;
     top:50%;
     right:0;

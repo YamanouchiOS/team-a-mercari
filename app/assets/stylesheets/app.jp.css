@@ -317,7 +317,7 @@ button:disabled {
   }
 }
 
-.nav-item-link-prev-next .icon-arrow-right, .nav-user-link-prev-next .icon-arrow-right, .nav-item-link-prev-next .icon-arrow-left, .nav-user-link-prev-next .icon-arrow-left {
+.nav-item-link-prev-next .fa-angle-right, .nav-user-link-prev-next .fa-angle-right, .nav-item-link-prev-next .icon-arrow-left, .nav-user-link-prev-next .icon-arrow-left {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -339,7 +339,7 @@ button:disabled {
   text-align: right
 }
 
-.nav-item-link-next .icon-arrow-right, .nav-user-link-next .icon-arrow-right {
+.nav-item-link-next .fa-angle-right, .nav-user-link-next .fa-angle-right {
   right: 0
 }
 
@@ -1154,7 +1154,7 @@ h3 {
   margin: 16px 0 0
 }
 
-.form-group .icon-arrow-bottom {
+.form-group .fa-angle-down {
   position: absolute
 }
 
@@ -1304,7 +1304,7 @@ h3 {
   background: #fff
 }
 
-.select-wrap .icon-arrow-bottom {
+.select-wrap .fa-angle-down {
   position: absolute;
   right: 16px;
   top: 50%;
@@ -1779,7 +1779,7 @@ h3 {
   z-index: 2
 }
 
-.sp-header-form .icon-search {
+.sp-header-form .fa-search {
   position: absolute;
   top: 0;
   right: 0;
@@ -1815,7 +1815,7 @@ h3 {
   border: 1px solid #0099e8
 }
 
-.sp-header-search:focus+.icon-search {
+.sp-header-search:focus+.fa-search {
   z-index: 3;
   color: #333
 }
@@ -1906,7 +1906,7 @@ h3 {
   border: 1px solid #0099e8
 }
 
-.pc-header-form .icon-search {
+.pc-header-form .fa-search {
   position: absolute;
   top: 0;
   right: 0;
@@ -1977,7 +1977,7 @@ h3 {
   text-decoration: none
 }
 
-.pc-header-nav .icon-arrow-bottom {
+.pc-header-nav .fa-angle-down {
   margin: 0 0 0 8px;
   font-size: 7px
 }
@@ -2183,8 +2183,8 @@ h3 {
   vertical-align: middle
 }
 
-.pc-header-user-nav .icon-bell {
-  font-size: 17px
+.pc-header-user-nav .fa-bell {
+  font-size: 17px;
 }
 
 .pc-header-user-nav .icon-check {
@@ -2281,7 +2281,7 @@ h3 {
   line-height: 40px
 }
 
-.pc-header-mypage-sales-point .icon-arrow-right {
+.pc-header-mypage-sales-point .fa-angle-right {
   position: relative;
   top: -2px;
   font-size: 12px;
@@ -2534,13 +2534,13 @@ h3 {
   text-decoration: none
 }
 
-.footer-sell-btn .icon-camera {
+.footer-sell-btn .fa-camera {
   margin: 4px 0 0;
   font-size: 24px
 }
 
 @media screen and (min-width: 768px) {
-  .footer-sell-btn .icon-camera {
+  .footer-sell-btn .fa-camera {
     margin: 8px 0 0;
     font-size: 54px
   }
@@ -2625,7 +2625,7 @@ i[class^='icon-'], i[class*='icon-'] {
   -moz-osx-font-smoothing: grayscale
 }
 
-.icon-arrow-bottom:before {
+.fa-angle-down:before {
   content: '\e001'
 }
 
@@ -2641,7 +2641,7 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e004'
 }
 
-.icon-arrow-right:before {
+.fa-angle-right:before {
   content: '\e005'
 }
 
@@ -2657,11 +2657,12 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e008'
 }
 
-.icon-bell:before {
+.fa-bell:before {
   content: '\e009'
+  color: white;
 }
 
-.icon-camera:before {
+.fa-camera:before {
   content: '\e00a'
 }
 
@@ -2765,11 +2766,11 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e023'
 }
 
-.icon-search-detail:before {
+.fa-search-detail:before {
   content: '\e024'
 }
 
-.icon-search:before {
+.fa-search:before {
   content: '\e025'
 }
 
@@ -3020,7 +3021,7 @@ i[class^='icon-'], i[class*='icon-'] {
   color: #333
 }
 
-.bread-crumbs .icon-arrow-right {
+.bread-crumbs .fa-angle-right {
   margin: 0 8px;
   font-size: 9px;
   color: #888
@@ -3294,7 +3295,7 @@ i[class^='icon-'], i[class*='icon-'] {
   color: #333
 }
 
-.accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .icon-arrow-right {
+.accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 20px;
@@ -3305,7 +3306,7 @@ i[class^='icon-'], i[class*='icon-'] {
 }
 
 @media screen and (min-width: 768px) {
-  .accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .icon-arrow-right {
+  .accordion-parent .icon-minus, .accordion-parent .icon-plus, .accordion-parent .fa-angle-right {
     display: none
   }
 }
@@ -3484,7 +3485,7 @@ i[class^='icon-'], i[class*='icon-'] {
   color: #ea352d
 }
 
-.search-category h2+a .icon-arrow-right {
+.search-category h2+a .fa-angle-right {
   font-size: 10px
 }
 
@@ -5076,11 +5077,11 @@ body.modal-open {
   background: #fafafa
 }
 
-.list-row .icon-arrow-right {
+.list-row .fa-angle-right {
   font-size: 14px
 }
 
-.list-row .icon-arrow-up, .list-row .icon-arrow-bottom {
+.list-row .icon-arrow-up, .list-row .fa-angle-down {
   font-size: 8px
 }
 
@@ -6220,7 +6221,7 @@ body.modal-open {
   margin: 0
 }
 
-.item-detail-table .icon-arrow-right:before {
+.item-detail-table .fa-angle-right:before {
   font-size: .9em
 }
 
@@ -6933,7 +6934,7 @@ body.modal-open {
   margin: 0 8px 0 0
 }
 
-.mypage-item-link .icon-arrow-right {
+.mypage-item-link .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -7049,11 +7050,11 @@ body.modal-open {
   text-align: center
 }
 
-.mypage-go-list span, .mypage-go-list .icon-arrow-right {
+.mypage-go-list span, .mypage-go-list .fa-angle-right {
   vertical-align: middle
 }
 
-.mypage-go-list .icon-arrow-right {
+.mypage-go-list .fa-angle-right {
   margin: 0 0 0 8px
 }
 
@@ -7086,7 +7087,7 @@ body.modal-open {
   opacity: 1
 }
 
-.mypage-nav-list a:hover .icon-arrow-right {
+.mypage-nav-list a:hover .fa-angle-right {
   -webkit-transform: translate(4px, -50%);
   transform: translate(4px, -50%);
   color: #333
@@ -7106,7 +7107,7 @@ body.modal-open {
   font-weight: 600
 }
 
-.mypage-nav-list-item.active .icon-arrow-right {
+.mypage-nav-list-item.active .fa-angle-right {
   color: #333
 }
 
@@ -7114,7 +7115,7 @@ body.modal-open {
   background: #eee
 }
 
-.mypage-nav-list-item .icon-arrow-right {
+.mypage-nav-list-item .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -7664,7 +7665,7 @@ body.modal-open {
   text-align: left
 }
 
-.buy-accordion .icon-arrow-bottom {
+.buy-accordion .fa-angle-down {
   font-size: 8px
 }
 
@@ -7711,12 +7712,12 @@ body.modal-open {
   text-align: right
 }
 
-.buy-user-info-fix .icon-arrow-right {
+.buy-user-info-fix .fa-angle-right {
   margin: 0 0 0 8px;
   font-size: 10px
 }
 
-.buy-user-info-fix .icon-arrow-right, .buy-user-info-fix span {
+.buy-user-info-fix .fa-angle-right, .buy-user-info-fix span {
   vertical-align: middle
 }
 
@@ -7862,7 +7863,7 @@ body.modal-open {
   font-size: 14px
 }
 
-.search-nav .icon-search-detail {
+.search-nav .fa-search-detail {
   font-size: 15px
 }
 
@@ -8021,7 +8022,7 @@ body.modal-open {
   color: #333
 }
 
-.search-save-nav .icon-arrow-right {
+.search-save-nav .fa-angle-right {
   position: absolute;
   top: 50%;
   right: -28px;
@@ -8629,7 +8630,7 @@ body.modal-open {
   }
 }
 
-.transaction-user-icon .icon-arrow-right {
+.transaction-user-icon .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -8914,7 +8915,7 @@ body.modal-open {
   text-align: justify
 }
 
-.news-list .icon-arrow-right {
+.news-list .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -12708,7 +12709,7 @@ body.modal-open {
   display: none
 }
 
-.sell-upload-drop-box .icon-camera {
+.sell-upload-drop-box .fa-camera {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12718,7 +12719,7 @@ body.modal-open {
 }
 
 @media screen and (min-width: 768px) {
-  .sell-upload-drop-box .icon-camera {
+  .sell-upload-drop-box .fa-camera {
     display: none
   }
 }
@@ -12945,11 +12946,11 @@ body.modal-open {
   }
 }
 
-.sell-crop-header a .icon-camera {
+.sell-crop-header a .fa-camera {
   margin: 0 8px 0 0
 }
 
-.sell-crop-header a .icon-camera, .sell-crop-header a span {
+.sell-crop-header a .fa-camera, .sell-crop-header a span {
   vertical-align: middle
 }
 
@@ -12994,19 +12995,19 @@ body.modal-open {
   padding: 0 36px 0 22px
 }
 
-.sell-crop-range .icon-camera {
+.sell-crop-range .fa-camera {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%)
 }
 
-.sell-crop-range .icon-camera:first-child {
+.sell-crop-range .fa-camera:first-child {
   left: 0;
   font-size: 12px
 }
 
-.sell-crop-range .icon-camera:last-child {
+.sell-crop-range .fa-camera:last-child {
   right: 0;
   font-size: 20px
 }
@@ -13076,11 +13077,11 @@ body.modal-open {
   margin: 40px auto 0
 }
 
-.sell-draft .btn-red span, .sell-draft .btn-red .icon-camera {
+.sell-draft .btn-red span, .sell-draft .btn-red .fa-camera {
   vertical-align: middle
 }
 
-.sell-draft .icon-camera {
+.sell-draft .fa-camera {
   margin: 0 8px 0 0
 }
 
@@ -13123,7 +13124,7 @@ body.modal-open {
   text-overflow: ellipsis
 }
 
-.sell-draft-list .icon-arrow-right {
+.sell-draft-list .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 8px;
@@ -14728,7 +14729,7 @@ body.modal-open {
   text-decoration: none
 }
 
-.guide-car-main a:hover .icon-arrow-right {
+.guide-car-main a:hover .fa-angle-right {
   -webkit-transform: translate(8px, 0);
   transform: translate(8px, 0)
 }
@@ -14752,11 +14753,11 @@ body.modal-open {
   }
 }
 
-.guide-car-main a .icon-arrow-right, .guide-car-main a span {
+.guide-car-main a .fa-angle-right, .guide-car-main a span {
   vertical-align: middle
 }
 
-.guide-car-main .icon-arrow-right {
+.guide-car-main .fa-angle-right {
   margin: 0 0 0 8px;
   font-size: 12px;
   -webkit-transition: all ease-out .15s;
@@ -14764,7 +14765,7 @@ body.modal-open {
 }
 
 @media screen and (min-width: 768px) {
-  .guide-car-main .icon-arrow-right {
+  .guide-car-main .fa-angle-right {
     margin: 0 0 0 24px;
     font-size: 20px
   }
@@ -15021,13 +15022,13 @@ body.modal-open {
   }
 }
 
-.guide-car-detail-head .icon-arrow-right {
+.guide-car-detail-head .fa-angle-right {
   font-size: 12px;
   vertical-align: middle
 }
 
 @media screen and (min-width: 768px) {
-  .guide-car-detail-head .icon-arrow-right {
+  .guide-car-detail-head .fa-angle-right {
     font-size: 16px
   }
 }
@@ -17769,7 +17770,7 @@ body.modal-open {
   opacity: .64
 }
 
-.help-center-photo-file .icon-camera {
+.help-center-photo-file .fa-camera {
   margin: 0 8px 0 0;
   color: #ea352d
 }
@@ -18029,7 +18030,7 @@ body.modal-open {
   line-height: 1.2
 }
 
-.help-center-top-content-list .icon-arrow-right {
+.help-center-top-content-list .fa-angle-right {
   position: absolute;
   top: 50%;
   right: 0;
@@ -18778,7 +18779,7 @@ body.modal-open {
   width: 44px
 }
 
-.help-center-search-form .icon-search {
+.help-center-search-form .fa-search {
   font-size: 18px;
   color: #888
 }
