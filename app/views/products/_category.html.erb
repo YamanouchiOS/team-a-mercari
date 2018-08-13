@@ -1,16 +1,103 @@
+<nav class="sp-header-nav">
+<ul>
+          <li>
+    <a
+      href="https://www.mercari.com/jp/category/1/"
+      class=""
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_レディース">レディース</a>
+  </li>
+<li>
+    <a
+      href="https://www.mercari.com/jp/brand/658/"
+      class=""
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_シャネル">シャネル</a>
+  </li>
+<li>
+    <a
+      href="https://www.mercari.com/jp/category/2/"
+      class=""
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_メンズ">メンズ</a>
+  </li>
+<li>
+    <a
+      href="https://www.mercari.com/jp/brand/857/"
+      class=""
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_ナイキ">ナイキ</a>
+  </li>
+<li>
+    <a
+      href="https://www.mercari.com/jp/category/3/"
+      class=""
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_ベビー・キッズ">ベビー・キッズ</a>
+  </li>
+<li>
+    <a
+      href="https://www.mercari.com/jp/brand/1326/"
+      class=""
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_ルイ ヴィトン">ルイ ヴィトン</a>
+  </li>
+<li>
+    <a
+      href="https://www.mercari.com/jp/category/6/"
+      class=""
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_コスメ・香水・美容">コスメ・香水・美容</a>
+  </li>
+<li>
+    <a
+      href="https://www.mercari.com/jp/brand/"
+      class="active-category"
+      data-ga="element"
+      data-ga-category="NAVIGATION"
+      data-ga-label="sp_header_nav_ブランド一覧">ブランド一覧</a>
+  </li>
+        </ul>
+</nav>
+
+</header>
+
+<header class="pc-header visible-pc">
+<div class="pc-header-inner">
+<div class="clearfix">
+<h1 class="l-left">
+<a href="https://www.mercari.com/jp/">
+<img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?304547132" alt="mercari" width="134" height="36">
+</a>
+</h1>
+
+  <form action="https://www.mercari.com/jp/search/" class="pc-header-form l-right">
+<input type="search" name="keyword" value="" placeholder="キーワードから探す" class="input-default">
+<i class="fas fa-search"></i>
+</form>
+</div>
+
 <div class="pc-header-nav-box clearfix">
-  <nav class="l-left">
-    <ul class="pc-header-nav">
-      <li>
-        <h2>
-          <%= link_to "カテゴリー", categories_path, class: "pc-header-nav-root" %>
-        </h2>
-        <ul class="pc-header-nav-parent-wrap" data-mega="1">
-          <% @large_classes.each do |large_class| %>
-            <li class="pc-header-nav-parent">
-              <h3>
-                <%= link_to "#{large_class[1]}", category_path("1"+"#{large_class[0]}") %>
-              </h3>
+
+              <nav class="l-left">
+  <ul class="pc-header-nav">
+                  <li>
+      <h2>
+        <%= link_to "カテゴリー", categories_path, class: "pc-header-nav-root" %>
+      </h2>
+<ul class="pc-header-nav-parent-wrap" data-mega="1">
+  <% @large_classes.each do |large_class| %>
+    <li class="pc-header-nav-parent">
+      <h3>
+        <%= link_to "#{large_class[1]}", category_path("1"+"#{large_class[0]}") %>
+      </h3>
         <ul class="pc-header-nav-child-wrap" data-mega="2">
           <% @middle_classes.each do |middle_class| %>
             <% if middle_class[2] == large_class[0] %>
@@ -29,11 +116,11 @@
             <% end %>
           <% end %>
         </ul>
-      </li>
-          <% end %>
-      </ul>
-      </li>
-    <li>
+    </li>
+  <% end %>
+</ul>
+</li>
+<li>
       <h2>
         <a href="https://www.mercari.com/jp/brand/" class="pc-header-nav-root">ブランド</a>
         <ul class="pc-header-nav-parent-wrap">
