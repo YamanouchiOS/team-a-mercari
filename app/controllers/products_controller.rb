@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   def show
     @user = User.find(params[:id])
     @product = Product.find(params[:id])
-    @productcategory = ProductCategory.find(13)
+    @productcategory = ProductCategory.find(params[:id])
     @comments = @product.comments
     @comment = Comment.new
   end

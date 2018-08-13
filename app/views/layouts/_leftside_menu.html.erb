@@ -163,10 +163,10 @@
       </li>
 
       <li>
-        <a href="/jp/logout/" class="mypage-nav-list-item ">
+        <%= link_to signout_user_index_path, class: "mypage-nav-list-item" do %>
           ログアウト
           <i class="fas fa-angle-right"></i>
-        </a>
+        <% end %>
       </li>
     </ul>
   </nav>

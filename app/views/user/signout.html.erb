@@ -1,0 +1,14 @@
+<%= render partial: "layouts/header" %>
+  <main class=" l-container clearfix">
+      <div class="l-content">
+        <div class="l-chapter-container">
+          <div class="l-single-inner">
+            <div class="l-single-content">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn-default btn-red" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%= render partial: "layouts/leftside_menu" %>
+  </main>
+<%= render partial: "layouts/footer" %>
