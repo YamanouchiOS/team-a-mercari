@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
     @small_classes = SmallClass.pluck(:id, :name, :middle_class_id)
 
     @pickup1 = Product.fetch_pickup_categories(1)
+    @pickup2 = Product.fetch_pickup_categories(2)
+    @pickup3 = Product.fetch_pickup_categories(3)
 
   end
 
