@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-    belongs_to :user, counter_cache: :products_count
+    belongs_to :user, class_name: 'User', :foreign_key => 'user_id', counter_cache: :products_count
+    belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id'
     has_one :product_category, dependent: :destroy
     has_many :comments, dependent: :destroy
     has_many :likes, dependent: :destroy
