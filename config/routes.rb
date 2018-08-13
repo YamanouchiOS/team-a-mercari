@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   resources :addresses, except: [:index, :destroy, :show]
-  resources :user, only: [:edit, :update, :show]
+  resources :user, only: [:edit, :update, :show] do
+    collection do
+      get 'signout'
+    end
+  end
   resources :categories, only: [:index, :show]
 end
