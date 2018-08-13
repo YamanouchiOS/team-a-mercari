@@ -1,0 +1,39 @@
+%li.clearfix
+- comment.each do |comment|
+  .message-user
+    =link_to @user.nickname, "user_path"
+    %figure
+      .message-user-unknown
+        %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1845134038"}/
+      %figcaption.bold
+        = comment.user
+  .message-body
+    .message-body-text
+      = comment.text
+    .message-icons.clearfix
+      %time.message-icon-left
+        %i.icon-time
+        %span
+      .message-icon-right
+    %i.icon-balloon
+%li.clearfix
+  %a.message-user{:href => "https://www.mercari.com/jp/u/789824183/"}
+    %figure
+      %div
+        %img{:alt => "", :src => ""}/
+      %figcaption.bold
+        サンプル
+    .message-is-seller 出品者
+  .message-body
+    .message-body-text
+      質問なんでもおーけー
+    .message-icons.clearfix
+      %time.message-icon-left
+        %i.icon-time
+        %span 1 日前
+      .message-icon-right
+        %form{:action => "https://www.mercari.com/jp/comment/report/m28824546027/1693597243/", :method => "POST"}
+          %button{:type => "submit"}
+            %i.icon-flag
+          %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+    %i.icon-balloon
