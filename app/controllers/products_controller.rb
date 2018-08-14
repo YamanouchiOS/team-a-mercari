@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  before_action :set_product, only: [:buy, :first_update]
   protect_from_forgery :except => [:create]
 
   def index
@@ -42,8 +42,23 @@ class ProductsController < ApplicationController
     end
   end
 
+  def buy
+    @user = User.includes(:address).find(current_user.id)
+  end
+
+  def first_update
+    if @product.update(first_update_params)
+      redirect_to root_path
+    else
+      render :buy
+    end
+  end
 
   private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
   def product_params
     params.require(:product).permit(
@@ -58,5 +73,9 @@ class ProductsController < ApplicationController
       product_images_attributes: [:image, :status],
       product_category_attributes: [:large_class_id, :middle_class_id, :small_class_id]
       ).merge(user_id: current_user.id)
+  end
+
+  def first_update_params
+    params.permit(:buyer_id, :status)
   end
 end
