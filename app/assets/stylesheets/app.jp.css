@@ -4411,7 +4411,7 @@ i[class^='icon-'], i[class*='icon-'] {
 .message-submit {
   width: 100%;
   margin: 8px 0 0;
-  font-size: 0;
+  font-size: 14px;
   text-align: center
 }
 
