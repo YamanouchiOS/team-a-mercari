@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: [:index, :show]
+  get 'product/buy/:id', to: 'products#buy'
+  patch 'prodcut/perchase/:id', to: 'products#first_update'
+  put 'prodcut/perchase/:id', to: 'products#first_update'
 end
