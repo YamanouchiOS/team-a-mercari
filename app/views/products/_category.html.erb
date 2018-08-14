@@ -6,18 +6,18 @@
           <%= link_to "カテゴリー", categories_path, class: "pc-header-nav-root" %>
         </h2>
         <ul class="pc-header-nav-parent-wrap" data-mega="1">
-          <% @large_classes.each do |large_class| %>
+          <% large_classes.each do |large_class| %>
             <li class="pc-header-nav-parent">
               <h3>
                 <%= link_to "#{large_class[1]}", category_path("1"+"#{large_class[0]}") %>
               </h3>
         <ul class="pc-header-nav-child-wrap" data-mega="2">
-          <% @middle_classes.each do |middle_class| %>
+          <% middle_classes.each do |middle_class| %>
             <% if middle_class[2] == large_class[0] %>
               <li class="pc-header-nav-child">
                 <%= link_to "#{middle_class[1]}", category_path("2"+"#{middle_class[0]}") %>
                   <ul class="pc-header-nav-grand-child-wrap" data-mega="3">
-                    <% @small_classes.each do |small_class| %>
+                    <% small_classes.each do |small_class| %>
                       <% if small_class[2] == middle_class[0] %>
                         <li class="pc-header-nav-grand-child">
                           <%= link_to "#{small_class[1]}", category_path("3"+"#{small_class[0]}") %>
