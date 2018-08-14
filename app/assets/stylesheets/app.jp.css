@@ -1,9 +1,57 @@
 /*! sanitize.css v3.2.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
-.pc-header-user-icon>div {
-    display: inline-block;
-    margin: 0 0 0 8px;
-    font-size: 14px;
-    vertical-align: middle;
+.sp-header-user-icon {
+  display: block;
+  margin: 0 40px 0 0;
+  color: #333;
+  font-size: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s
+}
+
+.sp-header-user-icon.is-focus {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0
+}
+
+.sp-header-user-icon figure {
+  display: inline-block;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  vertical-align: middle
+}
+
+.sp-header-user-icon figure>div {
+  overflow: hidden;
+  border-radius: 50%
+}
+
+.sp-header-user-icon figcaption {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ea352d;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #fff
+}
+
+.sp-header-btn {
+  display: block;
+  margin: 0 40px 0 0;
+  padding: 0 16px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px
 }
 
 audio:not([controls]) {
