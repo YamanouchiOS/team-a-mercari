@@ -1,0 +1,71 @@
+<head>
+  <title>購入が完了しました - メルカリ スマホでかんたん フリマアプリ</title>
+</head>
+<body>
+  <div class="single-container">
+    <header class="single-header">
+      <h1>
+        <a href="/">
+          <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1236411757" alt="mercari">
+        </a>
+      </h1>
+    </header>
+    <main class="single-main">
+      <section class="l-single-container buy-item-container">
+        <div class="transact-attention">
+          <h3>
+            <i class="icon-time"></i>
+            <span>発送をお待ちください</span>
+          </h3>
+          <p>出品者からの発送通知をお待ちください</p>
+        </div>
+        <h2 class="l-single-head">購入が完了しました</h2>
+        <section class="buy-content buy-item">
+          <div class="buy-content-inner">
+            <h3 class="buy-item-image">
+              <img data-src="<%= @product.product_images[0].image %>" class=" is-higher-height lazyloaded" alt="" src="<%= @product.product_images[0].image %>">
+            </h3>
+            <p class="buy-item-name bold"><%= @product.name %></p>
+          </div>
+        </section>
+        <section class="buy-content buy-user-info buy-item">
+          <div class="buy-content-inner">
+            <p class="buy-price-ja bold">
+              ¥ <%= @product.price %>
+              <span class="item-shipping-fee f14 bold">送料込み</span>
+            </p>
+          </div>
+        </section>
+        <section class="buy-content buy-user-info">
+          <div class="buy-content-inner">
+            <h3>配送先 </h3>
+            <address class="buy-user-info-text">
+              〒<%= @buyer.address.postal_code %>
+              <br>
+              <%= @buyer.address.prefecture %>
+              <%= @buyer.address.city %>
+              <%= @buyer.address.street_number %>
+              <%= @buyer.address.building_number %>
+              <br>
+              <%= @buyer.address.family_name %><%= @buyer.address.first_name %>
+            </address>
+          <p class="buy-user-info-text">
+          </p>
+        </div>
+        </section>
+        <section class="buy-content buy-done-flow">
+          <h3>発送通知後の流れ</h3>
+          <div>
+            <i class="icon-good"></i>
+            <i class="icon-normal"></i>
+            <i class="icon-bad"></i>
+          </div>
+          <p>商品を受け取ったら<br>出品者の評価をしましょう。<br>購入代金が出品者に振り込まれます。<br>評価後に取引は完了です。</p>
+          <a href="<%= user_path(current_user.id) %>" class="bold">マイページへもどる</a>
+        </section>
+      </section>
+    </main>
+    <%= render partial: 'layouts/footer_simple' %>
+  </div>
+  <%= render partial: 'layouts/footer_scripts' %>
+</body>
