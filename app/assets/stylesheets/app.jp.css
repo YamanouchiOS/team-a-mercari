@@ -1,4 +1,16 @@
 /*! sanitize.css v3.2.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
+.fa-laugh {
+  color: #de5d85;
+}
+
+.fa-meh {
+  color: #f0ac4e;
+}
+
+.fa-sad-tear {
+  color: #7ab4d4;
+}
+
 .sp-header-user-icon {
   display: block;
   margin: 0 40px 0 0;
@@ -646,34 +658,16 @@ button:disabled {
   color: #ccc
 }
 
-.icon-facebook {
-  color: #fff;
-  background: #385185;
-  font-size: 18px
-}
-
 .icon-google-plus {
   color: #fff;
   background: #dc4e41;
   font-size: 14px
 }
 
-.icon-line {
-  color: #fff;
-  background: #00c137;
-  font-size: 22px
-}
-
 .icon-pinterest {
   color: #fff;
   background: #aa262a;
   font-size: 18px
-}
-
-.icon-twitter {
-  color: #fff;
-  background: #5d9dc9;
-  font-size: 16px
 }
 
 .icon-time {
@@ -2567,10 +2561,6 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e012'
 }
 
-.icon-facebook:before {
-  content: '\e013'
-}
-
 .icon-flag:before {
   content: '\e014'
 }
@@ -2587,16 +2577,30 @@ i[class^='icon-'], i[class*='icon-'] {
   content: '\e017'
 }
 
+.fa-twitter-square {
+  color: #5d9dc9;
+  background-color: #fff;
+  font-size: 50.5px;
+}
+
+.fa-facebook-square {
+  color:  #385185;
+  background-color: #fff;
+  font-size: 50px
+}
+
+.fa-line {
+  background: #fff;
+  color: #00c137;
+  font-size: 51px;
+}
+
 .icon-like-border:before {
   content: '\e018'
 }
 
 .icon-like:before {
   content: '\e019'
-}
-
-.icon-line:before {
-  content: '\e01a'
 }
 
 .icon-list:before {
@@ -2665,10 +2669,6 @@ i[class^='icon-'], i[class*='icon-'] {
 
 .icon-track:before {
   content: '\e02b'
-}
-
-.icon-twitter:before {
-  content: '\e02c'
 }
 
 .anti-social-form .next {

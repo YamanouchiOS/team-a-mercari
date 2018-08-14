@@ -1,0 +1,103 @@
+<%= render partial: "layouts/header" %>
+<nav class="bread-crumbs">
+  <ul>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="/" itemprop="url">
+        <span itemprop="title">メルカリ</span>
+      </a>
+      <i class="fas fa-angle-right"></i>
+    </li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <span itemprop="title"><%= @user.nickname %></span>
+    </li>
+  </ul>
+</nav>
+
+<main class="item-container l-container clearfix">
+  <div class="l-content">
+
+    <div class="users-detail-profile-box">
+      <div class="users-detail-photo_box text-center">
+        <%= link_to exhibitor_path(@user) do %>
+          <div class="users-detail-photo" style="background-image: url('//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png')"></div>
+          <h2 class="users-detail-title font-6"><%= @user.nickname %></h2>
+        <% end %>
+      <div class="users-detail-score font-3">
+        <span>評価 4</span>
+        <span>出品数 <%= @product_all %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="white">
+    <div class="users-detail-ratings-box font-6">
+      <div>
+        <div class="users-detail-ratings clearfix">
+          <i class="fas fa-laugh"></i>
+          <div class="text-center users-detail-ragtings-score">
+            4
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="users-detail-ratings clearfix">
+          <i class="fas fa-meh"></i>
+          <div class="text-center users-detail-ragtings-score">
+            0
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="users-detail-ratings clearfix">
+          <i class="fas fa-sad-tear"></i>
+          <div class="text-center users-detail-ragtings-score">
+            0
+          </div>
+        </div>
+      </div>
+      </div>
+</div>
+
+<div class="item-social-media-box">
+  <ul class="social-media-box">
+    <li>
+      <%= link_to "#", class: "share-btn" do %>
+        <i class="fab fa-facebook-square"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#", class: "share-btn" do %>
+        <i class="fab fa-twitter-square"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#" do %>
+        <i class="fab fa-line"></i>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+  <section class="items-box-container clearfix  items-box-overflow">
+    <h2 class="items-box-head">
+      この出品者の商品
+    </h2>
+
+    <div class="items-box-content clearfix">
+
+      <%= render partial: @products %>
+
+    </div>
+  </section>
+</div>
+
+  <div class="l-side">
+    <div class="l-visible-large">
+      <a href="https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8" target="_blank" class="side-banner">
+        <img src="//www-mercari-jp.akamaized.net/assets/img/common/jp/side_banner.jpg?1236411757" alt="Download Mercari Now">
+      </a>
+    </div>
+  </div>
+</main>
+<%= render partial: "layouts/footer" %>
+
