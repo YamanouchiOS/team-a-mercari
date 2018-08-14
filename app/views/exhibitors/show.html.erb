@@ -5,7 +5,7 @@
       <a href="/" itemprop="url">
         <span itemprop="title">メルカリ</span>
       </a>
-      <i class="icon-arrow-right"></i>
+      <i class="fas fa-angle-right"></i>
     </li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
       <span itemprop="title"><%= @user.nickname %></span>
@@ -16,119 +16,86 @@
 <main class="item-container l-container clearfix">
   <div class="l-content">
 
-<div class="users-detail-profile-box">
-  <div class="users-detail-photo_box text-center">
-    <a href="https://www.mercari.com/jp/u/319522678/">
-    <div class="users-detail-photo" style="background-image: url('//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png')"></div>
-            <h2 class="users-detail-title font-6">
-        mihok      </h2>
-    </a>
-    <div class="users-detail-score font-3">
-      <span>評価 4</span>
-      <span>出品数 2</span>
+    <div class="users-detail-profile-box">
+      <div class="users-detail-photo_box text-center">
+        <%= link_to exhibitor_path(@user) do %>
+          <div class="users-detail-photo" style="background-image: url('//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png')"></div>
+          <h2 class="users-detail-title font-6"><%= @user.nickname %></h2>
+        <% end %>
+      <div class="users-detail-score font-3">
+        <span>評価 4</span>
+        <span>出品数 <%= @product_all %></span>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="white">
-      <div class="users-detail-ratings-box font-6">
-            <div>
+  <div class="white">
+    <div class="users-detail-ratings-box font-6">
+      <div>
         <div class="users-detail-ratings clearfix">
-          <i class="icon-good"></i>
+          <i class="fas fa-laugh"></i>
           <div class="text-center users-detail-ragtings-score">
             4
           </div>
         </div>
       </div>
-            <div>
+      <div>
         <div class="users-detail-ratings clearfix">
-          <i class="icon-normal"></i>
+          <i class="fas fa-meh"></i>
           <div class="text-center users-detail-ragtings-score">
             0
           </div>
         </div>
       </div>
-            <div>
+      <div>
         <div class="users-detail-ratings clearfix">
-          <i class="icon-bad"></i>
+          <i class="fas fa-sad-tear"></i>
           <div class="text-center users-detail-ragtings-score">
             0
           </div>
         </div>
       </div>
-          </div>
-
       </div>
+</div>
 
 <div class="item-social-media-box">
   <ul class="social-media-box">
     <li>
-      <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.mercari.com%2Fjp%2Fu%2F319522678%2F" target="_blank" class="share-btn" data-window-name="facebook_window">
-        <i class="icon-facebook"></i>
-      </a>
+      <%= link_to "#", class: "share-btn" do %>
+        <i class="fab fa-facebook-square"></i>
+      <% end %>
     </li>
     <li>
-      <a href="http://twitter.com/share?count=horizontal&amp;original_referer=https%3A%2F%2Fwww.mercari.com%2Fjp%2Fu%2F319522678%2F&amp;text=%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%20https%3A%2F%2Fwww.mercari.com%2Fjp%2Fu%2F319522678%2F" target="_blank" class="share-btn" data-window-name="twitter_window">
-        <i class="icon-twitter"></i>
-      </a>
+      <%= link_to "#", class: "share-btn" do %>
+        <i class="fab fa-twitter-square"></i>
+      <% end %>
     </li>
-                <li>
-        <a href="http://line.me/R/msg/text/?mihok%20%7C%20%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%E3%82%B9%E3%83%9E%E3%83%9B%E3%81%A7%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%0D%0Ahttps://www.mercari.com/jp/u/319522678/" target="_blank">
-          <i class="icon-line"></i>
-        </a>
-      </li>
-      </ul>
+    <li>
+      <%= link_to "#" do %>
+        <i class="fab fa-line"></i>
+      <% end %>
+    </li>
+  </ul>
 </div>
 
-
-  <section class="items-box-container clearfix items-box-overflow">
-            <h2 class="items-box-head">
-    この出品者の商品
-  </h2>
+  <section class="items-box-container clearfix  items-box-overflow">
+    <h2 class="items-box-head">
+      この出品者の商品
+    </h2>
 
     <div class="items-box-content clearfix">
-              <section class="items-box">
-          <a href="https://item.mercari.com/jp/m90497486909/">
-            <figure class="items-box-photo">
-              <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m90497486909_1.jpg?1533102058" class="lazyload" alt="プログラマの数学">
-                              <figcaption>
-                  <div class="item-sold-out-badge"><div>SOLD</div></div>
-                </figcaption>
-                          </figure>
-            <div class="items-box-body">
-              <h3 class="items-box-name font-2">プログラマの数学</h3>
-              <div class="items-box-num clearfix">
-                <div class="items-box-price font-5">¥ 800</div>
-                                                  <p class="item-box-tax">(税込)</p>
-                              </div>
-            </div>
-          </a>
-        </section>
-              <section class="items-box">
-          <a href="https://item.mercari.com/jp/m86211253647/">
-            <figure class="items-box-photo">
-              <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m86211253647_1.jpg?1533102014" class="lazyload" alt="Gap　スキニーパンツ">
-                          </figure>
-            <div class="items-box-body">
-              <h3 class="items-box-name font-2">Gap　スキニーパンツ</h3>
-              <div class="items-box-num clearfix">
-                <div class="items-box-price font-5">¥ 1,000</div>
-                                                  <p class="item-box-tax">(税込)</p>
-                              </div>
-            </div>
-          </a>
-        </section>
-          </div>
+
+      <%= render partial: @products %>
+
+    </div>
   </section>
+</div>
 
-
-  </div>
-
-    <div class="l-side">
-            <div class="l-visible-large">
+  <div class="l-side">
+    <div class="l-visible-large">
       <a href="https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8" target="_blank" class="side-banner">
-                  <img src="//www-mercari-jp.akamaized.net/assets/img/common/jp/side_banner.jpg?1236411757" alt="Download Mercari Now">
-              </a>
+        <img src="//www-mercari-jp.akamaized.net/assets/img/common/jp/side_banner.jpg?1236411757" alt="Download Mercari Now">
+      </a>
     </div>
   </div>
 </main>
