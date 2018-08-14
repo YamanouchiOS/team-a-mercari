@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:buy, :first_update]
+  before_action :set_product, only: [:show, :buy, :first_update]
   protect_from_forgery :except => [:create]
 
   def index
