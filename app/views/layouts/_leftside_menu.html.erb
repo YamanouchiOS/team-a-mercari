@@ -3,7 +3,7 @@
 
     <ul class="mypage-nav-list">
       <li>
-        <%= link_to, user_path(current_user.id), class: "mypage-nav-list-item active" do %>
+        <%= link_to user_path(current_user.id), class: "mypage-nav-list-item active" do %>
           マイページ
           <i class="fas fa-angle-right"></i>
         <% end %>
