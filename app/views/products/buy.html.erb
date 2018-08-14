@@ -1,0 +1,143 @@
+<head>
+  <title>購入を確定 - メルカリ スマホでかんたん フリマアプリ</title>
+</head>
+<body>
+  <div class="single-container">
+    <header class="single-header">
+      <h1>
+        <a href="/">
+          <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1236411757" alt="mercari">
+        </a>
+      </h1>
+    </header>
+    <main class="single-main">
+      <section class="l-single-container buy-item-container">
+        <h2 class="l-single-head">購入を確定しますか？</h2>
+      <section class="buy-content buy-item">
+        <div class="buy-content-inner">
+          <h3 class="buy-item-image">
+            <img data-src="<%= @product.product_images[0].image %>" class=" is-higher-height lazyloaded" src="<%= @product.product_images[0].image %>">
+          </h3>
+            <p class="buy-item-name bold"><%= @product.name %></p>
+          <%= form_for @product, url: "#{first_update_product_path(current_user.id)}", html: {class: "buy-form", novalidate: "novalidate"} do |f| %>
+            <p class="buy-price-ja bold">
+              <%= @product.price %>
+              <span class="item-shipping-fee f14 bold">送料込み</span>
+            </p>
+            <ul class="buy-accordion">
+              <li class="accordion-parent">
+                <div class="accordion-toggle">
+                  ポイントを使う
+                  <i class="accordion-icon icon-arrow-bottom"></i>
+                </div>
+                <ul class="accordion-child" style="display: none;">
+                  <li class="bold">所持ポイント: P 700</li>
+                  <li class="form-group" data-buy="parent">
+                    <div class="radio-default">
+                      <label>
+                        <input type="radio" name="consume_point_radio" value="none" data-buy="none">ポイントを使わない
+                      </label>
+                    </div>
+                    <div class="radio-default">
+                      <label>
+                        <input type="radio" name="consume_point_radio" value="all" data-buy="all">
+                        <input type="hidden" value="500">
+                          すべてのポイントを使う
+                          <br>
+                          P 500
+                      </label>
+                    </div>
+                    <div class="radio-default">
+                      <label>
+                        <input type="radio" name="consume_point_radio" value="partial" data-buy="part">
+                          一部のポイントを使う
+                      </label>
+                    </div>
+                    <input type="number" value="" class="input-default" placeholder="使うポイントを入力" data-input="money" data-buy="part_num">
+                    <input type="hidden" name="consume_point" value="0" data-buy="result">
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="buy-price-table">
+              <li class="buy-price-row buy-you-pay bold">
+                <div class="buy-price-cell">支払い金額</div>
+                <div class="buy-price-cell">
+                  <span data-buy-pay="300">¥ <%= @product.price %></span>
+                </div>
+              </li>
+            </ul>
+              <input type="hidden" name="buyer_id" value="<%= current_user.id%>">
+              <input type="hidden" name="status" value="1">
+              <!-- <input type="hidden" name="seller_id" value="983966298">
+              <input type="hidden" name="payment_fee" value="0">
+              <input type="hidden" name="payment_amount" value="300">
+              <input type="hidden" name="price" value="300">
+              <input type="hidden" name="item_condition" value="3">
+              <input type="hidden" name="shipping_payer" value="2">
+              <input type="hidden" name="shipping_method" value="14">
+              <input type="hidden" name="shipping_duration" value="2">
+              <input type="hidden" name="shipping_class" value="0">
+              <input type="hidden" name="zip_code1" value="211">
+              <input type="hidden" name="zip_code2" value="0041">
+              <input type="hidden" name="paid_method" value="card">
+              <input type="hidden" name="checksum" value="08d107e88f9c311a6746abd0c6eb091b">
+              <input type="hidden" name="payment_use_last_card_base64" value="eWVz">
+              <input type="hidden" name="item_name_base64" value="aGF5YTTmp5jlsILnlKg=">
+              <input type="hidden" name="description_base64" value="44GT44Gh44KJ44Gu5ZWG5ZOB44GvaGF5YTTmp5jlsILnlKjjga7llYblk4HjgajjgarjgaPjgabjgYrjgorjgb7jgZnjgIIK44GU5LqG5om/44GP44Gg44GV44GE44G+44Gb44CC">
+              <input type="hidden" name="family_name_base64" value="5p6X">
+              <input type="hidden" name="first_name_base64" value="6LK05rSL">
+              <input type="hidden" name="family_name_kana_base64" value="44OP44Ok44K3">
+              <input type="hidden" name="first_name_kana_base64" value="44K/44Kr44OS44Ot">
+              <input type="hidden" name="prefecture_base64" value="56We5aWI5bed55yM">
+              <input type="hidden" name="city_base64" value="5bed5bSO5biC5Lit5Y6f5Yy65LiL5bCP55Sw5Lit">
+              <input type="hidden" name="address1_base64" value="Ni0zMS00Mw==">
+              <input type="hidden" name="address2_base64" value="5Lit5Y6f44OP44Kk44OgMjI4">
+              <input type="hidden" name="telephone_base64" value="">
+              <input type="hidden" name="__csrf_value" value="54f08c4f3e76c5d377c68f423bda8cdf3e140a3a61a55692261a05b82ac0265af72608b534a0e0b035b0f26644aacbc46bcc0b9b443793e8ab847f74a802497da"> -->
+              <button type="submit" class="btn-default btn-red bold">購入する</button>
+            <% end %>
+          </div>
+        </section>
+        <section class="buy-content buy-user-info">
+          <div class="buy-content-inner">
+            <h3>配送先 </h3>
+            <address class="buy-user-info-text">
+              〒<%= @user.address.postal_code %>
+              <br>
+              <%= @user.address.prefecture %>
+              <%= @user.address.city %>
+              <%= @user.address.street_number %>
+              <%= @user.address.building_number %>
+              <br>
+              <%= @user.address.family_name %><%= @user.address.first_name %>
+            </address>
+            <p class="buy-user-info-text">
+            </p>
+            <a href="<%= edit_address_url(current_user.id) %>" class="buy-user-info-fix"><span>変更する</span><i class="icon-arrow-right"></i></a>
+          </div>
+        </section>
+        <section class="buy-content buy-user-info" data-buy="pay-method">
+          <div class="buy-content-inner">
+            <h3>支払い方法</h3>
+            <p class="buy-user-info-text">
+              ************9008
+              <br>
+              06 / 20
+            </p>
+            <figure>
+              <img src="//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1236411757" width="49" height="15" alt="visa">
+            </figure>
+            <p></p>
+            <a href="https://www.mercari.com/jp/transaction/select_card/m52317412621/" class="buy-user-info-fix">
+              <span>変更する</span>
+              <i class="icon-arrow-right"></i>
+            </a>
+          </div>
+        </section>
+      </section>
+</main>
+<%= render partial: "layouts/footer_simple" %>
+</div>
+<%= render partial: "layouts/footer_scripts" %>
+</body>

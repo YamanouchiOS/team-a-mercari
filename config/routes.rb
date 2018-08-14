@@ -4,12 +4,21 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create]
+    member do
+      get :buy
+      patch :first_update
+      put :first_update
+    end
   end
+
   resources :addresses, except: [:index, :destroy, :show]
+
   resources :user, only: [:edit, :update, :show] do
     collection do
       get 'signout'
     end
   end
+
   resources :categories, only: [:index, :show]
 end
+
