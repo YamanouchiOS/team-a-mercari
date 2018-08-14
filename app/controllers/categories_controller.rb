@@ -11,6 +11,6 @@ class CategoriesController < ApplicationController
 
     @products = Product.fetch_products_of_category(category_class, category_id)
 
-    render :layout => "category"
+    render layouts: "category"
   end
 end
