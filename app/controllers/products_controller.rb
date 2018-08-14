@@ -48,10 +48,15 @@ class ProductsController < ApplicationController
 
   def first_update
     if @product.update(first_update_params)
-      redirect_to root_path
+      redirect_to action:'perchased'
     else
       render :buy
     end
+  end
+
+  def perchased
+    @product = Product.find(params[:id])
+    @buyer = User.includes(:address).find(@product.buyer.id)
   end
 
   private
