@@ -19,7 +19,7 @@
             <img data-src="<%= @product.product_images[0].image %>" class=" is-higher-height lazyloaded" src="<%= @product.product_images[0].image %>">
           </h3>
             <p class="buy-item-name bold"><%= @product.name %></p>
-          <%= form_for @product, url: "/prodcut/perchase/#{current_user.id}", html: {class: "buy-form", novalidate: "novalidate"} do |f| %>
+          <%= form_for @product, url: "#{first_update_product_path(current_user.id)}", html: {class: "buy-form", novalidate: "novalidate"} do |f| %>
             <p class="buy-price-ja bold">
               <%= @product.price %>
               <span class="item-shipping-fee f14 bold">送料込み</span>
@@ -69,7 +69,7 @@
             </ul>
               <input type="hidden" name="buyer_id" value="<%= current_user.id%>">
               <input type="hidden" name="status" value="1">
-              <input type="hidden" name="seller_id" value="983966298">
+              <!-- <input type="hidden" name="seller_id" value="983966298">
               <input type="hidden" name="payment_fee" value="0">
               <input type="hidden" name="payment_amount" value="300">
               <input type="hidden" name="price" value="300">
@@ -94,7 +94,7 @@
               <input type="hidden" name="address1_base64" value="Ni0zMS00Mw==">
               <input type="hidden" name="address2_base64" value="5Lit5Y6f44OP44Kk44OgMjI4">
               <input type="hidden" name="telephone_base64" value="">
-              <input type="hidden" name="__csrf_value" value="54f08c4f3e76c5d377c68f423bda8cdf3e140a3a61a55692261a05b82ac0265af72608b534a0e0b035b0f26644aacbc46bcc0b9b443793e8ab847f74a802497da">
+              <input type="hidden" name="__csrf_value" value="54f08c4f3e76c5d377c68f423bda8cdf3e140a3a61a55692261a05b82ac0265af72608b534a0e0b035b0f26644aacbc46bcc0b9b443793e8ab847f74a802497da"> -->
               <button type="submit" class="btn-default btn-red bold">購入する</button>
             <% end %>
           </div>
@@ -137,7 +137,7 @@
         </section>
       </section>
 </main>
-<%= render partial: "layouts/simple_footer" %>
+<%= render partial: "layouts/footer_simple" %>
 </div>
-<%= render partial: "layouts/scripts_footer" %>
+<%= render partial: "layouts/footer_scripts" %>
 </body>
