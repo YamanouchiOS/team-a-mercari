@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
     @pickup1 = Product.fetch_pickup_categories(1)
     @pickup2 = Product.fetch_pickup_categories(2)
     @pickup3 = Product.fetch_pickup_categories(3)
-
   end
 
   def new
@@ -17,10 +16,14 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @product = Product.find(params[:id])
-    @productcategory = ProductCategory.find(params[:id])
-    @comments = @product.comments
+    @product = Product.includes(:user).find(params[:id])
+    @products = Product.where(user_id: @product.user_id).where.not(id: params[:id])
+    @productcategory = ProductCategory.where(product_id: params[:id])
+
+    @large_classes = LargeClass.pluck(:id, :name)
+    @middle_classes = MiddleClass.pluck(:id, :name, :large_class_id)
+    @small_classes = SmallClass.pluck(:id, :name, :middle_class_id)
+    @comments = @product.comments.order("created_at ASC")
     @comment = Comment.new
   end
 
