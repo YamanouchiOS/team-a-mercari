@@ -72,13 +72,13 @@
                   = link_to @product.user.nickname, "user_path"
                   %div
                     .item-user-ratings
-                      %i.icon-good
+                      %i.fas.fa-laugh
                       %span 0
                     .item-user-ratings
-                      %i.icon-normal
+                      %i.fas.fa-meh
                       %span 0
                     .item-user-ratings
-                      %i.icon-bad
+                      %i.fas.fa-sad-tear
                       %span 0
               %tr
                 %th カテゴリー
@@ -113,7 +113,7 @@
               %tr
                 %th 配送の方法
                 %td
-                / テーブルがないので保留
+                  らくらくメルカリ便
               %tr
                 %th 配送元地域
                 %td
@@ -128,8 +128,8 @@
               = @product.price
             %span.item-tax (税込)
             %span.item-shipping-fee 送料込み
-          %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"} 購入画面に進む
-          %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"}
+          %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "/products/#{@product.id}/buy"} 購入画面に進む
+          %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m"}
             %div{"data-client" => "visible"}
               購入画面に進む
           %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
@@ -195,17 +195,14 @@
               .fb-save{"data-uri" => "product://113299479059860/m28824546027"}
             %ul.social-media-box
               %li
-                %a
-                  %i.fab.fa-facebook
+                = link_to "#", class: "share-btn" do
+                  %i.fab.fa-facebook-square
               %li
-                %a.share-btn{"data-window-name" => "twitter_window", :href => "http://twitter.com/share?count=horizontal&original_referer=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm28824546027%2F&text=%E3%80%90%E3%81%8A%E5%80%A4%E5%BC%95%E4%BA%A4%E6%B8%89%E5%A4%A7%E6%AD%93%E8%BF%8E%E2%80%A6%20%28%C2%A5%2015%2C200%29%20https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm28824546027%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89", :target => "_blank"}
-                  %i.icon-twitter
-              %li.social-hidden-item
-                %a{:href => "http://line.me/R/msg/text/?【お値引交渉大歓迎・極美品・送料無料・本物】ディオール・バッグ(人気・B045)%20%7C%20%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%E3%82%B9%E3%83%9E%E3%83%9B%E3%81%A7%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%0D%0Ahttps://item.mercari.com/jp/m28824546027/", :target => "_blank"}
-                  %i.icon-line
+                = link_to "#", class: "share-btn" do
+                  %i.fab.fa-twitter-square
               %li
-                %a.share-btn{"data-window-name" => "pinterest_window", :href => "http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm28824546027%2F&media=https%3A%2F%2Fstatic-mercari-jp-imgtr2.akamaized.net%2Fphotos%2Fm28824546027_1.jpg%3F1532342243&description=%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E5%95%86%E5%93%81%3A%20%E3%80%90%E3%81%8A%E5%80%A4%E5%BC%95%E4%BA%A4%E6%B8%89%E5%A4%A7%E6%AD%93%E8%BF%8E%E3%83%BB%E6%A5%B5%E7%BE%8E%E5%93%81%E3%83%BB%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%83%BB%E6%9C%AC%E7%89%A9%E3%80%91%E3%83%87%E3%82%A3%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%90%E3%83%83%E3%82%B0%28%E4%BA%BA%E6%B0%97%E3%83%BBB045%29%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA", :target => "_blank"}
-                  %i.icon-pinterest
+                = link_to "#" do
+                  %i.fab.fa-line
           %section.items-box-container.clearfix.items-box-overflow
             %h2.items-box-head
               %a{:href => "https://www.mercari.com/jp/u/789824183/"}
