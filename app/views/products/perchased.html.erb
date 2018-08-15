@@ -31,7 +31,7 @@
         <section class="buy-content buy-user-info buy-item">
           <div class="buy-content-inner">
             <p class="buy-price-ja bold">
-              ¥ <%= @product.price %>
+              ¥ <%= price_delimiter(@product.price) %>
               <span class="item-shipping-fee f14 bold">送料込み</span>
             </p>
           </div>
