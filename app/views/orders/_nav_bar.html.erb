@@ -1,0 +1,25 @@
+<nav class="bread-crumbs">
+  <ul>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="/" itemprop="url">
+        <span itemprop="title">メルカリ</span>
+      </a>
+      <i class="fas fa-angle-right"></i>
+    </li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="<%= user_path(current_user) %>" itemprop="url">
+        <span itemprop="title">マイページ</span>
+      </a>
+      <i class="fas fa-angle-right"></i>
+    </li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="https://www.mercari.com/jp/mypage/purchase/" itemprop="url">
+        <span itemprop="title">購入した商品 - 取引中</span>
+      </a>
+      <i class="fas fa-angle-right"></i>
+    </li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <span itemprop="title">取引画面</span>
+    </li>
+  </ul>
+</nav>
