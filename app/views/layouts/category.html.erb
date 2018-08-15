@@ -5,12 +5,13 @@
   <%= stylesheet_link_tag 'ones_stylesheets/category', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag '', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <title>Team-a メルカリ スマホでかんたん フリマアプリ</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
-<body>
-<% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% end %>
-<%= yield %>
+<body class="">
+
+  <%= yield %>
 
 </body>
 </html>
