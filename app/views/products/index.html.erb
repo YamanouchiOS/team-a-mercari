@@ -1,9 +1,3 @@
-<% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% end %>
-<!-- #ハヤシ追記 -->
-<!-- <link rel="stylesheet" type="text/css" href="app.jp.css"> -->
-
 <div class="default-container">
 
   <%= render partial: "layouts/header" %>
@@ -207,52 +201,9 @@
       </a>
     </h3>
     <div class="items-box-content clearfix">
-      <section class="items-box">
-        <a href="https://item.mercari.com/jp/m80084256270/">
-          <figure class="items-box-photo">
-            <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m80084256270_1.jpg?1533054177" class="lazyload" alt="柄アロハシャツ  夏「古着」">
-          </figure>
-          <div class="items-box-body">
-            <h3 class="items-box-name font-2">柄アロハシャツ  夏「古着」</h3>
-            <div class="items-box-num clearfix">
-              <div class="items-box-price font-5">¥ 4,500</div>
-                <p class="item-box-tax">(税込)</p>
-            </div>
-          </div>
-        </a>
-      </section>
-      <section class="items-box">
-        <a href="https://item.mercari.com/jp/m99363823003/">
-          <figure class="items-box-photo">
-            <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m99363823003_1.jpg?1533058465" class="lazyload" alt="VALENTINO. クラッチバッグ">
-          </figure>
-          <div class="items-box-body">
-            <h3 class="items-box-name font-2">VALENTINO. クラッチバッグ</h3>
-            <div class="items-box-num clearfix">
-              <div class="items-box-price font-5">¥ 3,900</div>
-                <p class="item-box-tax">(税込)</p>
-            </div>
-          </div>
-        </a>
-      </section>
-      <section class="items-box">
-        <a href="https://item.mercari.com/jp/m10653185117/">
-          <figure class="items-box-photo">
-            <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m10653185117_1.jpg?1496545182" class="lazyload" alt="Ｎハリウッド×ラングラー デニムシャツ 値下げしました‼︎">
-          </figure>
-          <div class="items-box-body">
-            <h3 class="items-box-name font-2">Ｎハリウッド×ラングラー デニムシャツ 値下げしました‼︎</h3>
-            <div class="items-box-num clearfix">
-              <div class="items-box-price font-5">¥ 7,000</div>
-              <div class="items-box-likes font-2">
-                <i class="icon-like-border"></i>
-                <span>8</span>
-              </div>
-              <p class="item-box-tax">(税込)</p>
-            </div>
-          </div>
-        </a>
-      </section>
+      <% @pickup2.each do |product| %>
+        <%= render partial: 'product', locals: {product: product} %>
+      <% end %>
       <section class="items-box">
         <a href="https://item.mercari.com/jp/m72856953600/">
           <figure class="items-box-photo">
@@ -270,86 +221,35 @@
     </div>
   </section>
   <section class="items-box-container clearfix">
-          <h3 class="text-center">
-  <a href="/jp/category/3/">
-    ベビー・キッズ
-  </a>
-</h3>
-
-  <div class="items-box-content clearfix">
-            <section class="items-box">
+    <h3 class="text-center">
+      <a href="/jp/category/3/">
+      ベビー・キッズ
+      </a>
+    </h3>
+    <div class="items-box-content clearfix">
+      <% @pickup3.each do |product| %>
+        <%= render partial: 'product', locals: {product: product} %>
+      <% end %>
+      <section class="items-box">
         <a href="https://item.mercari.com/jp/m88853771048/">
           <figure class="items-box-photo">
             <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m88853771048_1.jpg?1532970543" class="lazyload" alt="エルゴ インサート メッシュ">
-                        </figure>
+          </figure>
           <div class="items-box-body">
             <h3 class="items-box-name font-2">エルゴ インサート メッシュ</h3>
             <div class="items-box-num clearfix">
               <div class="items-box-price font-5">¥ 1,400</div>
-<div class="items-box-likes font-2">
-                  <i class="icon-like-border"></i>
-                  <span>6</span>
-                </div>
-                <p class="item-box-tax">(税込)</p>
-                            </div>
+              <div class="items-box-likes font-2">
+                <i class="icon-like-border"></i>
+                <span>6</span>
+              </div>
+              <p class="item-box-tax">(税込)</p>
+            </div>
           </div>
         </a>
       </section>
-            <section class="items-box">
-        <a href="https://item.mercari.com/jp/m29415424029/">
-          <figure class="items-box-photo">
-            <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m29415424029_1.jpg?1532522824" class="lazyload" alt="❤美品❤特別価格❤メゾピアノ❤ショートパンツ キュロット">
-                        </figure>
-          <div class="items-box-body">
-            <h3 class="items-box-name font-2">❤美品❤特別価格❤メゾピアノ❤ショートパンツ キュロット</h3>
-            <div class="items-box-num clearfix">
-              <div class="items-box-price font-5">¥ 4,000</div>
-<div class="items-box-likes font-2">
-                  <i class="icon-like-border"></i>
-                  <span>3</span>
-                </div>
-                <p class="item-box-tax">(税込)</p>
-                            </div>
-          </div>
-        </a>
-      </section>
-            <section class="items-box">
-        <a href="https://item.mercari.com/jp/m44988812695/">
-          <figure class="items-box-photo">
-            <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m44988812695_1.jpg?1532765733" class="lazyload" alt="デニム&amp;ダンガリー ミッキー Tシャツ">
-                        </figure>
-          <div class="items-box-body">
-            <h3 class="items-box-name font-2">デニム&amp;ダンガリー ミッキー Tシャツ</h3>
-            <div class="items-box-num clearfix">
-              <div class="items-box-price font-5">¥ 3,500</div>
-<div class="items-box-likes font-2">
-                  <i class="icon-like-border"></i>
-                  <span>2</span>
-                </div>
-                <p class="item-box-tax">(税込)</p>
-                            </div>
-          </div>
-        </a>
-      </section>
-            <section class="items-box">
-        <a href="https://item.mercari.com/jp/m15893538612/">
-          <figure class="items-box-photo">
-            <img data-src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15893538612_1.jpg?1533092158" class="lazyload" alt="男の子  ジーンズ">
-                        </figure>
-          <div class="items-box-body">
-            <h3 class="items-box-name font-2">男の子  ジーンズ</h3>
-            <div class="items-box-num clearfix">
-              <div class="items-box-price font-5">¥ 500</div>
-                <p class="item-box-tax">(税込)</p>
-                            </div>
-          </div>
-        </a>
-      </section>
-        </div>
-</section>
-            </section>
-
-        <section class="pickup-container">
+    </section>
+    <section class="pickup-container">
       <h2 class="pickup-head">ピックアップブランド</h2>
                   <section class="items-box-container clearfix">
           <h3 class="text-center">

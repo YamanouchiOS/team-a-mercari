@@ -1,14 +1,11 @@
 class ProductsController < ApplicationController
-
+  before_action :set_product, only: [:show, :buy, :first_update]
   protect_from_forgery :except => [:create]
 
   def index
-
-    @large_classes = LargeClass.pluck(:id, :name)
-    @middle_classes = MiddleClass.pluck(:id, :name, :large_class_id)
-    @small_classes = SmallClass.pluck(:id, :name, :middle_class_id)
-
     @pickup1 = Product.fetch_pickup_categories(1)
+    @pickup2 = Product.fetch_pickup_categories(2)
+    @pickup3 = Product.fetch_pickup_categories(3)
   end
 
   def new
@@ -16,10 +13,6 @@ class ProductsController < ApplicationController
     product_category = ProductCategory.new
     @product.product_images.build
     @product.product_category = product_category
-
-    @large_classes = LargeClass.all
-    @middle_classes = MiddleClass.all
-    @small_classes = SmallClass.all
   end
 
   def show
@@ -43,8 +36,28 @@ class ProductsController < ApplicationController
     end
   end
 
+  def buy
+    @user = User.includes(:address).find(current_user.id)
+  end
+
+  def first_update
+    if @product.update(first_update_params)
+      redirect_to action:'perchased'
+    else
+      render :buy
+    end
+  end
+
+  def perchased
+    @product = Product.find(params[:id])
+    @buyer = User.includes(:address).find(@product.buyer.id)
+  end
 
   private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
   def product_params
     params.require(:product).permit(
@@ -59,5 +72,9 @@ class ProductsController < ApplicationController
       product_images_attributes: [:image, :status],
       product_category_attributes: [:large_class_id, :middle_class_id, :small_class_id]
       ).merge(user_id: current_user.id)
+  end
+
+  def first_update_params
+    params.permit(:buyer_id, :status)
   end
 end
