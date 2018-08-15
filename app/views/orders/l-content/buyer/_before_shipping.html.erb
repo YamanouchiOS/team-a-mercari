@@ -1,0 +1,123 @@
+  <div class="l-content">
+    <section class="l-chapter-container">
+      <h2 class="l-chapter-head">取引画面</h2>
+        <div class="transact-attention">
+          <h3>
+            <i class="icon-time"></i>
+            <span>発送をお待ちください</span>
+          </h3>
+          <p>出品者からの発送通知をお待ちください。</p>
+        </div>
+        <ul class="transact-guide text-right">
+          <li>
+            <a href="/jp/help_center/category/5/" target="_blank">
+              <span>購入した後の流れ</span>
+              <i class="icon-arrow-right"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/jp/help_center/article/142/" target="_blank">
+              <span>出品者からのお届け先の確認について</span>
+              <i class="icon-arrow-right"></i>
+            </a>
+          </li>
+        </ul>
+      <section class="l-single-inner rakuraku-content">
+      <h3>配送状況</h3>
+        <nav class="progress-bar">
+          <ol class="clearfix">
+            <li class="">
+              発送済み
+              <div class="progress-status"></div>
+            </li>
+            <li class="">
+              輸送中
+              <div class="progress-status no-cicle"></div>
+            </li>
+            <li class="">
+              配達中
+              <div class="progress-status"></div>
+            </li>
+            <li class="">
+              配達済み
+              <div class="progress-status"></div>
+            </li>
+          </ol>
+        </nav>
+        <p>
+          <span class="bold">※らくらくメルカリ便に関するお問い合わせは<a href="https://www.mercari.com/jp/mypage/support/">こちら</a>よりお願いします</span>
+          <br>
+          （ヤマト運輸には、直接お問い合わせされないようお願いします）
+        </p>
+      </section>
+      <div class="message-container">
+        <div class="message-content">
+          <form action="https://www.mercari.com/jp/transaction/message/m52317412621/" method="POST" class="message-form">
+            <input type="hidden" name="__csrf_value" value="f3526669d4374ad8da3373f61a86923d661399d19628fcc59c6707fa29be2ea80239e45335ebfe6451369351161aab18f6744d6a95fb71620a2bba55cb04888ef">
+            <p>取引メッセージの内容は、必要に応じて事務局で確認しています</p>
+            <input type="hidden" name="item_id" value="m52317412621">
+            <textarea type="text" name="body" value="" class="textarea-default"></textarea>
+            <button type="submit" class="message-submit btn-default btn-gray">
+              <span>取引メッセージを送る</span>
+            </button>
+          </form>
+        </div>
+
+
+        <aside class="modal" data-modal="delete-comment" data-close="modal">
+          <div class="modal-inner modal-banner">
+            <div class="modal-body">
+              <div class="modal-head bold">確認</div>
+              <div data-comment="body"></div>
+              <br>
+              本当にこのコメントを削除してよろしいですか？
+            </div>
+            <form action="https://www.mercari.com/jp/comment/delete/" method="POST">
+              <div class="clearfix">
+                <div class="modal-btn modal-btn-cancel" data-close="modal">キャンセル</div>
+                <button type="submit" class="modal-btn modal-btn-submit">
+                  削除する
+                </button>
+              </div>
+              <input type="hidden" name="item_id" value="m52317412621">
+              <input type="hidden" name="comment_id" value="">
+              <input type="hidden" name="__csrf_value" value="f3526669d4374ad8da3373f61a86923d661399d19628fcc59c6707fa29be2ea80239e45335ebfe6451369351161aab18f6744d6a95fb71620a2bba55cb04888ef">
+            </form>
+          </div>
+        </aside>
+      </div>
+      <div class="message-content">
+        ※お困りの際は<a href="/jp/help_center/category/1/" target="_blank">よくある質問</a>をご確認ください。
+      </div>
+    </section>
+    <aside class="modal" data-modal="seller-cancel" data-close="modal">
+      <div class="modal-inner modal-banner">
+        <div class="modal-body">
+          <div class="modal-head bold">取引をキャンセルしますか？</div>
+          キャンセル後、商品は出品停止状態になりますので、再度出品をお願いいたします
+        </div>
+        <div class="clearfix">
+        <div class="modal-btn modal-btn-cancel" data-close="modal">いいえ</div>
+          <form action="/jp/transaction/seller_cancel/done/m52317412621/" method="POST" novalidate="novalidate">
+            <input type="hidden" name="__csrf_value" value="f3526669d4374ad8da3373f61a86923d661399d19628fcc59c6707fa29be2ea80239e45335ebfe6451369351161aab18f6744d6a95fb71620a2bba55cb04888ef">
+            <button type="submit" class="modal-btn modal-btn-submit">はい</button>
+          </form>
+        </div>
+      </div>
+    </aside>
+    <aside class="modal" data-modal="buyer-cancel" data-close="modal">
+      <div class="modal-inner modal-banner">
+        <div class="modal-body">
+          <div class="modal-head bold">取引キャンセルを依頼しますか</div>
+            事務局にて取引内容を確認後、対応してまいります
+          </div>
+          <div class="clearfix">
+          <div class="modal-btn modal-btn-cancel" data-close="modal">キャンセル</div>
+            <form action="/jp/transaction/buyer_cancel/done/m52317412621/" method="POST" novalidate="novalidate">
+              <input type="hidden" name="__csrf_value" value="f3526669d4374ad8da3373f61a86923d661399d19628fcc59c6707fa29be2ea80239e45335ebfe6451369351161aab18f6744d6a95fb71620a2bba55cb04888ef">
+              <button type="submit" class="modal-btn modal-btn-submit">はい</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </div>
