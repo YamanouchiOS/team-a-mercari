@@ -39,6 +39,7 @@ class ProductsController < ApplicationController
 
   def first_update
     if @product.update(first_update_params)
+      @product.touch(:purchased_at)
       redirect_to action:'perchased'
     else
       render :buy
