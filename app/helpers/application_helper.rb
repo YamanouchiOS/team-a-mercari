@@ -12,4 +12,8 @@ module ApplicationHelper
     SmallClass.pluck(:id, :name, :middle_class_id)
   end
 
+  def price_delimiter(price)
+    number_with_delimiter(price)
+  end
+
 end
