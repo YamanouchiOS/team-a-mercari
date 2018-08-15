@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.includes(:user).find(params[:id])
-    @products = Product.where(user_id: params[:id]).where.not(id: params[:id])
+    @products = Product.where(user_id: @product.user_id).where.not(id: params[:id])
     @productcategory = ProductCategory.where(product_id: params[:id])
 
     @large_classes = LargeClass.pluck(:id, :name)
