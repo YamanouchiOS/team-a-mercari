@@ -1,5 +1,5 @@
 <section class="items-box">
-  <a href = "/products/1" method = "get">
+  <a href = "/products/<%= product.id%>" method = "get">
     <figure class="items-box-photo">
       <img data-src="<%= product.product_images[0].image %>" class="lazyload" alt="<%= product.name %>">
       <% if product.status >= 1 %>
@@ -11,7 +11,7 @@
     <div class="items-box-body">
       <h3 class="items-box-name font-2"><%= product.name %></h3>
       <div class="items-box-num clearfix">
-        <div class="items-box-price font-5">¥ <%= product.price %></div>
+        <div class="items-box-price font-5">¥ <%= price_delimiter(product.price) %></div>
         <p class="item-box-tax">(税込)</p>
         </div>
     </div>
