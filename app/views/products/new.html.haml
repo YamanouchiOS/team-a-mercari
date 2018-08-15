@@ -125,9 +125,9 @@
                         %div
                           .select-wrap
                             = f.fields_for :product_category do |category|
-                              = category.select :large_class_id, {"---" => ""}.merge(@large_classes.map{|t| [t.name, t.id]}.to_h), {}, {class: "select-default"}
-                              = category.select :middle_class_id, {"---" => ""}.merge(@middle_classes.map{|t| [t.name, t.id]}.to_h), {}, {class: "select-default"}
-                              = category.select :small_class_id, {"---" => ""}.merge(@small_classes.map{|t| [t.name, t.id]}.to_h), {}, {class: "select-default"}
+                              = category.select :large_class_id, {"---" => ""}.merge(large_classes.map{|t| [t[1], t[0]]}.to_h), {}, {class: "select-default"}
+                              = category.select :middle_class_id, {"---" => ""}.merge(middle_classes.map{|t| [t[1], t[1]]}.to_h), {}, {class: "select-default"}
+                              = category.select :small_class_id, {"---" => ""}.merge(small_classes.map{|t| [t[1], t[0]]}.to_h), {}, {class: "select-default"}
                         / react-empty: 48
                       .form-group
                         %label
