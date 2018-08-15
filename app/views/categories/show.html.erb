@@ -32,7 +32,7 @@
     <ul class="parts-nav clearfix">
       <li>
         <a href="https://www.mercari.com/jp/category/16/">
-        靴　（選択したカテゴリの子カテゴリで出品数が多い順）
+        靴
         </a>
       </li>
       <li>
@@ -87,7 +87,7 @@
           </h2>
         <% else %>
           <% @products.each do |product| %>
-            <%= render partial: '/products/product', locals: {product: product} %>
+            <%= render partial: product %>
           <% end %>
         <% end %>
       </div>
