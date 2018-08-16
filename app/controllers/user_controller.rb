@@ -22,19 +22,19 @@ class UserController < ApplicationController
   end
 
   def in_progress
-    @products = Product.where('user_id = ? and status = ?',current_user.id, 1)
+    @products = Product.where('user_id = ? and (status = ? or status = ? or status = ?)',current_user.id, 1, 2, 3)
   end
 
   def completed
-    @products = Product.where('user_id = ? and status = ?',current_user.id, 2)
+    @products = Product.where('user_id = ? and status = ?',current_user.id, 4)
   end
 
   def purchase
-    @products = Product.where('user_id = ? and status = ?',current_user.id, 3)
+    @products = Product.where('buyer_id = ? and (status = ? or status = ? or status = ?)',current_user.id, 1, 2, 3)
   end
 
   def purchased
-    @products = Product.where('user_id = ? and status = ?',current_user.id, 4)
+    @products = Product.where('buyer_id = ? and status = ?',current_user.id, 4)
   end
 
 private
