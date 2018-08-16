@@ -6,3 +6,8 @@ Time::DATE_FORMATS[:human] = lambda {|date|
  return "#{seconds}秒前" if seconds > 10;
  return "今";
 }
+Time::DATE_FORMATS[:default] = '%Y/%m/%d %H:%M'
+Time::DATE_FORMATS[:datetime] = '%Y/%m/%d %H:%M'
+Time::DATE_FORMATS[:date] = '%Y/%m/%d'
+Time::DATE_FORMATS[:time] = '%H:%M:%S'
+Date::DATE_FORMATS[:default] = '%Y/%m/%d'
