@@ -29,7 +29,7 @@
         <li class="transact-info-table-row">
           <span class="transact-info-table-cell">購入日時</span>
           <ul class="transact-info-table-cell">
-            <li><%= @product.purchased_at %></li>
+            <li><%= @product.purchased_at.to_s(:default) %></li>
           </ul>
         </li>
         <li class="transact-info-table-row">
