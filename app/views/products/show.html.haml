@@ -1,413 +1,192 @@
-!!!
-%html{:lang => "ja-JP"}
-  / %script{:src => "//www-mercari-jp.akamaized.net/assets/js/sell.js?3788517629"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
-    %title 出品 - メルカリ スマホでかんたん フリマアプリ
-    %meta{:content => "CMで話題！フリマアプリ「メルカリ」は、スマホから誰でも簡単に売り買いが楽しめるフリマアプリです。購入時はクレジットカード・キャリア決済・コンビニ・銀行ATMで支払いでき、品物が届いてから出品者に入金される独自システムで安心です。", :name => "description"}/
-    %meta{:content => "telephone=no", :name => "format-detection"}/
-    %link{:href => "/jp/assets/css/app.jp.css?3563859531", :rel => "stylesheet"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/favicon.ico?1845134038", :rel => "shortcut icon"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon.png?1845134038", :rel => "apple-touch-icon"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/favicon-16x16.png?1845134038", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/favicon-32x32.png?1845134038", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/favicon-194x194.png?1845134038", :rel => "icon", :sizes => "194x194", :type => "image/png"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/android-chrome-192x192.png?1845134038", :rel => "icon", :sizes => "192x192", :type => "image/png"}/
-    %link{:color => "#ea352d", :href => "//www-mercari-jp.akamaized.net/safari-pinned-tab.svg?1845134038", :rel => "mask-icon"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/manifest.json?1845134038", :rel => "manifest"}/
-    %meta{:content => "#ffc40d", :name => "msapplication-TileColor"}/
-    %meta{:content => "//www-mercari-jp.akamaized.net/mstile-144x144.png?1845134038", :name => "msapplication-TileImage"}/
-    %meta{:content => "#ea352d", :name => "theme-color"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-precomposed.png?1845134038", :rel => "apple-touch-icon-precomposed"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-57x57.png?1845134038", :rel => "apple-touch-icon", :sizes => "57x57"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-60x60.png?1845134038", :rel => "apple-touch-icon", :sizes => "60x60"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-72x72.png?1845134038", :rel => "apple-touch-icon", :sizes => "72x72"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-76x76.png?1845134038", :rel => "apple-touch-icon", :sizes => "76x76"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-114x114.png?1845134038", :rel => "apple-touch-icon", :sizes => "114x114"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-120x120.png?1845134038", :rel => "apple-touch-icon", :sizes => "120x120"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-144x144.png?1845134038", :rel => "apple-touch-icon", :sizes => "144x144"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-152x152.png?1845134038", :rel => "apple-touch-icon", :sizes => "152x152"}/
-    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-180x180.png?1845134038", :rel => "apple-touch-icon", :sizes => "180x180"}/
-    %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
-  %body
-    = render "layouts/header"
-    %nav.bread-crumbs
-      %ul
-        %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-          %a{:href => "https://www.mercari.com/jp/", :itemprop => "url"}
-            %span{:itemprop => "title"} メルカリ
-          %i.icon-arrow-right
-        %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-          %span{:itemprop => "title"}
-            = @product.name
-    %main.l-container.clearfix
-      .l-content
-        %section.item-box-container
-          %h2.item-name
-            = @product.name
-          .item-main-content.clearfix
-            .item-photo
-              .owl-carousel
-                - @product.product_images.each do |product|
-                  .owl-item-inner{"data-thumbnail-class-name" => ""}
-                    %img.owl-lazy{"data-src" => "#{product.image}"}/
-            .item-price-box.text-center.visible-sp
-              %span.item-price.bold
-                = @product.price
-              %span.item-tax (税込)
-              %span.item-shipping-fee 送料込み
-            %section.visible-sp
-              %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"} 購入画面に進む
-              %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"}
-                %div{"data-client" => "visible"}
-                  購入画面に進む
-              %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
-                アプリで購入
-            %table.item-detail-table
-              %tr
-                %th 出品者
-                %td
-                  = link_to @product.user.nickname, "user_path"
-                  %div
-                    .item-user-ratings
-                      %i.fas.fa-laugh
-                      %span 0
-                    .item-user-ratings
-                      %i.fas.fa-meh
-                      %span 0
-                    .item-user-ratings
-                      %i.fas.fa-sad-tear
-                      %span 0
-              %tr
-                %th カテゴリー
-                %td
-                  %a{:href => ""}
-                    .item-detail-table-sub-category
-                      %i.icon-arrow-right
-                      = @productcategory[0].large_class.name
-                  %a{:href => ""}
-                    .item-detail-table-sub-category
-                      %i.icon-arrow-right
-                      = @productcategory[0].middle_class.name
-                  %a{:href => ""}
-                    .item-detail-table-sub-sub-category
-                      %i.icon-arrow-right
-                      = @productcategory[0].small_class.name
-                / カテゴリーの詳細画面がないので、リンク先はノータッチ
-              %tr
-                %th ブランド
-                / ブランドテーブルがないので保留
-                %td
-                  %a{:href => ""}
-                    %div
-              %tr
-                %th 商品の状態
-                %td
-                  = @product.condition
-              %tr
-                %th 配送料の負担
-                %td
-                  = @product.delivery_cost
-              %tr
-                %th 配送の方法
-                %td
-                  らくらくメルカリ便
-              %tr
-                %th 配送元地域
-                %td
-                  = link_to @product.prefecture, ""
-              %tr
-                %th 発送日の目安
-                %td
-                  = @product.delivery_date
-          .item-price-box.text-center
-            %span.item-price.bold
-              ¥
-              = @product.price
-            %span.item-tax (税込)
-            %span.item-shipping-fee 送料込み
-          %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "/products/#{@product.id}/buy"} 購入画面に進む
-          %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m"}
+= render "layouts/header"
+%nav.bread-crumbs
+  %ul
+    %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+      %a{href: "/", itemprop: "url"}
+        %span{itemprop: "title"} メルカリ
+      %i.fas.fa-angle-right
+    %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+      %span{itemprop: "title"}
+        = @product.name
+%main.l-container.clearfix
+  .l-content
+    %section.item-box-container
+      %h2.item-name
+        = @product.name
+      .item-main-content.clearfix
+        .item-photo
+          .owl-carousel
+            - @product.product_images.each do |product|
+              .owl-item-inner{"data-thumbnail-class-name": ""}
+                %img.owl-lazy{"data-src": "#{product.image}"}/
+        .item-price-box.text-center.visible-sp
+          %span.item-price.bold
+            = @product.price
+          %span.item-tax (税込)
+          %span.item-shipping-fee 送料込み
+        %section.visible-sp
+          %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"} 購入画面に進む
+          %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"}
             %div{"data-client" => "visible"}
               購入画面に進む
           %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
             アプリで購入
-          .item-description.f14
-            = @product.detail
-          .item-button-container.clearfix
-            .item-button-left
-              %button.item-button.item-button-like{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "like!", "data-id" => "m28824546027", "data-toggle" => "like", :name => "like!", :type => "button"}
-                %i.icon-like-border
-                %span いいね!
-                %span.fade-in-down{"data-num" => "like"}
-              %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
-                %i.icon-flag
-                %span 不適切な商品の報告
-              %input{:name => "like_add_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/add/m28824546027/"}/
-              %input{:name => "like_del_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/delete/m28824546027/"}/
-              %input{:name => "__csrf_value", :type => "hidden", :value => "389f6d304ef0d1e57ce30a2b501480ffa86f5a09dab73c637b6b2391bff118f8ce166567391fa0e419057723dd967af8e2a7b4baeeb38344593f4072d7bc0d5c1"}/
-            .item-button-right
-              %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
-                %i.icon-lock
-                %span あんしん・あんぜんへの取り組み
-                / ここは本家のリンクでいいですかね？？
-        .item-detail-message
-          .message-container
-            .message-content
-              %ul.message-items
-                = render partial: 'comment', locals: {comment: @comments}
-            .message-content
-              .message-form
-                %p
-                  相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-              = form_for [@product,@comment],class: "message-form" do |f|
-                = f.text_field :text, class: 'textarea-default'
-                = f.submit "コメントする", class: 'message-submit btn-default btn-gray'
-            %aside.modal{"data-close" => "modal", "data-modal" => "delete-comment"}
-              .modal-inner.modal-banner
-                .modal-body
-                  .modal-head.bold 確認
-                  %div{"data-comment" => "body"}
-                  %br/
-                  本当にこのコメントを削除してよろしいですか？
-                %form{:action => "https://www.mercari.com/jp/comment/delete/", :method => "POST"}
-                  .clearfix
-                    .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
-                    %button.modal-btn.modal-btn-submit{:type => "submit"}
-                      削除する
-                  %input{:name => "item_id", :type => "hidden", :value => "m28824546027"}/
-                  %input{:name => "comment_id", :type => "hidden", :value => ""}/
-                  %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
-                  %input{:name => "__csrf_value", :type => "hidden", :value => "389f6d304ef0d1e57ce30a2b501480ffa86f5a09dab73c637b6b2391bff118f8ce166567391fa0e419057723dd967af8e2a7b4baeeb38344593f4072d7bc0d5c1"}/
-          %ul.nav-item-link-prev-next.clearfix
-            %li.nav-item-link-prev
-              %a{:href => "https://item.mercari.com/jp/m93650291396/"}
-                %i.icon-arrow-left>
-                【お値下げ】新品未開封 チェンジ プレシャス バブルファンデS 9g
-            %li.nav-item-link-next
-              %a{:href => "https://item.mercari.com/jp/m37307566134/"}
-                Hey!Say!2010TENJUMP Hey!Say! JUMP
-                %i.fas fa-angle-right
-          .item-social-media-box
-            .text-center
-              .fb-save{"data-uri" => "product://113299479059860/m28824546027"}
-            %ul.social-media-box
-              %li
-                = link_to "#", class: "share-btn" do
-                  %i.fab.fa-facebook-square
-              %li
-                = link_to "#", class: "share-btn" do
-                  %i.fab.fa-twitter-square
-              %li
-                = link_to "#" do
-                  %i.fab.fa-line
-          %section.items-box-container.clearfix.items-box-overflow
-            %h2.items-box-head
-              %a{:href => "https://www.mercari.com/jp/u/789824183/"}
-                = @product.user.nickname
-                さんのその他の出品
-            - @products.each do |product|
-              = render partial: 'product', locals: {product: product}
-          %aside.modal{"data-close" => "modal", "data-modal" => "report-item"}
-            .modal-inner.modal-banner
-              .modal-body
-                .modal-head.bold 確認
-                不適切な商品を報告しますか？
+        %table.item-detail-table
+          %tr
+            %th 出品者
+            %td
+              = link_to @product.user.nickname, "user_path"
+              %div
+                .item-user-ratings
+                  %i.fas.fa-laugh
+                  %span 0
+                .item-user-ratings
+                  %i.fas.fa-meh
+                  %span 0
+                .item-user-ratings
+                  %i.fas.fa-sad-tear
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              %a{:href => ""}
+                .item-detail-table-sub-category
+                  %i.icon-arrow-right
+                  = @productcategory[0].large_class.name
+              %a{:href => ""}
+                .item-detail-table-sub-category
+                  %i.icon-arrow-right
+                  = @productcategory[0].middle_class.name
+              %a{:href => ""}
+                .item-detail-table-sub-sub-category
+                  %i.icon-arrow-right
+                  = @productcategory[0].small_class.name
+            / カテゴリーの詳細画面がないので、リンク先はノータッチ
+          %tr
+            %th ブランド
+            / ブランドテーブルがないので保留
+            %td
+              %a{:href => ""}
+                %div
+          %tr
+            %th 商品の状態
+            %td
+              = @product.condition
+          %tr
+            %th 配送料の負担
+            %td
+              = @product.delivery_cost
+          %tr
+            %th 配送の方法
+            %td
+              らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td
+              = link_to @product.prefecture, ""
+          %tr
+            %th 発送日の目安
+            %td
+              = @product.delivery_date
+      .item-price-box.text-center
+        %span.item-price.bold
+          ¥
+          = @product.price
+        %span.item-tax (税込)
+        %span.item-shipping-fee 送料込み
+      %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "/products/#{@product.id}/buy"} 購入画面に進む
+      %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m"}
+        %div{"data-client" => "visible"}
+          購入画面に進む
+      %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
+        アプリで購入
+      .item-description.f14
+        = @product.detail
+      .item-button-container.clearfix
+        .item-button-left
+          %button.item-button.item-button-like{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "like!", "data-id" => "m28824546027", "data-toggle" => "like", :name => "like!", :type => "button"}
+            %i.icon-like-border
+            %span いいね!
+            %span.fade-in-down{"data-num" => "like"}
+          %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
+            %i.icon-flag
+            %span 不適切な商品の報告
+          %input{:name => "like_add_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/add/m28824546027/"}/
+          %input{:name => "like_del_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/delete/m28824546027/"}/
+          %input{:name => "__csrf_value", :type => "hidden", :value => "389f6d304ef0d1e57ce30a2b501480ffa86f5a09dab73c637b6b2391bff118f8ce166567391fa0e419057723dd967af8e2a7b4baeeb38344593f4072d7bc0d5c1"}/
+        .item-button-right
+          %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
+            %i.icon-lock
+            %span あんしん・あんぜんへの取り組み
+            / ここは本家のリンクでいいですかね？？
+    .item-detail-message
+      .message-container
+        .message-content
+          %ul.message-items
+            = render partial: 'comment', locals: {comment: @comments}
+        .message-content
+          .message-form
+            %p
+              相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = form_for [@product,@comment],class: "message-form" do |f|
+            = f.text_field :text, class: 'textarea-default'
+            = f.submit "コメントする", class: 'message-submit btn-default btn-gray'
+        %aside.modal{"data-close" => "modal", "data-modal" => "delete-comment"}
+          .modal-inner.modal-banner
+            .modal-body
+              .modal-head.bold 確認
+              %div{"data-comment" => "body"}
+              %br/
+              本当にこのコメントを削除してよろしいですか？
+            %form{:action => "https://www.mercari.com/jp/comment/delete/", :method => "POST"}
               .clearfix
                 .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
-                %a{:href => "https://www.mercari.com/jp/report/m28824546027/"}
-                  %button.modal-btn.modal-btn-submit はい
-      .l-side
-        .l-visible-large
-          %a.side-banner{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-            %img{:alt => "Download Mercari Now", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/side_banner.jpg?1845134038"}/
-      %aside.app-banner
-        .app-banner-sp
-          %a{:href => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=common.foot_banner", :target => "_blank"}
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_banner_sp.jpg?1845134038", :width => "100%"}/
-        .app-banner-pc
-          .app-banner-pc-inner
-            %h2 スマホでかんたんフリマアプリ
-            %p 今すぐ無料ダウンロード！
-            .app-banner-icon.clearfix
-              %figure
-                %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?1845134038", :width => "68"}/
-              %ul.clearfix
-                %li
-                  %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-                    %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?1845134038", :width => "133"}/
-                %li
-                  %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
-                    %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?1845134038", :width => "133"}/
-          %figure
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?1845134038"}/
-      %footer.global-footer
-        %nav
-          %ul
-            %li.download-app
-              %a{:href => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=common.footer"}
-                %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?1845134038", :width => "35px"}>/
-                今すぐ無料ダウンロード！
-            %li.footer-cell
-              %h2.footer-head メルカリについて
-              %ul
-                %li
-                  %a{:href => "https://about.mercari.com/"} 会社概要（運営会社）
-                %li
-                  %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-                %li
-                  %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-                %li
-                  %a{:href => "https://www.mercari.com/jp/tos_paid_point/"} メルカリ利用規約・有償ポイントに関する特約
-                %li
-                  %a{:href => "https://www.mercari.com/jp/tos_smartphone_support/"} あんしんスマホサポート制度に関する利用特約
-                %li
-                  %a{:href => "https://www.mercari.com/jp/compliance/"} コンプライアンスポリシー
-                %li
-                  %a{:href => "https://www.mercari.com/jp/data_security/"} 個人データの安全管理に係る基本方針
-                %li
-                  %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-                %li
-                  %a{:href => "https://www.mercari.com/jp/shikin_kessai/"} 資金決済法に基づく表示
-                %li
-                  %a{:href => "https://about.mercari.com/csr/safety/"} 法令順守と犯罪抑止のために
-                %li
-                  %a{:href => "https://www.mercari.com/jp/jobs/"} 採用情報
-            %li.footer-cell
-              %h2.footer-head メルカリを見る
-              %ul
-                %li
-                  %a{:href => "https://www.mercari.com/jp/category/"} カテゴリー一覧
-                %li
-                  %a{:href => "https://www.mercari.com/jp/brand/"} ブランド一覧
-                %li
-                  %a{:href => "https://www.mercari.com/jp/area/"} 出品地域一覧
-                %li
-                  %a{:href => "https://jp-news.mercari.com/", :target => "_blank"} 公式ブログ
-                %li
-                  %a{:href => "https://twitter.com/mercari_jp", :target => "_blank"} 公式Twitter
-                %li
-                  %a{:href => "https://www.facebook.com/mercarijp", :target => "_blank"} 公式Facebook
-            %li.footer-cell
-              %h2.footer-head ヘルプ＆ガイド
-              %ul
-                %li
-                  %a{:href => "https://www.mercari.com/jp/help_center/"} メルカリガイド
-                %li
-                  %a{:href => "https://www.mercari.com/jp/logo-guidelines/"} メルカリロゴ利用ガイドライン
-                %li
-                  %a{:href => "https://about.mercari.com/press/news/"} お知らせ
-                %li
-                  %a{:href => "https://www.mercari.com/jp/rakuraku-mercari/"} らくらくメルカリ便とは
-                %li
-                  %a{:href => "https://www.mercari.com/jp/yuyu-mercari/"} ゆうゆうメルカリ便とは
-                %li
-                  %a{:href => "https://www.mercari.com/jp/rakuraku-ogata/"} 大型らくらくメルカリ便とは
-                %li
-                  %a{:href => "https://www.mercari.com/jp/guide/car/"} 車体取引ガイド
-                %li
-                  %a{:href => "https://www.mercari.com/jp/refund-returns/"} 返品・返金ポリシー
-                %li
-                  %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"} メルカリあんしん・あんぜん宣言！
-                %li
-                  %a{:href => "https://www.mercari.com/jp/authenticity/"} 偽ブランド品撲滅への取り組み
-                %li
-                  %a{:href => "https://www.mercari.com/jp/box/"} メルカリボックス
-            %li.footer-cell
-              %h2.footer-head 国
-              %ul.footer-nav-lang
-                %li
-                  %a{:href => "https://www.mercari.com/"}
-                    %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?1845134038", :width => "22"}>/
-                    United States
-                %li
-                  %a{:href => "https://www.mercari.com/uk/"}
-                    %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?1845134038", :width => "22"}>/
-                    United Kingdom
-                %li
-                  %a.active{:href => "https://www.mercari.com/jp/"}
-                    %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?1845134038", :width => "22"}>/
-                    日本
-        %a.footer-logo{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :height => "33", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1845134038", :width => "124"}/
-        %p.footer-copyright
-          %small © 2018 Mercari
-      %a.footer-sell-btn.hidden{:href => "https://www.mercari.com/jp/sell/"}
-        %div 出品
-        %i.icon-camera
-      .custom-banner.custom-banner-ios.banner-pattern1.clearfix
-        %figure
-          %img{:alt => "Mercari app's icon", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/custom-banner-icon.png?1845134038", :width => "56"}/
-        .clearfix
-          .banner-rating
-            %figcaption
-              iOS版メルカリ
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-off.png?1845134038", :width => "12"}/
-            %span.user-num (6,698)
-          %a.pattern1-install{:href => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=installHeader.creative1", :target => "_blank"} インストール
-          %a.pattern1-open{"data-action" => "item/openDetail", "data-key" => "id=m28824546027", "data-toggle" => "open-app", "data-url-scheme" => "mercari://", :href => ""} アプリで開く
-        %i.icon-close
-      .custom-banner.custom-banner-android.banner-pattern1.clearfix
-        %figure
-          %img{:alt => "Mercari app's icon", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/custom-banner-icon.png?1845134038", :width => "56"}/
-        .clearfix
-          .banner-rating
-            %figcaption
-              Android版メルカリ
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-on.png?1845134038", :width => "12"}/
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/star-off.png?1845134038", :width => "12"}/
-            %span.user-num (60,414)
-          %a.pattern1-install{:href => "http://app.adjust.io/xio2ii?campaign=android&adgroup=installHeader.creative1", :target => "_blank"} インストール
-          %a.pattern1-open{"data-action" => "item/openDetail", "data-key" => "id=m28824546027", "data-toggle" => "open-app", "data-url-scheme" => "mercari://", :href => ""} アプリで開く
-        %i.icon-close
-      .overlay
-    %script{:src => "//www-mercari-jp.akamaized.net/assets/js/app.js?3788517629"}
-    :javascript
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-50190241-1', 'auto');
-      ga('send', 'pageview');
-    #fb-root
-    :javascript
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/ja_JP/sdk/xfbml.save.js#xfbml=1&version=v2.5&appId=466308336793848"; fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    :javascript
-      window.dataLayer = window.dataLayer || []
-      dataLayer.push({
-      　　 'event': 'dynamic_product',
-        'ecomm_pagetype': 'product',
-          'ecomm_prodid': 'm28824546027',
-          'ecomm_totalvalue': '15200'
-      });
-    :javascript
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'virtual_pageview',
-        'trackPageview': '/jp/m28824546027/on_sale/'
-      });
-    / Google Tag Manager
-    :javascript
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-KLPT5L5');
-    / End Google Tag Manager
-    / Google Tag Manager (noscript)
-    %noscript
-      %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", :style => "display:none;visibility:hidden", :width => "0"}
-    / End Google Tag Manager (noscript)
+                %button.modal-btn.modal-btn-submit{:type => "submit"}
+                  削除する
+              %input{:name => "item_id", :type => "hidden", :value => "m28824546027"}/
+              %input{:name => "comment_id", :type => "hidden", :value => ""}/
+              %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+              %input{:name => "__csrf_value", :type => "hidden", :value => "389f6d304ef0d1e57ce30a2b501480ffa86f5a09dab73c637b6b2391bff118f8ce166567391fa0e419057723dd967af8e2a7b4baeeb38344593f4072d7bc0d5c1"}/
+      %ul.nav-item-link-prev-next.clearfix
+        %li.nav-item-link-prev
+          %a{:href => "https://item.mercari.com/jp/m93650291396/"}
+            %i.icon-arrow-left>
+            【お値下げ】新品未開封 チェンジ プレシャス バブルファンデS 9g
+        %li.nav-item-link-next
+          %a{:href => "https://item.mercari.com/jp/m37307566134/"}
+            Hey!Say!2010TENJUMP Hey!Say! JUMP
+            %i.fas fa-angle-right
+      .item-social-media-box
+        .text-center
+          .fb-save{"data-uri" => "product://113299479059860/m28824546027"}
+        %ul.social-media-box
+          %li
+            = link_to "#", class: "share-btn" do
+              %i.fab.fa-facebook-square
+          %li
+            = link_to "#", class: "share-btn" do
+              %i.fab.fa-twitter-square
+          %li
+            = link_to "#" do
+              %i.fab.fa-line
+      %section.items-box-container.clearfix.items-box-overflow
+        %h2.items-box-head
+          %a{:href => "https://www.mercari.com/jp/u/789824183/"}
+            = @product.user.nickname
+            さんのその他の出品
+        - @products.each do |product|
+          = render partial: 'product', locals: {product: product}
+      %aside.modal{"data-close" => "modal", "data-modal" => "report-item"}
+        .modal-inner.modal-banner
+          .modal-body
+            .modal-head.bold 確認
+            不適切な商品を報告しますか？
+          .clearfix
+            .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
+            %a{:href => "https://www.mercari.com/jp/report/m28824546027/"}
+              %button.modal-btn.modal-btn-submit はい
+  .l-side
+    .l-visible-large
+      %a.side-banner{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
+        %img{:alt => "Download Mercari Now", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/side_banner.jpg?1845134038"}/
+= render partial: "layouts/footer"
