@@ -18,18 +18,23 @@ class UserController < ApplicationController
   end
 
   def listening
+    @products = Product.where('user_id = ? and status = ?',current_user.id, 0)
   end
 
   def in_progress
+    @products = Product.where('user_id = ? and status = ?',current_user.id, 1)
   end
 
   def completed
+    @products = Product.where('user_id = ? and status = ?',current_user.id, 2)
   end
 
   def purchase
+    @products = Product.where('user_id = ? and status = ?',current_user.id, 3)
   end
 
   def purchased
+    @products = Product.where('user_id = ? and status = ?',current_user.id, 4)
   end
 
 private

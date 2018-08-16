@@ -5,5 +5,4 @@ class OrdersController < ApplicationController
     @seller = User.find(@product.user_id)
     @user = User.find(current_user)
   end
-
 end

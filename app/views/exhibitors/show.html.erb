@@ -19,7 +19,7 @@
     <div class="users-detail-profile-box" style="background-image:url(<%= asset_path "user-bg.jpg" %>)">
       <div class="users-detail-photo_box text-center">
         <%= link_to exhibitor_path(@user) do %>
-          <div class="users-detail-photo" style="background-image: url('//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png')"></div>
+          <img src="<%= current_user.image %>" class="users-detail-photo">
           <h2 class="users-detail-title font-6"><%= @user.nickname %></h2>
         <% end %>
       <div class="users-detail-score font-3">
