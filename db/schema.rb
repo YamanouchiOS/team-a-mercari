@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180815155504) do
+ActiveRecord::Schema.define(version: 20180816050649) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "user_id",                       null: false
@@ -104,6 +104,18 @@ ActiveRecord::Schema.define(version: 20180815155504) do
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
+  create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "grade",                     null: false
+    t.text     "text",        limit: 65535
+    t.integer  "status",                    null: false
+    t.integer  "reviewer_id",               null: false
+    t.integer  "reviewee_id",               null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id", using: :btree
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id", using: :btree
+  end
+
   create_table "small_classes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name",            null: false
     t.integer  "middle_class_id", null: false
@@ -145,5 +157,7 @@ ActiveRecord::Schema.define(version: 20180815155504) do
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "users"
   add_foreign_key "products", "users", column: "buyer_id"
+  add_foreign_key "reviews", "users", column: "reviewee_id"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
   add_foreign_key "small_classes", "middle_classes"
 end
