@@ -2532,6 +2532,7 @@ i[class^='icon-'], i[class*='icon-'] {
 
 .fa-bell:before {
   content: '\e009'
+  color: white;
 }
 
 .fa-camera:before {
