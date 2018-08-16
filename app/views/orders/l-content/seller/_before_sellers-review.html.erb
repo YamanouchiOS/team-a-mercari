@@ -22,9 +22,10 @@
                                             </ul>
 
 
-
-                    <form action="https://www.mercari.com/jp/transaction/review/m57583597862/" method="POST" class="transact-form-review">
+      <%= form_for @product, html: {class:"transact-form-review"} do |f|%>
+      <form action="https://www.mercari.com/jp/transaction/review/m57583597862/" method="POST" class="transact-form-review">
         <input type="hidden" name="__csrf_value" value="76deface1799e71e0f9dadac145359acc3d65ed46992676134d3d971ee1a9f272100c053286f4af3d698d698893c84ef3581672e23f21881303e723febaffb6dd">
+        <input type="hidden" name="status" value="4">
 
                   <input type="hidden" name="transaction_delivered" id="transaction_delivered" value="1">
 
@@ -32,7 +33,7 @@
           <li>
             <input type="radio" name="fame" id="face1" value="good">
             <div class="transact-review-icon">
-              <i class="icon-good"></i>
+              <i class="fas fa-laugh"></i>
               <label for="face1">
                 良い
               </label>
@@ -41,7 +42,7 @@
           <li>
             <input type="radio" name="fame" id="face2" value="normal">
             <div class="transact-review-icon">
-              <i class="icon-normal"></i>
+              <i class="fas fa-meh"></i>
               <label for="face2">
                 普通
               </label>
@@ -50,7 +51,7 @@
           <li>
             <input type="radio" name="fame" id="face3" value="bad">
             <div class="transact-review-icon">
-              <i class="icon-bad"></i>
+              <i class="fas fa-sad-tear"></i>
               <label for="face3">
                 悪い
               </label>
@@ -64,7 +65,7 @@
         <button type="submit" class="btn-default btn-red" disabled="">
                       評価を投稿する
                   </button>
-      </form>
+      <% end %>
 
 
 

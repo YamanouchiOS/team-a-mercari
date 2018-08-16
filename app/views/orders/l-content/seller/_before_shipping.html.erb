@@ -27,11 +27,11 @@
 
 
                 <div class="transact-shipping-soyo">
-
-        <form action="/jp/shipping/shipped/m57583597862/" method="POST" novalidate="novalidate">
+        <%= form_for @product, html: {novalidate: "novalidate"} do |f| %>
           <input type="hidden" name="__csrf_value" value="53bbeb6b9ac6bc67f10abbbf26eff267a1aaf194ea79c6cbe83e4d9491c102cef703d2e708265cae1e1e2f3000054b1b7626cce5b37816d49db7f669287868370">
+          <input type="hidden" name="status" value="2" >
           <button type="submit" class="btn-default btn-red">商品の発送をしたので、発送通知をする</button>
-        </form>
+        <% end %>
 
         <h3 class="text-center">らくらくメルカリ便に変更できます</h3>
 

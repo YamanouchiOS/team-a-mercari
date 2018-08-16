@@ -19,7 +19,7 @@
             <img data-src="<%= @product.product_images[0].image %>" class=" is-higher-height lazyloaded" src="<%= @product.product_images[0].image %>">
           </h3>
             <p class="buy-item-name bold"><%= @product.name %></p>
-          <%= form_for @product, url: "#{first_update_product_path(current_user.id)}", html: {class: "buy-form", novalidate: "novalidate"} do |f| %>
+          <%= form_for @product, url: "#{first_update_product_path(@product)}", html: {class: "buy-form", novalidate: "novalidate"} do |f| %>
             <p class="buy-price-ja bold">
               <%= @product.price %>
               <span class="item-shipping-fee f14 bold">送料込み</span>

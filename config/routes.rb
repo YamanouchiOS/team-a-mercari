@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'registrations'}
   root 'products#index'
 
-  resources :products, only: [:index, :new, :create, :show] do
+  resources :products, only: [:index, :new, :create, :show, :update] do
     resources :comments, only: [:create]
     resources :orders, only: [:index]
     member do
