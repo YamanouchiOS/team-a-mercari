@@ -1,8 +1,8 @@
 <%= render partial: "layouts/header" %>
   <main class=" l-container clearfix">
     <div class="l-content">
-      <section class="mypage-user-icon">
-        <a href="https://www.mercari.com/jp/u/319522678/">
+      <section class="mypage-user-icon" style="background-image:url(<%= asset_path "user-bg.jpg" %>)">
+        <%= link_to exhibitor_path(current_user) do %>
           <figure>
             <img src="//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png" alt="" width="60" height="60">
           </figure>
@@ -11,7 +11,7 @@
             <div>評価 <span class="bold">3</span></div>
             <div>出品数 <span class="bold">2</span></div>
           </div>
-        </a>
+        <% end %>
       </section>
 
       <section class="mypage-tab-container-notification-todo">
