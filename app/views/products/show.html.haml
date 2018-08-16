@@ -19,6 +19,9 @@
             - @product.product_images.each do |product|
               .owl-item-inner{"data-thumbnail-class-name": ""}
                 %img.owl-lazy{"data-src": "#{product.image}"}/
+          - if @product.status >= 1
+            .item-sold-out-badge
+              %div SOLD
         %table.item-detail-table
           %tr
             %th 出品者
@@ -82,12 +85,15 @@
           = price_delimiter(@product.price)
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
-      %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "/products/#{@product.id}/buy"} 購入画面に進む
-      %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m"}
-        %div{"data-client" => "visible"}
-          購入画面に進む
-      %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
-        アプリで購入
+        - if @product.status == 0
+          %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "/products/#{@product.id}/buy"} 購入画面に進む
+          %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m"}
+            %div{"data-client" => "visible"}
+              購入画面に進む
+          %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
+            アプリで購入
+        - else
+          .item-buy-btn.disabled.f18-24 売り切れました
       .item-description.f14
         = @product.detail
       .item-button-container.clearfix
@@ -116,9 +122,14 @@
           .message-form
             %p
               相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          = form_for [@product,@comment],class: "message-form" do |f|
-            = f.text_field :text, class: 'textarea-default'
-            = f.submit "コメントする", class: 'message-submit btn-default btn-gray'
+          - if @product.status == 0
+            = form_for [@product,@comment],class: "message-form" do |f|
+              = f.text_field :text, class: 'textarea-default'
+              = f.submit "コメントする", class: 'message-submit btn-default btn-red'
+          - else
+            = form_for [@product,@comment],class: "message-form" do |f|
+              = f.text_field :text, class: 'textarea-default', disabled: "disabled"
+              = f.submit "売り切れのためコメントできません", class: 'message-submit btn-default btn-gray', disabled: "disabled"
         %aside.modal{"data-close" => "modal", "data-modal" => "delete-comment"}
           .modal-inner.modal-banner
             .modal-body
