@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :buy, :first_update]
+  before_action :set_product, only: [:show, :buy, :first_update, :update, :perchased]
   protect_from_forgery :except => [:create]
 
   def index
@@ -50,8 +50,15 @@ class ProductsController < ApplicationController
   end
 
   def perchased
-    @product = Product.find(params[:id])
     @buyer = User.includes(:address).find(@product.buyer.id)
+  end
+
+  def update
+    if @product.update(update_params)
+      redirect_to user_path
+    else
+      render controller: :orders, action: :index
+    end
   end
 
   private
@@ -77,5 +84,9 @@ class ProductsController < ApplicationController
 
   def first_update_params
     params.permit(:buyer_id, :status)
+  end
+
+  def update_params
+    params.permit(:status)
   end
 end
