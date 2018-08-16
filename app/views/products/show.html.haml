@@ -19,18 +19,6 @@
             - @product.product_images.each do |product|
               .owl-item-inner{"data-thumbnail-class-name": ""}
                 %img.owl-lazy{"data-src": "#{product.image}"}/
-        .item-price-box.text-center.visible-sp
-          %span.item-price.bold
-            = @product.price
-          %span.item-tax (税込)
-          %span.item-shipping-fee 送料込み
-        %section.visible-sp
-          %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"} 購入画面に進む
-          %a.item-btn-client{:href => "https://www.mercari.com/jp/transaction/buy/m28824546027/"}
-            %div{"data-client" => "visible"}
-              購入画面に進む
-          %a.item-action-text{"data-action" => "item/openDetail", "data-adjust-url" => "http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1", "data-key" => "id=m28824546027", "data-play-id" => "com.kouzoh.mercari", "data-toggle" => "open-app", "data-url-scheme" => "mercari://"}
-            アプリで購入
         %table.item-detail-table
           %tr
             %th 出品者
@@ -91,7 +79,7 @@
       .item-price-box.text-center
         %span.item-price.bold
           ¥
-          = @product.price
+          = price_delimiter(@product.price)
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
       %a.item-buy-btn.f18-24{"data-client" => "hidden", :href => "/products/#{@product.id}/buy"} 購入画面に進む
@@ -147,15 +135,6 @@
               %input{:name => "comment_id", :type => "hidden", :value => ""}/
               %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
               %input{:name => "__csrf_value", :type => "hidden", :value => "389f6d304ef0d1e57ce30a2b501480ffa86f5a09dab73c637b6b2391bff118f8ce166567391fa0e419057723dd967af8e2a7b4baeeb38344593f4072d7bc0d5c1"}/
-      %ul.nav-item-link-prev-next.clearfix
-        %li.nav-item-link-prev
-          %a{:href => "https://item.mercari.com/jp/m93650291396/"}
-            %i.icon-arrow-left>
-            【お値下げ】新品未開封 チェンジ プレシャス バブルファンデS 9g
-        %li.nav-item-link-next
-          %a{:href => "https://item.mercari.com/jp/m37307566134/"}
-            Hey!Say!2010TENJUMP Hey!Say! JUMP
-            %i.fas fa-angle-right
       .item-social-media-box
         .text-center
           .fb-save{"data-uri" => "product://113299479059860/m28824546027"}
@@ -171,7 +150,7 @@
               %i.fab.fa-line
       %section.items-box-container.clearfix.items-box-overflow
         %h2.items-box-head
-          %a{:href => "https://www.mercari.com/jp/u/789824183/"}
+          %a{:href => "/exhibitors/#{@product.user.id}"}
             = @product.user.nickname
             さんのその他の出品
         - @products.each do |product|
