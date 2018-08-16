@@ -4,7 +4,7 @@
        <%= link_to user_path(current_user.id), class: "sp-header-user-icon pc-header-nav-root" do %>
         <figure>
           <div>
-            <img src="//static-mercari-jp-imgtr2.akamaized.net/thumb/members/557352198.jpg?1532452662" alt="" width="32">
+            <img src="<%= current_user.image %>" alt="" width="32">
           </div>
         </figure>
         <div>マイページ</div>
@@ -13,7 +13,7 @@
           <div class="pc-header-mypage-state text-center">
             <figure>
               <div>
-                <img src="//static-mercari-jp-imgtr2.akamaized.net/thumb/members/557352198.jpg?1532452662" alt="" width="60">
+                <img src="<%= current_user.image %>" alt="" width="60">
               </div>
               <figcaption><%= current_user.nickname %></figcaption>
             </figure>
