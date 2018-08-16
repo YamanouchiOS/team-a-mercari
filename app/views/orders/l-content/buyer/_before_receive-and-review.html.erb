@@ -16,6 +16,7 @@
     <%= form_for @product, html: {class: "transact-form-review"} do |f|%>
       <input type="hidden" name="__csrf_value" value="f3526669d4374ad8da3373f61a86923d661399d19628fcc59c6707fa29be2ea80239e45335ebfe6451369351161aab18f6744d6a95fb71620a2bba55cb04888ef">
       <input type="hidden" name="status" value="3">
+      <input type="hidden" name="review_type" value="0">
       <div class="checkbox-default">
         <input type="checkbox" name="transaction_delivered" id="transaction_delivered" value="1">
         <i class="icon-check"></i>
@@ -23,7 +24,7 @@
       </div>
       <ul class="transact-review-list clearfix">
         <li>
-          <input type="radio" name="fame" id="face1" value="good">
+          <input type="radio" name="fame" id="face1" value="0">
           <div class="transact-review-icon">
             <i class="fas fa-laugh"></i>
             <label for="face1">
@@ -32,7 +33,7 @@
           </div>
         </li>
         <li>
-          <input type="radio" name="fame" id="face2" value="normal">
+          <input type="radio" name="fame" id="face2" value="1">
           <div class="transact-review-icon">
             <i class="fas fa-meh"></i>
             <label for="face2">
@@ -41,7 +42,7 @@
           </div>
         </li>
         <li>
-          <input type="radio" name="fame" id="face3" value="bad">
+          <input type="radio" name="fame" id="face3" value="2">
             <div class="transact-review-icon">
               <i class="fas fa-sad-tear"></i>
               <label for="face3">
@@ -51,7 +52,7 @@
         </li>
       </ul>
       <p>評価のコメントを記入しましょう。</p>
-        <textarea name="message" placeholder="コメントはなくても構いませんが、お礼のメッセージなどを書くと喜ばれます。" class="textarea-default"></textarea>
+        <textarea name="text" placeholder="コメントはなくても構いませんが、お礼のメッセージなどを書くと喜ばれます。" class="textarea-default"></textarea>
         <button type="submit" class="btn-default btn-red" disabled="">
           評価を投稿する
         </button>

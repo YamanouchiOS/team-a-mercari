@@ -1,9 +1,9 @@
 <body>
   <div class="default-container">
     <%= render partial: "layouts/header" %>
-    <%= render partial: "nav_bar" %>
+    <%= render partial: "/orders/nav_bar" %>
     <main class=" l-container clearfix">
-      <%= render partial: "side_bar_left" %>
+      <%= render partial: "/orders/side_bar_left" %>
       <%= render partial: "orders/l-content/#{buyer_or_seller(@product, @user)}/#{define_order_status(@product)}" %>
     </main>
     <%= render partial: "layouts/footer_without_posting_button" %>

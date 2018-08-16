@@ -55,9 +55,24 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(update_params)
-      redirect_to user_path
+      if review_params.empty?
+        redirect_to user_path
+      else
+        if review_params[:review_type] == "0" #受け取り評価
+        @review = Review.new(grade: review_params[:fame], text: review_params[:text], status: review_params[:review_type], reviewer_id: current_user.id, reviewee_id: @product.user_id )
+        elsif review_params[:review_type] == "1" #購入者を評価
+          @review = Review.new(grade: review_params[:fame], text: review_params[:text], status: review_params[:review_type], reviewer_id: current_user.id, reviewee_id: @product.buyer_id )
+        else
+         redirect_to orders_index_path(@product)
+        end
+        if @review.save
+          redirect_to user_path
+        else
+          redirect_to orders_index_path(@product)
+        end
+      end
     else
-      render controller: :orders, action: :index
+      redirect_to orders_index_path(@product)
     end
   end
 
@@ -88,5 +103,14 @@ class ProductsController < ApplicationController
 
   def update_params
     params.permit(:status)
+  end
+
+  def review_params
+    params.permit(
+      :fame,
+      :text,
+      :review_type,
+      :reviewer_id,
+      :reviewee_id)
   end
 end
