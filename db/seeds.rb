@@ -12,8 +12,8 @@ CSV.foreach('db/csv/small_class.csv') do |row|
   SmallClass.create(name: row[0], middle_class_id: row[1], created_at: Time.zone.now, updated_at: Time.zone.now)
 end
 
-User.create(id: 1, email: "nozomi@test.com", password: 12345678, nickname: "のぞみん")
-User.create(id: 2, email: "suzu@test.com", password: 87654321, nickname: "すぅちゃん")
+User.create(id: 1, email: "nozomi@test.com", password: 12345678, nickname: "のぞみん", image: "http://www.lifetrivia.net/wp-content/uploads/2017/04/20170408-1-320x296.jpg")
+User.create(id: 2, email: "suzu@test.com", password: 87654321, nickname: "すぅちゃん", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
 
 Address.create(
   id: 1,
