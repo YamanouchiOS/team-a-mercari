@@ -1,0 +1,62 @@
+<%= render partial: "layouts/header" %>
+
+<nav class="bread-crumbs">
+  <ul>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <%= link_to root_path do %>
+        <span itemprop="title">メルカリ</span>
+      <% end %>
+      <i class="fas fa-angle-right"></i>
+    </li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <%= link_to user_path(current_user) do %>
+        <span itemprop="title">マイページ</span>
+      <% end %>
+      <i class="fas fa-angle-right"></i>
+    </li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <span itemprop="title">出品した商品 - 取引中</span>
+    </li>
+  </ul>
+</nav>
+
+<main class=" l-container clearfix">
+  <div class="l-content">
+    <section class="mypage-tab-container">
+      <h2 class="mypage-tab-head">出品した商品</h2>
+
+      <ul class="listing-tabs">
+        <li class="">
+          <h3>
+            <%= link_to listening_user_path(current_user) do %>
+                出品中
+            <% end %>
+          </h3>
+        </li>
+
+        <li class="">
+          <h3>
+            <%= link_to in_progress_user_path(current_user) do %>
+                取引中
+            <% end %>
+          </h3>
+        </li>
+
+        <li class="active">
+          <h3>
+            <%= link_to completed_user_path(current_user) do %>
+              売却済み
+            <% end %>
+          </h3>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <ul id="mypage-tab-transaction-old" class="mypage-item-list tab-pane active">
+          <li class="mypage-item-not-found bold" style="background-image:url(<%= asset_path "logo-gray-icon.svg" %>)">取引中の商品がありません</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <%= render partial: "layouts/leftside_menu" %>
+</main>
+<%= render partial: "layouts/footer" %>
