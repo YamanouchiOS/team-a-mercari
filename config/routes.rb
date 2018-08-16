@@ -19,7 +19,14 @@ Rails.application.routes.draw do
 
   resources :user, only: [:edit, :update, :show] do
     collection do
-      get 'signout'
+      get :signout
+    end
+    member do
+      get :listening
+      get :in_progress
+      get :completed
+      get :purchase
+      get :purchased
     end
   end
 

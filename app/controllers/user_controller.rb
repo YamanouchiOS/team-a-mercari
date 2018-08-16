@@ -17,6 +17,21 @@ class UserController < ApplicationController
   def show
   end
 
+  def listening
+  end
+
+  def in_progress
+  end
+
+  def completed
+  end
+
+  def purchase
+  end
+
+  def purchased
+  end
+
 private
 
   def introduction_params
