@@ -23,7 +23,7 @@
           %tr
             %th 出品者
             %td
-              = link_to @product.user.nickname, "user_path"
+              = link_to @product.user.nickname, "/exhibitors/#{@product.user_id}"
               %div
                 .item-user-ratings
                   %i.fas.fa-laugh
