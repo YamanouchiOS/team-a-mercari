@@ -88,10 +88,6 @@ $(function(){
   });
 
 
-
-
-
-
   // カテゴリーの非同期表示
 
   // 変数
@@ -113,11 +109,10 @@ $(function(){
   };
 
   // イベント処理
+  // ミドルクラスの表示
   $('#select_large').on("change", function(e) {
     var input = $("#select_large").val();
     var url = "/dynamic_select_middle";
-    console.log(input);
-    console.log(input + url);
     $.ajax({
       url: input + url,
       type: "GET",
@@ -126,8 +121,6 @@ $(function(){
       contentType: false
     })
     .done(function(data) {
-      console.log(data);
-      console.log(select_box_middle)
       $("#select_large").after(select_box_middle);
       $("#select_middle").append(default_select);
       data.forEach(function(data){
@@ -138,12 +131,10 @@ $(function(){
       alert("非同期通信に失敗しました")
     })
   })
-
+  // スモールクラスの表示
   $(".select-wrap").on("change", "#select_middle", function(e) {
     var input = $("#select_middle").val();
     var url = "/dynamic_select_small";
-    console.log(input);
-    console.log(input + url);
     $.ajax({
       url: input + url,
       type: "GET",
@@ -152,8 +143,6 @@ $(function(){
       contentType: false
     })
     .done(function(data) {
-      console.log(data);
-      console.log(select_box_small)
       $("#select_middle").after(select_box_small);
       $("#select_small").append(default_select);
       data.forEach(function(data){
@@ -164,5 +153,14 @@ $(function(){
       alert("非同期通信に失敗しました")
     })
   })
-});
 
+  // 手数料・利益の表示
+  $("#product_price").on("change", function(e) {
+    var input = $('#product_price').val();
+    var yen = "¥ "
+    console.log(input);
+    $("#mergin").html(yen + (input * 0.1))
+    $("#revenue").html(yen + (input*0.9))
+  })
+
+});
