@@ -26,12 +26,13 @@
       <form action="https://www.mercari.com/jp/transaction/review/m57583597862/" method="POST" class="transact-form-review">
         <input type="hidden" name="__csrf_value" value="76deface1799e71e0f9dadac145359acc3d65ed46992676134d3d971ee1a9f272100c053286f4af3d698d698893c84ef3581672e23f21881303e723febaffb6dd">
         <input type="hidden" name="status" value="4">
+        <input type="hidden" name="review_type" value="1">
 
                   <input type="hidden" name="transaction_delivered" id="transaction_delivered" value="1">
 
                 <ul class="transact-review-list clearfix">
           <li>
-            <input type="radio" name="fame" id="face1" value="good">
+            <input type="radio" name="fame" id="face1" value="0">
             <div class="transact-review-icon">
               <i class="fas fa-laugh"></i>
               <label for="face1">
@@ -40,7 +41,7 @@
             </div>
           </li>
           <li>
-            <input type="radio" name="fame" id="face2" value="normal">
+            <input type="radio" name="fame" id="face2" value="1">
             <div class="transact-review-icon">
               <i class="fas fa-meh"></i>
               <label for="face2">
@@ -49,7 +50,7 @@
             </div>
           </li>
           <li>
-            <input type="radio" name="fame" id="face3" value="bad">
+            <input type="radio" name="fame" id="face3" value="2">
             <div class="transact-review-icon">
               <i class="fas fa-sad-tear"></i>
               <label for="face3">
@@ -60,7 +61,7 @@
         </ul>
 
                 <p>評価のコメントを記入しましょう。</p>
-        <textarea name="message" placeholder="コメントはなくても構いませんが、お礼のメッセージなどを書くと喜ばれます。" class="textarea-default"></textarea>
+        <textarea name="text" placeholder="コメントはなくても構いませんが、お礼のメッセージなどを書くと喜ばれます。" class="textarea-default"></textarea>
 
         <button type="submit" class="btn-default btn-red" disabled="">
                       評価を投稿する
