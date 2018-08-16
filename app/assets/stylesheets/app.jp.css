@@ -1,4 +1,10 @@
 /*! sanitize.css v3.2.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
+#js-preview,#js-preview-1,#js-preview-2,#js-preview-3{
+  width: 140px;
+  height: 140px;
+
+}
+
 .l-content.full-width {
   width: 100%;
 }
@@ -14,6 +20,7 @@
 .fa-sad-tear {
   color: #7ab4d4;
 }
+
 
 .sp-header-user-icon {
   display: block;
@@ -12525,8 +12532,7 @@ body.modal-open {
     float: right;
     width: 620px;
     margin: 0;
-    min-height: 184px;
-    padding: 40px
+    height: 140px;
   }
 }
 
@@ -17438,12 +17444,12 @@ body.modal-open {
   display: none
 }
 
-.visible-pc {
+.visible-pc-1,.visible-pc-2,.visible-pc-3,.visible-pc-4{
   display: none
 }
 
 @media screen and (min-width: 768px) {
-  .visible-pc {
+  .visible-pc-1,.visible-pc-2,.visible-pc-3,.visible-pc-4{
     display: block
   }
 }
