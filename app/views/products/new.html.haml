@@ -21,36 +21,40 @@
                       = f.fields_for :product_images do |image|
                         %label.label-upload-drop-box{for: "upload-image"}
                           .sell-upload-drop-box.have-item-3.one
+                            %img#js-preview
                             = image.file_field :image, style: "display:none", id: "upload-image"
                             = image.hidden_field :status, value: "1"
-                            %pre.visible-pc
+                            %pre.visible-pc-1
                               :preserve
                                 ドラッグアンドドロップ
                                 またはクリックしてファイルをアップロード
                       = f.fields_for :product_images do |image|
                         %label.label-upload-drop-box{for: "upload-image2"}
                           .sell-upload-drop-box.have-item-3
+                            %img#js-preview-1
                             = image.file_field :image, style: "display:none", id: "upload-image2"
                             = image.hidden_field :status, value:"1"
-                            %pre.visible-pc
+                            %pre.visible-pc-2
                               :preserve
                                 ドラッグアンドドロップ
                                 またはクリックしてファイルをアップロード
                       = f.fields_for :product_images do |image|
                         %label.label-upload-drop-box{for: "upload-image3"}
                           .sell-upload-drop-box.have-item-3
+                            %img#js-preview-2
                             = image.file_field :image, style: "display:none", id: "upload-image3"
                             = image.hidden_field :status, value:"1"
-                            %pre.visible-pc
+                            %pre.visible-pc-3
                               :preserve
                                 ドラッグアンドドロップ
                                 またはクリックしてファイルをアップロード
                       = f.fields_for :product_images do |image|
                         %label.label-upload-drop-box{for: "upload-image4"}
                           .sell-upload-drop-box.have-item-3
+                            %img#js-preview-3
                             = image.file_field :image, style: "display:none", id: "upload-image4"
                             = image.hidden_field :status, value:"1"
-                            %pre.visible-pc
+                            %pre.visible-pc-4
                               :preserve
                                 ドラッグアンドドロップ
                                 またはクリックしてファイルをアップロード
