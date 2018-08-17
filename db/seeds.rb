@@ -12,8 +12,21 @@ CSV.foreach('db/csv/small_class.csv') do |row|
   SmallClass.create(name: row[0], middle_class_id: row[1], created_at: Time.zone.now, updated_at: Time.zone.now)
 end
 
-User.create(id: 1, email: "nozomi@test.com", password: 12345678, nickname: "のぞみん", image: "http://www.lifetrivia.net/wp-content/uploads/2017/04/20170408-1-320x296.jpg")
-User.create(id: 2, email: "suzu@test.com", password: 87654321, nickname: "すぅちゃん", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+CSV.foreach('db/csv/usr.csv') do |row|
+  User.create(email: row[0], password: row[1], nickname: row[2], image: row[3], created_at: Time.zone.now, updated_at: Time.zone.now)
+end
+
+
+User.create(id: 2, email: "jobs@test.com", password: 12345678, nickname: "ジョブズ", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "zakk@test.com", password: 12345678, nickname: "ザック", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "geitz@test.com", password: 12345678, nickname: "ゲイツ", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "bz@test.com", password: 12345678, nickname: "B'z松本", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "amuro@test.com", password: 12345678, nickname: "安室", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "ruffy@test.com", password: 12345678, nickname: "ルフィ", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "goku@test.com", password: 12345678, nickname: "悟空", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "mei@test.com", password: 12345678, nickname: "めい", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+User.create(id: 2, email: "matz@test.com", password: 12345678, nickname: "マッツ", image: "http://50秒ニュース.com/wp-content/uploads/2014/12/90.jpg")
+
 
 Address.create(
   id: 1,
@@ -46,6 +59,135 @@ Address.create(
   first_kana: "スズ",
   introduction: "初めまして。本を中心に出品しています。"
   )
+
+Address.create(
+  id: 3,
+  user_id: 3,
+  postal_code: "010-0951",
+  prefecture: 1,
+  city: "函館市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "ジョブズ",
+  first_name: "スティーブ",
+  family_kana: "ジョブズ",
+  first_kana: "スティーブ",
+  introduction: "iphone作ってます。よろしくお願いします。"
+  )
+
+Address.create(
+  id: 4,
+  user_id: 4,
+  postal_code: "010-0951",
+  prefecture: 4,
+  city: "秋田市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "佐々木",
+  first_name: "希",
+  family_kana: "ササキ",
+  first_kana: "ノゾミ",
+  introduction: "手作りのアクセサリーを出品しています。よろしくお願いします。"
+  )
+
+Address.create(
+  id: 5,
+  user_id: 1,
+  postal_code: "010-0951",
+  prefecture: 4,
+  city: "秋田市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "佐々木",
+  first_name: "希",
+  family_kana: "ササキ",
+  first_kana: "ノゾミ",
+  introduction: "手作りのアクセサリーを出品しています。よろしくお願いします。"
+  )
+
+Address.create(
+  id: 6,
+  user_id: 1,
+  postal_code: "010-0951",
+  prefecture: 4,
+  city: "秋田市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "佐々木",
+  first_name: "希",
+  family_kana: "ササキ",
+  first_kana: "ノゾミ",
+  introduction: "手作りのアクセサリーを出品しています。よろしくお願いします。"
+  )
+
+Address.create(
+  id: 7,
+  user_id: 1,
+  postal_code: "010-0951",
+  prefecture: 4,
+  city: "秋田市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "佐々木",
+  first_name: "希",
+  family_kana: "ササキ",
+  first_kana: "ノゾミ",
+  introduction: "手作りのアクセサリーを出品しています。よろしくお願いします。"
+  )
+
+Address.create(
+  id: 8,
+  user_id: 1,
+  postal_code: "010-0951",
+  prefecture: 4,
+  city: "秋田市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "佐々木",
+  first_name: "希",
+  family_kana: "ササキ",
+  first_kana: "ノゾミ",
+  introduction: "手作りのアクセサリーを出品しています。よろしくお願いします。"
+  )
+
+Address.create(
+  id: 9,
+  user_id: 1,
+  postal_code: "010-0951",
+  prefecture: 4,
+  city: "秋田市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "佐々木",
+  first_name: "希",
+  family_kana: "ササキ",
+  first_kana: "ノゾミ",
+  introduction: "手作りのアクセサリーを出品しています。よろしくお願いします。"
+  )
+
+Address.create(
+  id: 10,
+  user_id: 1,
+  postal_code: "010-0951",
+  prefecture: 4,
+  city: "秋田市",
+  street_number: "山王１丁目１",
+  building_number: "",
+  phone_number: "090-1234-5678",
+  family_name: "佐々木",
+  first_name: "希",
+  family_kana: "ササキ",
+  first_kana: "ノゾミ",
+  introduction: "手作りのアクセサリーを出品しています。よろしくお願いします。"
+  )
+
 
 Product.create(
   id: 1,
