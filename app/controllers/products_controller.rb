@@ -15,6 +15,22 @@ class ProductsController < ApplicationController
     @product.product_category = product_category
   end
 
+  def dynamic_select_middle
+  @middle_classes = MiddleClass.where(large_class_id: params[:id])
+    respond_to do |format|
+      format.html { redirect_to "#{params[:url]}" }
+      format.json
+    end
+  end
+
+  def dynamic_select_small
+  @small_classes = SmallClass.where(middle_class_id: params[:id])
+    respond_to do |format|
+      format.html { redirect_to "#{params[:url]}" }
+      format.json
+    end
+  end
+
   def show
     @product = Product.includes(:user).find(params[:id])
     @products = Product.where(user_id: @product.user_id).where.not(id: params[:id])

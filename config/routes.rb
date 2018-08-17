@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get :perchased
       patch :first_update
       put :first_update
+      get :dynamic_select_middle
+      get :dynamic_select_small
     end
   end
 
