@@ -65,7 +65,13 @@
                   </div>
                   <div>
               <div class="mypage-item-status bold awaiting">
-                取引中
+                <% if product.status == 1 %>
+                  取引中
+                <% elsif product.status == 2 %>
+                  受け取り評価待ち
+                <% elsif product.status == 3 %>
+                  評価中
+                <% end %>
               </div>
               </div>
             </div>

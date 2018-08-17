@@ -29,7 +29,7 @@
         <li class="">
           <h3>
             <%= link_to purchase_user_path(current_user) do %>
-                取引中
+              取引中
             <% end %>
           </h3>
         </li>
@@ -37,7 +37,7 @@
         <li class="active">
           <h3>
             <%= link_to purchased_user_path(current_user) do %>
-                過去の取引
+              過去の取引
             <% end %>
           </h3>
         </li>
@@ -48,7 +48,7 @@
       <div class="tab-content">
         <ul id="mypage-tab-transaction-now" class="mypage-item-list tab-pane active">
           <li>
-            <a href = "/products/<%= product.id%>/orders/orders" method = "get" class="mypage-item-link">
+            <a href = "/products/<%= product.id%>/orders" method = "get" class="mypage-item-link">
               <figure>
                 <img data-src="<%= product.product_images[0].image %>" alt="<%= product.name %>" src="<%= product.product_images[0].image %>">
               </figure>

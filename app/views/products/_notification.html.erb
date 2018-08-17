@@ -4,7 +4,11 @@
        <%= link_to user_path(current_user.id), class: "sp-header-user-icon pc-header-nav-root" do %>
         <figure>
           <div>
-            <img src="<%= current_user.image %>" alt="" width="32">
+            <% if current_user.image.present? %>
+              <img src="<%= current_user.image %>" alt="" width="32">
+            <% else %>
+              <img src="<%= asset_path "no_image_thumb.png" %>" alt="" width="32">
+            <% end %>
           </div>
         </figure>
         <div>マイページ</div>
@@ -13,7 +17,12 @@
           <div class="pc-header-mypage-state text-center">
             <figure>
               <div>
+                <% if current_user.image.present? %>
                 <img src="<%= current_user.image %>" alt="" width="60">
+                <% else %>
+                  <img src="<%= asset_path "no_image_thumb.png" %>" alt="" width="60">
+                <% end %>
+
               </div>
               <figcaption><%= current_user.nickname %></figcaption>
             </figure>
@@ -44,38 +53,38 @@
             </li>
 
             <li>
-              <a href="https://www.mercari.com/jp/mypage/listings/listing/" class="mypage-nav-list-item">
+              <%= link_to listening_user_path(current_user), class: "mypage-nav-list-item" do %>
                 出品した商品 - 出品中
                 <i class="fas fa-angle-right"></i>
-              </a>
+              <% end %>
             </li>
 
             <li>
-              <a href="https://www.mercari.com/jp/mypage/listings/in_progress/" class="mypage-nav-list-item">
+              <%= link_to in_progress_user_path(current_user), class: "mypage-nav-list-item" do %>
                 出品した商品 - 取引中
                 <i class="fas fa-angle-right"></i>
-              </a>
+              <% end %>
             </li>
 
             <li>
-              <a href="https://www.mercari.com/jp/mypage/listings/completed/" class="mypage-nav-list-item">
+              <%= link_to completed_user_path(current_user), class:"mypage-nav-list-item" do %>
                 出品した商品 - 売却済み
                 <i class="fas fa-angle-right"></i>
-              </a>
+              <% end %>
             </li>
 
             <li>
-              <a href="https://www.mercari.com/jp/mypage/purchase/" class="mypage-nav-list-item">
+              <%= link_to purchase_user_path(current_user), class: "mypage-nav-list-item" do %>
                       購入した商品 - 取引中
                 <i class="fas fa-angle-right"></i>
-              </a>
+              <% end %>
             </li>
 
             <li>
-              <a href="https://www.mercari.com/jp/mypage/purchased/" class="mypage-nav-list-item">
+              <%= link_to purchased_user_path(current_user), class: "mypage-nav-list-item" do %>
                 購入した商品 - 過去の取引
                 <i class="fas fa-angle-right"></i>
-              </a>
+              <% end %>
             </li>
           </ul>
       </div>

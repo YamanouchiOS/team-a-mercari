@@ -19,7 +19,11 @@
     <div class="users-detail-profile-box" style="background-image:url(<%= asset_path "user-bg.jpg" %>)">
       <div class="users-detail-photo_box text-center">
         <%= link_to exhibitor_path(@user) do %>
+        <% if current_user.image.present? %>
           <img src="<%= current_user.image %>" class="users-detail-photo">
+        <% else %>
+          <img src="<%= asset_path "no_image_thumb.png" %>" class="users-detail-photo">
+        <% end %>
           <h2 class="users-detail-title font-6"><%= @user.nickname %></h2>
         <% end %>
       <div class="users-detail-score font-3">
