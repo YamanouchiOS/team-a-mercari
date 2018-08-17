@@ -12,7 +12,7 @@ CSV.foreach('db/csv/small_class.csv') do |row|
   SmallClass.create(name: row[0], middle_class_id: row[1], created_at: Time.zone.now, updated_at: Time.zone.now)
 end
 
-CSV.foreach('db/csv/usr.csv') do |row|
+CSV.foreach('db/csv/user.csv') do |row|
   User.create(email: row[0], password: row[1], nickname: row[2], image: row[3], created_at: Time.zone.now, updated_at: Time.zone.now)
 end
 
